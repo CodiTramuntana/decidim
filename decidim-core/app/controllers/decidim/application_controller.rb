@@ -8,6 +8,7 @@ module Decidim
     include NeedsAuthorization
     include PayloadInfo
     include ImpersonateUsers
+    include NeedsTosAccepted
 
     helper Decidim::MetaTagsHelper
     helper Decidim::DecidimFormHelper
@@ -24,6 +25,7 @@ module Decidim
     # Saves the location before loading each page so we can return to the
     # right page.
     before_action :store_current_location
+    before_action :check_tos_lastest_accepted
 
     protect_from_forgery with: :exception, prepend: true
     after_action :add_vary_header

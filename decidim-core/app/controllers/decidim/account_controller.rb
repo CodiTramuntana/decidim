@@ -5,6 +5,8 @@ module Decidim
   class AccountController < Decidim::ApplicationController
     include Decidim::UserProfile
 
+    before_action :check_tos_lastest_accepted
+
     def show
       authorize! :show, current_user
       @account = form(AccountForm).from_model(current_user)

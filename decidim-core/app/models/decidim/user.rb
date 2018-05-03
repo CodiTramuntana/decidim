@@ -107,6 +107,10 @@ module Decidim
       )
     end
 
+    def tos_accepted?
+      tos_accepted_at
+    end
+
     protected
 
     # Overrides devise email required validation.

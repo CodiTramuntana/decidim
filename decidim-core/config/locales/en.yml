@@ -339,6 +339,20 @@ en:
     pages:
       index:
         title: More information
+      terms_and_conditions:
+        accept:
+          error: There's been an error while accepting the terms and conditions.
+          success: Great! You have accepted the terms and conditions.
+        form:
+          agreement: I agree this terms
+          legend: Agree to the terms and conditions of use
+        refuse:
+          dropdown_button: Refuse the terms
+          dropdown_info_text: If you refuse, you won't be able to use the platform, you can <a href="%{data_portability_path}">download your data</a> and/or <a href="%{delete_path}">delete your account</a>.
+        required_review:
+          alert: We've updated our Terms of Service
+          body: Please take a moment to review updates to our Terms of Services. Otherwise you won't be able to use the platform.
+          title: 'Required: Review updates to our terms of service'
     participatory_space_private_users:
       not_allowed: You are not allowed to view this content
     profile:
