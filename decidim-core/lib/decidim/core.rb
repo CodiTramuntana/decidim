@@ -54,6 +54,7 @@ module Decidim
   autoload :ParticipatorySpaceResourceable, "decidim/participatory_space_resourceable"
   autoload :HasPrivateUsers, "decidim/has_private_users"
   autoload :ViewModel, "decidim/view_model"
+  autoload :DataPortability, "decidim/data_portability"
 
   include ActiveSupport::Configurable
 

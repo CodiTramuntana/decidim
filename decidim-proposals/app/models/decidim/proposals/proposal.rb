@@ -16,6 +16,7 @@ module Decidim
       include Decidim::Proposals::CommentableProposal
       include Decidim::Traceable
       include Decidim::Loggable
+      include Decidim::DataPortability
 
       component_manifest_name "proposals"
 
