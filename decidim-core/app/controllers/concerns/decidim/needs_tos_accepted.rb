@@ -30,7 +30,7 @@ module Decidim
 
     def tos_accepted?
       return true unless current_user
-      current_user.tos_accepted_at > current_organization.tos_updated_at
+      current_user.tos_accepted_at >= current_organization.tos_updated_at
     end
 
     def redirect_to_tos
