@@ -6,7 +6,7 @@ module Decidim
   # middleware.
   module NeedsTosAccepted
     def check_tos_lastest_accepted
-      return unless current_user
+      return if tos_accepted?
       return if request.path == tos_path
       return if request.path == decidim.accept_tos_path
       return if request.path == decidim.delete_account_path
@@ -29,7 +29,8 @@ module Decidim
     end
 
     def tos_accepted?
-      current_user.tos_accepted_at > tos_page.updated_at
+      return true unless current_user
+      current_user.tos_accepted_at > current_organization.tos_updated_at
     end
 
     def redirect_to_tos

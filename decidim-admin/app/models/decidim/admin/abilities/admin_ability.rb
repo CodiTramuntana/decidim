@@ -20,6 +20,10 @@ module Decidim
             !StaticPage.default?(page.slug)
           end
 
+          can([:update_notable_changes], [StaticPage, StaticPageForm]) do |page|
+            page.slug == "terms-and-conditions"
+          end
+
           can([:read, :update], Decidim::Organization) do |organization|
             organization == user.organization
           end

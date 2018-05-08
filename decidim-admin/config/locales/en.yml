@@ -84,6 +84,7 @@ en:
         organization: Organization
         slug: URL slug
         title: Title
+        changed_notably: There have been noticeable changes.
     errors:
       models:
         oauth_application:
@@ -574,6 +575,9 @@ en:
         edit:
           title: Edit page
           update: Update
+          changed_notably_help: If checked, users will be notified to accept the new terms and conditions.
+        index:
+          last_notable_change: Last notable change
         new:
           create: Create
           title: New page

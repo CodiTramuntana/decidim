@@ -5,12 +5,12 @@ module Decidim
   module TosPageHelper
     # Renders the Call To Action button. Link and text can be configured
     # per organization.
-
+    include NeedsTosAccepted
 
     def tos_page_announcement
-      return unless tos_page?
+      return if tos_accepted?
       locals = {
-        callout_class: "secondary",
+        callout_class: "warning",
         announcement: {
           title: t("required_review.title", scope: "decidim.pages.terms_and_conditions"),
           body: t("required_review.body", scope: "decidim.pages.terms_and_conditions")
@@ -22,7 +22,7 @@ module Decidim
     end
 
     def tos_page_sticky_form
-      return unless tos_page?
+      return if tos_accepted?
             html = %{
       <div data-sticky-container>
         <div class="sticky"
@@ -41,7 +41,7 @@ module Decidim
             </div>
 
             <div class="row column flex-center">}
-              html += tos_refuse_btn_dropdown
+              html += tos_refuse_btn_modal
 
               lbl = t("form.agreement", scope:"decidim.pages.terms_and_conditions")
               html += button_to lbl, accept_tos_path, {method: :put, class: "button button--nomargin small"}
@@ -72,10 +72,32 @@ module Decidim
       }
     end
 
-    private
+    def tos_refuse_btn_modal
+      modal_title = t("refuse.modal_title", scope:"decidim.pages.terms_and_conditions")
+      btn_lbl_continue = t("refuse.modal_btn_continue", scope:"decidim.pages.terms_and_conditions")
+      btn_lbl_exit = t("refuse.modal_btn_exit", scope:"decidim.pages.terms_and_conditions")
+      btn_exit = button_to btn_lbl_exit, destroy_user_session_path, {method: :delete, class: "clear button secondary button--nomargin small"}
+      btn_continue =  button_to btn_lbl_continue, accept_tos_path, {method: :put, class: "button button--nomargin small"}
+      %{
+        <button class="clear button secondary button--nomargin small" type="button" data-open="tos-refuse-modal">
+          #{t("refuse.modal_button", scope:"decidim.pages.terms_and_conditions")}
+        </button>
 
-    def tos_page?
-      @page_finder.page.slug == "terms-and-conditions"
+        <div id="tos-refuse-modal" class="reveal" data-reveal aria-labelledby="#{modal_title}" aria-hidden="true" role="dialog">
+          <h2>
+          #{modal_title}
+          </h2>
+
+          <p>
+            #{t("refuse.modal_body", scope:"decidim.pages.terms_and_conditions", data_portability_path: "#", delete_path: delete_account_path)}
+          </p>
+
+          <div class="row column flex-center">
+            #{btn_exit}
+            #{btn_continue}
+          </div>
+        </div>
+      }
     end
   end
 end

@@ -11,3 +11,4 @@
 <div class="row column">
   <%= form.translated :editor, :content, toolbar: :full, lines: 25 %>
 </div>
+<%= render partial: "form_notable_changes", locals: {form: form} if can? :update_notable_changes, form.object %>

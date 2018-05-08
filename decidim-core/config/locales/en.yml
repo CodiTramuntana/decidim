@@ -347,10 +347,13 @@ en:
           agreement: I agree this terms
           legend: Agree to the terms and conditions of use
         refuse:
-          dropdown_button: Refuse the terms
-          dropdown_info_text: If you refuse, you won't be able to use the platform, you can <a href="%{data_portability_path}">download your data</a> and/or <a href="%{delete_path}">delete your account</a>.
+          modal_button: Refuse the terms
+          modal_title: Do you really wan't to quit?
+          modal_body: If you refuse, you won't be able to use the platform, you can <a href="%{data_portability_path}">download your data</a> and/or <a href="%{delete_path}">delete your account</a>.
+          modal_btn_continue: Accept terms and continue
+          modal_btn_exit: I'll review it later
         required_review:
-          alert: We've updated our Terms of Service
+          alert: We've updated our Terms of Service, please review them.
           body: Please take a moment to review updates to our Terms of Services. Otherwise you won't be able to use the platform.
           title: 'Required: Review updates to our terms of service'
     participatory_space_private_users:
