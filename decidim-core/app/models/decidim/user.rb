@@ -9,6 +9,7 @@ module Decidim
     include Nicknamizable
     include Decidim::Followable
     include Decidim::Loggable
+    include Decidim::DataPortability
 
     OMNIAUTH_PROVIDERS = [:facebook, :twitter, :google_oauth2, (:developer if Rails.env.development?)].compact
     ROLES = %w(admin user_manager).freeze
@@ -121,6 +122,14 @@ module Decidim
     def password_required?
       return false if managed?
       super
+    end
+
+    def self.user_collection(user)
+      self.where(id: user.id)
+    end
+
+    def self.export_serializer
+      Decidim::Exporters::UserSerializer
     end
 
     private
