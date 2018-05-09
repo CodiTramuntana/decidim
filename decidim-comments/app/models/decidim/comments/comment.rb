@@ -80,6 +80,8 @@ module Decidim
         Decidim::Comments::CommentSerializer
       end
 
+      delegate :participatory_space, to: :root_commentable
+
       private
 
       # Private: Check if commentable can have comments and if not adds
