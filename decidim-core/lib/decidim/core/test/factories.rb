@@ -69,6 +69,7 @@ FactoryBot.define do
     official_url { Faker::Internet.url }
     highlighted_content_banner_enabled false
     enable_omnipresent_banner false
+    tos_updated_at { Time.current }
   end
 
   factory :user, class: "Decidim::User" do
