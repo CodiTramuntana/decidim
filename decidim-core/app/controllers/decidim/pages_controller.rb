@@ -13,6 +13,7 @@ module Decidim
     delegate :page, to: :page_finder
     helper_method :page, :stats
     helper CtaButtonHelper
+    helper TosPageHelper
     helper Decidim::SanitizeHelper
     skip_before_action :store_current_location
 
