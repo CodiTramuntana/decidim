@@ -71,6 +71,21 @@ FactoryBot.define do
     enable_omnipresent_banner false
   end
 
+  factory :static_page, class: "Decidim::StaticPage" do
+    slug { generate(:slug) }
+    title { Decidim::Faker::Localized.sentence(3) }
+    content { Decidim::Faker::Localized.wrapped("<p>", "</p>") { Decidim::Faker::Localized.sentence(4) } }
+    organization
+
+    trait :default do
+      slug { Decidim::StaticPage::DEFAULT_PAGES.sample }
+    end
+
+    trait :tos do
+      slug { "terms-and-conditions" }
+    end
+  end
+
   factory :user, class: "Decidim::User" do
     email { generate(:email) }
     password "password1234"
@@ -83,6 +98,13 @@ FactoryBot.define do
     avatar { Decidim::Dev.test_file("avatar.jpg", "image/jpeg") }
     personal_url { Faker::Internet.url }
     about { Faker::Lorem.paragraph(2) }
+
+    after(:create) do |user|
+      tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: user.organization)
+      tos_page = create(:static_page, :tos, organization: user.organization) if tos_page.nil?
+      user.tos_accepted_at = tos_page.updated_at
+      user.save
+    end
 
     trait :confirmed do
       confirmed_at { Time.current }
@@ -111,6 +133,10 @@ FactoryBot.define do
     trait :officialized do
       officialized_at { Time.zone.now }
       officialized_as { Decidim::Faker::Localized.sentence(3) }
+    end
+
+    trait :review_tos do
+      tos_accepted_at { "" }
     end
   end
 
@@ -177,17 +203,6 @@ FactoryBot.define do
 
     trait :pending do
       granted_at nil
-    end
-  end
-
-  factory :static_page, class: "Decidim::StaticPage" do
-    slug { generate(:slug) }
-    title { Decidim::Faker::Localized.sentence(3) }
-    content { Decidim::Faker::Localized.wrapped("<p>", "</p>") { Decidim::Faker::Localized.sentence(4) } }
-    organization
-
-    trait :default do
-      slug { Decidim::StaticPage::DEFAULT_PAGES.sample }
     end
   end
 
