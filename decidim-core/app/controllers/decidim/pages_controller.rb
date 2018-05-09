@@ -8,6 +8,7 @@ module Decidim
     helper_method :page, :stats
     helper CtaButtonHelper
     helper Decidim::SanitizeHelper
+    helper TosPageHelper
     skip_before_action :store_current_location
 
     def index
