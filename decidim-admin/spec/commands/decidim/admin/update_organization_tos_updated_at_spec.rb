@@ -33,11 +33,11 @@ module Decidim::Admin
         end
 
         it "doesn't update the organization's terms-and-conditions updated at setting" do
+          previous_tos_updated_at = organization.tos_updated_at.strftime("%F %T.%L")
           command.call
-          other_page.reload
           organization.reload
 
-          expect(other_page.updated_at).not_to eq(organization.tos_updated_at)
+          expect(previous_tos_updated_at).to eq(organization.tos_updated_at.strftime("%F %T.%L"))
         end
       end
 
