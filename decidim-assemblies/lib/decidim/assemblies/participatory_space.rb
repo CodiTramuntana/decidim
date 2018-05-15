@@ -10,6 +10,11 @@ Decidim.register_participatory_space(:assemblies) do |participatory_space|
 
   participatory_space.permissions_class_name = "Decidim::Assemblies::Permissions"
 
+  participatory_space.register_resource do |resource|
+    resource.model_class_name = "Decidim::Assembly"
+    resource.card = "decidim/assemblies/assembly"
+  end
+
   participatory_space.context(:public) do |context|
     context.engine = Decidim::Assemblies::Engine
     context.layout = "layouts/decidim/assembly"
@@ -164,6 +169,32 @@ Decidim.register_participatory_space(:assemblies) do |participatory_space|
             participatory_space: current_assembly
           )
         end
+
+        Decidim::AssemblyMember::POSITIONS.each do |position|
+          Decidim::AssemblyMember.create!(
+            full_name: Faker::Name.name,
+            gender: Faker::Lorem.word,
+            birthday: Faker::Date.birthday(18, 65),
+            birthplace: Faker::Demographic.demonym,
+            designation_date: Faker::Date.between(1.year.ago, 1.month.ago),
+            designation_mode: Faker::Lorem.word,
+            position: position,
+            position_other: position == "other" ? Faker::Job.position : nil,
+            assembly: current_assembly
+          )
+        end
+
+        Decidim::AssemblyMember.create!(
+          user: current_assembly.organization.users.first,
+          gender: Faker::Lorem.word,
+          birthday: Faker::Date.birthday(18, 65),
+          birthplace: Faker::Demographic.demonym,
+          designation_date: Faker::Date.between(1.year.ago, 1.month.ago),
+          designation_mode: Faker::Lorem.word,
+          position: "other",
+          position_other: Faker::Job.position,
+          assembly: current_assembly
+        )
 
         Decidim.component_manifests.each do |manifest|
           manifest.seed!(current_assembly.reload)
