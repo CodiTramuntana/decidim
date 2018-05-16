@@ -22,18 +22,19 @@ module Decidim
       end
     end
 
-    def tos_page
-      @tos_page ||= Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: current_organization)
+
+    def terms_and_conditions_page
+      @terms_and_conditions_page ||= Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: current_organization)
     end
 
     def tos_path
-      decidim.page_path tos_page
+      decidim.page_path terms_and_conditions_page
     end
 
     def tos_accepted?
       return true unless current_user
       return true if current_user.managed
-      @tos_accepted ||= current_user.tos_accepted_at >= tos_page.updated_at
+      @tos_accepted ||= current_user.tos_accepted_at >= terms_and_conditions_page.updated_at
       # will_be: current_organization.tos_updated_at
     end
 
