@@ -192,6 +192,7 @@ en:
         new:
           already_have_an_account?: Already have an account?
           newsletter: Receive an occasional newsletter with relevant information
+          newsletter_title: Contact permission
           nickname_help: Your short, unique identifier in %{organization}
           sign_in: Log in
           sign_up: Sign up
@@ -527,11 +528,9 @@ en:
     invitations:
       edit:
         header: Finish creating your account
-        subtitle: |-
-          If you accept the invitation please set your nickname and password. <br />
-          All fields are required.
         nickname_help: Your unique identifier in %{organization}.
         submit_button: Save
+        subtitle: If you accept the invitation please set your nickname and password.
     mailer:
       invitation_instructions:
         accept: Accept invitation

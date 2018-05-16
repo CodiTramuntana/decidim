@@ -51,6 +51,17 @@
           </div>
         </div>
 
+        <div class="card" id="card__newsletter">
+          <div class="card__content">
+            <legend><%= t("newsletter_title", scope: "decidim.devise.registrations.new") %></legend>
+            <fieldset>
+              <div class="field">
+                <%= f.check_box :newsletter_notifications, label: t("newsletter", scope: "decidim.devise.registrations.new") %>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
         <div class="card">
           <div class="card__content">
             <div class="actions">
