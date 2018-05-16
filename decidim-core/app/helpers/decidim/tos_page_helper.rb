@@ -64,18 +64,6 @@ module Decidim
       %(<div id="sticky-btm-stop"></div>)
     end
 
-    def tos_refuse_btn_dropdown
-      %(
-        <button class="clear button secondary button--nomargin small" type="button" data-toggle="tos-refuse-dropdown">
-        #{t("refuse.dropdown_button", scope: "decidim.pages.terms_and_conditions")}
-        </button>
-
-        <div class="dropdown-pane top" id="tos-refuse-dropdown" data-dropdown>
-          #{t("refuse.dropdown_info_text", scope: "decidim.pages.terms_and_conditions", data_portability_path: "#", delete_path: delete_account_path)}
-        </div>
-      )
-    end
-
     def tos_refuse_btn_modal
       modal_title = t("refuse.modal_title", scope: "decidim.pages.terms_and_conditions")
       btn_lbl_continue = t("refuse.modal_btn_continue", scope: "decidim.pages.terms_and_conditions")
