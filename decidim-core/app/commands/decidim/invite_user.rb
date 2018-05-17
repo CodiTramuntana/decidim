@@ -46,18 +46,12 @@ module Decidim
         nickname: User.nicknamize(form.name),
         organization: form.organization,
         admin: form.role == "admin",
-        roles: form.role == "admin" ? [] : [form.role].compact,
-        tos_accepted_at: tos_accepted_at
+        roles: form.role == "admin" ? [] : [form.role].compact
       )
       @user.invite!(
         form.invited_by,
         invitation_instructions: form.invitation_instructions
       )
-    end
-
-    def tos_accepted_at
-      @tos_accepted_at ||= Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: current_organization).updated_at
-      # will_be: form.current_organization.tos_updated_at
     end
   end
 end

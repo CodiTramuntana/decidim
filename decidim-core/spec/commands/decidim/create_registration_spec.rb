@@ -7,7 +7,6 @@ module Decidim
     describe CreateRegistration do
       describe "call" do
         let(:organization) { create(:organization) }
-
         let(:sign_up_as) { "user" }
         let(:name) { "Username" }
         let(:nickname) { "nickname" }
@@ -69,6 +68,7 @@ module Decidim
           end
 
           it "creates a new user" do
+            tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: organization)
             expect(User).to receive(:create!).with(
               name: form.name,
               nickname: form.nickname,
@@ -78,7 +78,8 @@ module Decidim
               tos_agreement: form.tos_agreement,
               newsletter_notifications: form.newsletter,
               email_on_notification: true,
-              organization: organization
+              organization: organization,
+              tos_accepted_at: tos_page.updated_at
             ).and_call_original
 
             expect { command.call }.to change(User, :count).by(1)
