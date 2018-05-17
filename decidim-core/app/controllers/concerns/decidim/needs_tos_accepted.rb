@@ -33,8 +33,7 @@ module Decidim
     def tos_accepted?
       return true unless current_user
       return true if current_user.managed
-      @tos_accepted ||= current_user.tos_accepted_at >= terms_and_conditions_page.updated_at
-      # will_be: current_organization.tos_updated_at
+      @tos_accepted ||= current_user.tos_accepted_at >= current_organization.tos_updated_at
     end
 
     def redirect_to_tos

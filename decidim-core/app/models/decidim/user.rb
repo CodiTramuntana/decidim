@@ -138,10 +138,7 @@ module Decidim
 
     def tos_accepted?
       return true if managed
-      # to_remove
-      tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: organization)
-      tos_accepted_at >= tos_page.updated_at
-      # will_be: tos_accepted_at >= organization.tos_updated_at
+      tos_accepted_at >= organization.tos_updated_at
     end
 
     protected
