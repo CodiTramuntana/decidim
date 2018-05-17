@@ -42,7 +42,7 @@ module Decidim
                            tos_agreement: form.tos_agreement,
                            newsletter_notifications: form.newsletter,
                            email_on_notification: true,
-                           tos_accepted_at: tos_accepted_at)
+                           tos_accepted_at: form.current_organization.tos_updated_at)
     end
 
     def create_user_group
@@ -51,11 +51,6 @@ module Decidim
                                                             document_number: form.user_group_document_number,
                                                             phone: form.user_group_phone,
                                                             decidim_organization_id: form.current_organization.id))
-    end
-
-    def tos_accepted_at
-      @tos_accepted_at ||= Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: form.current_organization).updated_at
-      # will_be: form.current_organization.tos_updated_at
     end
   end
 end

@@ -70,9 +70,11 @@ FactoryBot.define do
     highlighted_content_banner_enabled false
     enable_omnipresent_banner false
 
-    after(:create) do |organization|
-      tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: organization)
-      create(:static_page, :tos, organization: organization) if tos_page.nil?
+    trait :with_tos do
+      after(:create) do |organization|
+        tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: organization)
+        create(:static_page, :tos, organization: organization) if tos_page.nil?
+      end
     end
   end
 

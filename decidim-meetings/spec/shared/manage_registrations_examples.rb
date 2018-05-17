@@ -73,7 +73,7 @@ shared_examples "manage registrations" do
           fill_in :user_nickname, with: "caballo_loco"
           fill_in :user_password, with: "123456"
           fill_in :user_password_confirmation, with: "123456"
-          find(:css, "#user_tos_agreement").set(true)
+          check :user_tos_agreement
           find("*[type=submit]").click
         end
 
