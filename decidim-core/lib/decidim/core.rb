@@ -57,7 +57,10 @@ module Decidim
   autoload :FingerprintCalculator, "decidim/fingerprint_calculator"
   autoload :Fingerprintable, "decidim/fingerprintable"
   autoload :DataPortability, "decidim/data_portability"
-  
+  autoload :DataPortabilitySerializers, "decidim/data_portability_serializers"
+  autoload :DataPortabilityFileReader, "decidim/data_portability_file_reader"
+  autoload :DataPortabilityFileZipper, "decidim/data_portability_file_zipper"
+
   include ActiveSupport::Configurable
 
   # Loads seeds from all engines.
