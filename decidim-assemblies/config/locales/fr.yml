@@ -34,6 +34,7 @@ fr:
         participatory_processes_ids: Processus participatifs associés
         participatory_scope: Objectif
         participatory_structure: Modalités
+        private_space: Espace privé
         promoted: Mis en avant
         published_at: Publié à
         purpose_of_action: But de l'action
@@ -42,6 +43,7 @@ fr:
         short_description: Résumé
         show_statistics: Afficher les statistiques
         slug: Identifiant
+        special_features: Particularités
         subtitle: Sous-titre
         target: Participants
         title: Titre
@@ -241,6 +243,9 @@ fr:
           highlighted_assemblies:
             active_assemblies: Agora actives
             see_all_assemblies: Voir toutes les agora
+        user_profile:
+          member_of:
+            member_of: Membre de
       show:
         area: Région
         assembly_type: Type d'assemblage
@@ -286,7 +291,7 @@ fr:
         votes_count: Soutiens
     assembly_members:
       assembly_member:
-        desiganted_on: Désigné sur
+        designated_on: Désigné sur
       index:
         title: Membres
     log:

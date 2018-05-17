@@ -34,6 +34,7 @@ it:
         participatory_processes_ids: Processi partecipativi correlati
         participatory_scope: Visibilità/ambito partecipativo
         participatory_structure: Struttura partecipativa
+        private_space: Spazio privato
         promoted: Promosso
         published_at: Pubblicato a
         purpose_of_action: Scopo dell'azione
@@ -42,6 +43,7 @@ it:
         short_description: Breve descrizione
         show_statistics: Mostra statistiche
         slug: URL slug
+        special_features: Caratteristiche speciali
         subtitle: Sottotitolo
         target: Target
         title: Titolo
@@ -241,6 +243,9 @@ it:
           highlighted_assemblies:
             active_assemblies: Assemblee attive
             see_all_assemblies: Vedere tutti gli assiemi
+        user_profile:
+          member_of:
+            member_of: Membro di
       show:
         area: La zona
         assembly_type: Tipo di assieme
@@ -286,7 +291,7 @@ it:
         votes_count: Voti
     assembly_members:
       assembly_member:
-        desiganted_on: Designato su
+        designated_on: Designato su
       index:
         title: Utenti
     log:
