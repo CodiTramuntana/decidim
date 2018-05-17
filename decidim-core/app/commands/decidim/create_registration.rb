@@ -54,7 +54,7 @@ module Decidim
     end
 
     def tos_accepted_at
-      @tos_accepted_at ||= Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: current_organization).updated_at
+      @tos_accepted_at ||= Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: form.current_organization).updated_at
       # will_be: form.current_organization.tos_updated_at
     end
   end

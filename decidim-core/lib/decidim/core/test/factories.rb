@@ -69,6 +69,11 @@ FactoryBot.define do
     official_url { Faker::Internet.url }
     highlighted_content_banner_enabled false
     enable_omnipresent_banner false
+
+    after(:create) do |organization|
+      tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: organization)
+      create(:static_page, :tos, organization: organization) if tos_page.nil?
+    end
   end
 
   factory :static_page, class: "Decidim::StaticPage" do
