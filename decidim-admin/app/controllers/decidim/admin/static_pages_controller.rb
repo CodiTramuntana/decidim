@@ -6,6 +6,7 @@ module Decidim
     #
     class StaticPagesController < Decidim::Admin::ApplicationController
       layout "decidim/admin/pages"
+      before_action :tos_updated_at_formatted, only: [:index, :edit]
 
       def index
         enforce_permission_to :read, :static_page
@@ -91,6 +92,14 @@ module Decidim
 
       def collection
         current_organization.static_pages
+      end
+
+      def tos_updated_at
+        @tos_updated_at ||= current_organization.tos_updated_at
+      end
+
+      def tos_updated_at_formatted
+        @tos_updated_at_formatted ||= l(tos_updated_at, format: :short) if tos_updated_at.present?
       end
     end
   end
