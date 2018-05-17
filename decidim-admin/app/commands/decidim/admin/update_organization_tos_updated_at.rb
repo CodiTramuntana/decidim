@@ -24,6 +24,7 @@ module Decidim
       # Returns nothing.
       def call
         return broadcast(:invalid) if @form.nil?
+        return broadcast(:invalid) if @page.nil?
         return broadcast(:invalid) unless @page.slug == "terms-and-conditions"
 
         update_organization_tos_updated_at
