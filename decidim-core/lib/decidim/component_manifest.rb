@@ -22,7 +22,7 @@ module Decidim
 
     attribute :query_type, String, default: "Decidim::Core::ComponentType"
 
-    ##COMENTSS
+    # #COMENTSS
     attribute :data_portable_entities, Array, default: []
 
     # A path with the `scss` stylesheet this engine provides. It is used to
