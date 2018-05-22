@@ -68,7 +68,6 @@ module Decidim
           end
 
           it "creates a new user" do
-            tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: organization)
             expect(User).to receive(:create!).with(
               name: form.name,
               nickname: form.nickname,
