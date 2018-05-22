@@ -72,7 +72,7 @@ module Decidim::Admin
 
           action_log = Decidim::ActionLog.last
           expect(action_log.version).to be_present
-          expect(action_log.version.event).to eq "update"
+          expect(action_log.action).to eq "update"
         end
 
         it "updates the the organization's terms-and-conditions updated at setting" do
