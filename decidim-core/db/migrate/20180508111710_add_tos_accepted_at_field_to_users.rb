@@ -2,11 +2,11 @@
 
 class AddTosAcceptedAtFieldToUsers < ActiveRecord::Migration[5.1]
   def up
-    add_column :decidim_users, :tos_accepted_at, :datetime
-    execute("UPDATE decidim_users SET tos_accepted_at = NOW()")
+    add_column :decidim_users, :accepted_tos_version, :datetime
+    execute("UPDATE decidim_users SET accepted_tos_version = NOW()")
   end
 
   def down
-    remove_columns :decidim_users, :confirmation_token, :tos_accepted_at
+    remove_columns :decidim_users, :accepted_tos_version
   end
 end

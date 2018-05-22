@@ -42,7 +42,7 @@ module Decidim
                            tos_agreement: form.tos_agreement,
                            newsletter_notifications: form.newsletter,
                            email_on_notification: true,
-                           tos_accepted_at: form.current_organization.tos_updated_at)
+                           accepted_tos_version: form.current_organization.tos_updated_at)
     end
 
     def create_user_group

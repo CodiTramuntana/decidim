@@ -27,7 +27,7 @@ module Decidim
       def accept_resource
         resource = resource_class.accept_invitation!(update_resource_params)
         resource.update!(managed: false) if resource.managed?
-        resource.update!(tos_accepted_at: terms_and_conditions_page.updated_at)
+        resource.update!(accepted_tos_version: terms_and_conditions_page.updated_at)
         resource
       end
 
