@@ -8,7 +8,7 @@ module Decidim
     skip_before_action :store_current_location
 
     def accept_tos
-      current_user.tos_accepted_at = Time.current
+      current_user.accepted_tos_version = Time.current
       if current_user.save!
         flash[:notice] = t("accept.success", scope: "decidim.pages.terms_and_conditions")
         redirect_to after_sign_in_path_for current_user

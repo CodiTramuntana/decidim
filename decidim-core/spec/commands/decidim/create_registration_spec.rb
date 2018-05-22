@@ -78,7 +78,7 @@ module Decidim
               newsletter_notifications: form.newsletter,
               email_on_notification: true,
               organization: organization,
-              tos_accepted_at: organization.tos_updated_at
+              accepted_tos_version: organization.tos_updated_at
             ).and_call_original
 
             expect { command.call }.to change(User, :count).by(1)

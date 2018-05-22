@@ -109,7 +109,7 @@ FactoryBot.define do
     after(:create) do |user|
       tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: user.organization)
       tos_page = create(:static_page, :tos, organization: user.organization) if tos_page.nil?
-      user.tos_accepted_at = tos_page.updated_at
+      user.accepted_tos_version = tos_page.updated_at
       user.save
     end
 
@@ -307,11 +307,9 @@ FactoryBot.define do
   factory :newsletter, class: "Decidim::Newsletter" do
     author { build(:user, :confirmed, organization: organization) }
     organization
-
-    # rubocop:disable RSpec/EmptyLineAfterSubject
     # Bug in rubocop-rspec
     subject { Decidim::Faker::Localized.sentence(3) }
-    # rubocop:enable RSpec/EmptyLineAfterSubject
+
     body { Decidim::Faker::Localized.wrapped("<p>", "</p>") { Decidim::Faker::Localized.sentence(4) } }
 
     trait :sent do
