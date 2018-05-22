@@ -139,7 +139,7 @@ module Decidim
     def tos_accepted?
       return true if managed
       return false if accepted_tos_version.nil?
-      accepted_tos_version >= organization.tos_updated_at
+      accepted_tos_version >= organization.tos_version
     end
 
     protected

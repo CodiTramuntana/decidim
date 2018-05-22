@@ -8,7 +8,6 @@ module Decidim
       include NeedsTosAccepted
 
       before_action :configure_permitted_parameters
-      helper_method :terms_and_conditions_page
 
       # We don't users to create invitations, so we just redirect them to the
       # homepage.
@@ -27,7 +26,7 @@ module Decidim
       def accept_resource
         resource = resource_class.accept_invitation!(update_resource_params)
         resource.update!(managed: false) if resource.managed?
-        resource.update!(accepted_tos_version: terms_and_conditions_page.updated_at)
+        resource.update!(accepted_tos_version: resource.organization.tos_version)
         resource
       end
 

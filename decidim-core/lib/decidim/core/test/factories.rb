@@ -108,8 +108,8 @@ FactoryBot.define do
 
     after(:create) do |user|
       tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: user.organization)
-      tos_page = create(:static_page, :tos, organization: user.organization) if tos_page.nil?
-      user.accepted_tos_version = tos_page.updated_at
+      create(:static_page, :tos, organization: user.organization) if tos_page.nil?
+      user.accepted_tos_version = user.organization.tos_version
       user.save
     end
 
