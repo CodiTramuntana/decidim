@@ -50,8 +50,8 @@ module Decidim
       homepage_image.big.url
     end
 
-    def tos_updated_at
-      @tos_updated_at ||= Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: self).updated_at
+    def tos_version
+      @tos_version ||= Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: self).updated_at
     end
   end
 end
