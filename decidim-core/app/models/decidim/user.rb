@@ -138,6 +138,7 @@ module Decidim
 
     def tos_accepted?
       return true if managed
+      return false if tos_accepted_at.nil?
       tos_accepted_at >= organization.tos_updated_at
     end
 
