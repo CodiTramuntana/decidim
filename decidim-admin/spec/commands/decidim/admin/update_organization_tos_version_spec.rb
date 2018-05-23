@@ -3,9 +3,8 @@
 require "spec_helper"
 
 module Decidim::Admin
-  describe UpdateOrganizationTosUpdatedAt do
+  describe UpdateOrganizationTosVersion do
     describe "call" do
-      # UpdateOrganizationTosUpdatedAt.call(@page.organization, @page, @form)
       let(:organization) { create(:organization) }
       let(:tos_page) { create(:static_page, slug: "terms-and-conditions", organization: organization) }
       let(:other_page) { create(:static_page, slug: "other-page", organization: organization) }
