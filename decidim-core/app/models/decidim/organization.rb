@@ -51,7 +51,7 @@ module Decidim
     end
 
     def tos_version
-      @tos_version ||= Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: self).updated_at
+      Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: self).updated_at
     end
   end
 end
