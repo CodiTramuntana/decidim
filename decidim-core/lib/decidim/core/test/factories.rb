@@ -141,10 +141,6 @@ FactoryBot.define do
       officialized_at { Time.zone.now }
       officialized_as { Decidim::Faker::Localized.sentence(3) }
     end
-
-    trait :review_tos do
-      tos_accepted_at { "" }
-    end
   end
 
   factory :participatory_space_private_user, class: "Decidim::ParticipatorySpacePrivateUser" do
