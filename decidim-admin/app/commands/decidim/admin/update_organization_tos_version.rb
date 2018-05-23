@@ -3,8 +3,8 @@
 module Decidim
   module Admin
     # A command with the business logic for updating the current
-    # organization tos_updated_at attribute.
-    class UpdateOrganizationTosUpdatedAt < Rectify::Command
+    # organization tos_version attribute.
+    class UpdateOrganizationTosVersion < Rectify::Command
       # Public: Initializes the command.
       #
       # organization - The Organization that will be updated.
@@ -27,7 +27,7 @@ module Decidim
         return broadcast(:invalid) if @page.nil?
         return broadcast(:invalid) unless @page.slug == "terms-and-conditions"
 
-        update_organization_tos_updated_at
+        update_organization_tos_version
         broadcast(:ok)
       end
 
@@ -35,11 +35,11 @@ module Decidim
 
       attr_reader :form
 
-      def update_organization_tos_updated_at
+      def update_organization_tos_version
         Decidim.traceability.update!(
           @organization,
           @form.current_user,
-          tos_updated_at: @page.updated_at
+          tos_version: @page.updated_at
         )
       end
     end

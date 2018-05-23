@@ -26,11 +26,6 @@ module Decidim
       allow(view).to receive(:form).and_return(form)
       allow(view).to receive(:allowed_to?).and_return(allowed?)
       allow(view).to receive(:permissions_class).and_return(permissions_class)
-      # allow(view).to receive(:tos_updated_at_formatted).and_return(tos_updated_at_formatted)
-      # allow(view).to receive(:tos_updated_at_formatted).with(
-      #   controller: 'Decidim::Admin::StaticPagesController',
-      #   action: 'create'
-      # ).and_return(tos_updated_at_formatted)
     end
 
     context "with a default static page" do
@@ -51,10 +46,7 @@ module Decidim
       let(:slug) { "foo" }
       let(:allowed?) { true }
 
-      it {
-        assign(:tos_updated_at_formatted, Time.current)
-        is_expected.to include("slug")
-      }
+      it { is_expected.to include("slug") }
     end
   end
 end

@@ -2,6 +2,6 @@
   <%= form.check_box :changed_notably, value: false, help_text: t("changed_notably_help", scope: "decidim.admin.static_pages.edit") %>
 
   <div class="callout secondary">
-    <%= t("last_notable_change", scope: "decidim.admin.static_pages.index") %>: <%= @tos_updated_at_formatted %>
+    <%= t("last_notable_change", scope: "decidim.admin.static_pages.index") %>: <%= @tos_version_formatted %>
   </div>
 </div>

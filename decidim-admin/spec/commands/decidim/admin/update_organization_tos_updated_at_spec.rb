@@ -33,11 +33,11 @@ module Decidim::Admin
         end
 
         it "doesn't update the organization's terms-and-conditions updated at setting" do
-          previous_tos_updated_at = organization.tos_updated_at.strftime("%F %T.%L")
+          previous_tos_version = organization.tos_version.strftime("%F %T.%L")
           command.call
           organization.reload
 
-          expect(previous_tos_updated_at).to eq(organization.tos_updated_at.strftime("%F %T.%L"))
+          expect(previous_tos_version).to eq(organization.tos_version.strftime("%F %T.%L"))
         end
       end
 
@@ -65,7 +65,7 @@ module Decidim::Admin
         it "traces the update", versioning: true do
           expect(Decidim.traceability)
             .to receive(:update!)
-            .with(organization, user, hash_including(:tos_updated_at))
+            .with(organization, user, hash_including(:tos_version))
             .and_call_original
 
           expect { command.call }.to change(Decidim::ActionLog, :count)
@@ -80,7 +80,7 @@ module Decidim::Admin
           tos_page.reload
           organization.reload
 
-          expect(tos_page.updated_at).to eq(organization.tos_updated_at)
+          expect(tos_page.updated_at).to eq(organization.tos_version)
         end
       end
     end

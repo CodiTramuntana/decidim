@@ -35,15 +35,15 @@ module Decidim::Admin
           expect(action_log.version).to be_present
           expect(action_log.version.event).to eq "update"
           expect(action_log.version.item_type).to eq "Decidim::Organization"
-          expect(action_log.version.object_changes).to include "tos_updated_at"
+          expect(action_log.version.object_changes).to include "tos_version"
         end
 
-        it "updates the the organization's terms-and-conditions updated at setting" do
+        it "updates the the organization's terms-and-conditions version setting" do
           command.call
           organization.reload
           page.reload
 
-          expect(page.updated_at).to eq(organization.tos_updated_at)
+          expect(page.updated_at).to eq(organization.tos_version)
         end
       end
     end

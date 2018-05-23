@@ -22,7 +22,7 @@ if !Rails.env.production? || ENV["SEED"]
     available_locales: Decidim.available_locales,
     reference_prefix: Faker::Name.suffix,
     available_authorizations: Decidim.authorization_workflows.map(&:name),
-    tos_updated_at: Time.current
+    tos_version: Time.current
   )
 
   if organization.top_scopes.none?

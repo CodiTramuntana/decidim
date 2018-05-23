@@ -31,7 +31,7 @@ module Decidim
           instagram_handler: :string,
           youtube_handler: :string,
           github_handler: :string,
-          tos_updated_at: :datetime
+          tos_version: :datetime
         }
       end
 

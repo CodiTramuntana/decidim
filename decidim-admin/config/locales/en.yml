@@ -65,7 +65,7 @@ en:
         omnipresent_banner_url: URL
         reference_prefix: Reference prefix
         show_statistics: Show statistics
-        tos_updated_at: Terms of Service updated at
+        tos_version: Terms of service version
         twitter_handler: Twitter handler
         welcome_text: Welcome text
         youtube_handler: YouTube handler
