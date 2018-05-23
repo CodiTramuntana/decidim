@@ -48,7 +48,7 @@ module Decidim
       end
 
       def update_organization_tos_updated_at
-        UpdateOrganizationTosUpdatedAt.call(@page.organization, @page, @form)
+        UpdateOrganizationTosUpdatedAt.call(@form.organization, @page, @form)
       end
     end
   end
