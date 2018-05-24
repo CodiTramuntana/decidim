@@ -69,6 +69,28 @@ FactoryBot.define do
     official_url { Faker::Internet.url }
     highlighted_content_banner_enabled false
     enable_omnipresent_banner false
+
+    trait :with_tos do
+      after(:create) do |organization|
+        tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: organization)
+        create(:static_page, :tos, organization: organization) if tos_page.nil?
+      end
+    end
+  end
+
+  factory :static_page, class: "Decidim::StaticPage" do
+    slug { generate(:slug) }
+    title { Decidim::Faker::Localized.sentence(3) }
+    content { Decidim::Faker::Localized.wrapped("<p>", "</p>") { Decidim::Faker::Localized.sentence(4) } }
+    organization
+
+    trait :default do
+      slug { Decidim::StaticPage::DEFAULT_PAGES.sample }
+    end
+
+    trait :tos do
+      slug { "terms-and-conditions" }
+    end
   end
 
   factory :user, class: "Decidim::User" do
@@ -83,6 +105,13 @@ FactoryBot.define do
     avatar { Decidim::Dev.test_file("avatar.jpg", "image/jpeg") }
     personal_url { Faker::Internet.url }
     about { Faker::Lorem.paragraph(2) }
+
+    after(:create) do |user|
+      tos_page = Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: user.organization)
+      create(:static_page, :tos, organization: user.organization) if tos_page.nil?
+      user.accepted_tos_version = user.organization.tos_version
+      user.save
+    end
 
     trait :confirmed do
       confirmed_at { Time.current }
@@ -180,17 +209,6 @@ FactoryBot.define do
     end
   end
 
-  factory :static_page, class: "Decidim::StaticPage" do
-    slug { generate(:slug) }
-    title { Decidim::Faker::Localized.sentence(3) }
-    content { Decidim::Faker::Localized.wrapped("<p>", "</p>") { Decidim::Faker::Localized.sentence(4) } }
-    organization
-
-    trait :default do
-      slug { Decidim::StaticPage::DEFAULT_PAGES.sample }
-    end
-  end
-
   factory :attachment_collection, class: "Decidim::AttachmentCollection" do
     name { Decidim::Faker::Localized.sentence(1) }
     description { Decidim::Faker::Localized.sentence(2) }
@@ -285,11 +303,9 @@ FactoryBot.define do
   factory :newsletter, class: "Decidim::Newsletter" do
     author { build(:user, :confirmed, organization: organization) }
     organization
-
-    # rubocop:disable RSpec/EmptyLineAfterSubject
     # Bug in rubocop-rspec
     subject { Decidim::Faker::Localized.sentence(3) }
-    # rubocop:enable RSpec/EmptyLineAfterSubject
+
     body { Decidim::Faker::Localized.wrapped("<p>", "</p>") { Decidim::Faker::Localized.sentence(4) } }
 
     trait :sent do

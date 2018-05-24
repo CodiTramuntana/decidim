@@ -49,5 +49,9 @@ module Decidim
     def homepage_big_url
       homepage_image.big.url
     end
+
+    def tos_version
+      Decidim::StaticPage.find_by(slug: "terms-and-conditions", organization: self).updated_at
+    end
   end
 end
