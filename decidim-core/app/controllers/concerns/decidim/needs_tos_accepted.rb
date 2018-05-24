@@ -32,6 +32,7 @@ module Decidim
     end
 
     def redirect_to_tos
+      flash[:notice] = flash[:notice] if flash[:notice]
       flash[:secondary] = t("required_review.alert", scope: "decidim.pages.terms_and_conditions")
       redirect_to tos_path
     end
