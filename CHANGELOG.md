@@ -36,7 +36,6 @@ must now set a resource name:
 
 **Added**:
 
-- **decidim-core**: Add GDPR to decidim
 - **decidim-docs**: Add documentation for developers getting started. [\#3297](https://github.com/decidim/decidim/pull/3297)
 - **decidim-assemblies**: Add members to assemblies. [\#3008](https://github.com/decidim/decidim/pull/3008)
 - **decidim-assemblies**: An assembly member can be related to an existing user. [\#3302](https://github.com/decidim/decidim/pull/3302)
@@ -52,6 +51,7 @@ must now set a resource name:
 - **decidim-core**: Add user profile card [\#3444](https://github.com/decidim/decidim/pull/3444)
 - **decidim-budgets**: Add project card [\#3454](https://github.com/decidim/decidim/pull/3454)
 - **decidim-core**: GDPR: Unbundled consent on user registration [\#3483](https://github.com/decidim/decidim/pull/3483)
+- **decidim-core**: GDPR: Add Right of data portability. [\#3489](https://github.com/decidim/decidim/pull/3489)
 
 **Changed**:
 
