@@ -55,6 +55,10 @@ module Decidim
   autoload :ViewModel, "decidim/view_model"
   autoload :FingerprintCalculator, "decidim/fingerprint_calculator"
   autoload :Fingerprintable, "decidim/fingerprintable"
+  autoload :DataPortability, "decidim/data_portability"
+  autoload :DataPortabilitySerializers, "decidim/data_portability_serializers"
+  autoload :DataPortabilityFileReader, "decidim/data_portability_file_reader"
+  autoload :DataPortabilityFileZipper, "decidim/data_portability_file_zipper"
 
   include ActiveSupport::Configurable
 
@@ -172,6 +176,11 @@ module Decidim
   # Allow organization's administrators to track newsletter links
   config_accessor :track_newsletter_links do
     true
+  end
+
+  # Time that data portability files are available in server
+  config_accessor :time_data_portability_files_available do
+    7
   end
 
   # A base path for the uploads. If set, make sure it ends in a slash.
