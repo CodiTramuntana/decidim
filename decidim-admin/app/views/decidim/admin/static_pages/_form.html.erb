@@ -12,6 +12,4 @@
   <%= form.translated :editor, :content, toolbar: :full, lines: 25 %>
 </div>
 
-<% if allowed_to? :update_notable_changes, :static_page, static_page: form.object %>
-  <%= render partial: "form_notable_changes", locals: {form: form} %>
-<% end %>
+<%= render partial: "form_notable_changes", locals: {form: form} %>

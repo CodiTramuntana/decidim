@@ -31,9 +31,9 @@ module Decidim::Admin
         it "traces the update", versioning: true do
           expect { command.call }.to change(Decidim::ActionLog, :count)
 
-          action_log = Decidim::ActionLog.last
+          action_log = Decidim::ActionLog.where(resource_type: "Decidim::Organization").last
           expect(action_log.version).to be_present
-          expect(action_log.version.event).to eq "update"
+          expect(action_log.action).to eq "update"
           expect(action_log.version.item_type).to eq "Decidim::Organization"
           expect(action_log.version.object_changes).to include "tos_version"
         end

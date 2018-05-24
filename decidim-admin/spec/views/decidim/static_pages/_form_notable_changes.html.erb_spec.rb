@@ -32,7 +32,7 @@ module Decidim
       let(:slug) { Decidim::StaticPage::DEFAULT_PAGES.without("terms-and-conditions").sample }
       let(:allowed?) { false }
 
-      it { is_expected.not_to include("changed_notably") }
+      it { is_expected.to eq("") }
     end
 
     context "with the TOS static page" do
@@ -46,7 +46,7 @@ module Decidim
       let(:slug) { "foo" }
       let(:allowed?) { false }
 
-      it { is_expected.not_to include("changed_notably") }
+      it { is_expected.to eq("") }
     end
   end
 end

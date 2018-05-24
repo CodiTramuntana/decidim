@@ -42,7 +42,7 @@ module Decidim
       end
 
       def update_organization_tos_version
-        UpdateOrganizationTosUpdatedAt.call(form.organization, @page, @form)
+        UpdateOrganizationTosVersion.call(form.organization, @page, @form)
       end
     end
   end
