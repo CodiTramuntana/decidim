@@ -158,6 +158,12 @@ en:
         name: Foo authorization
       granted_at: Granted at %{timestamp}
       started_at: Started at %{timestamp}
+    collapsible_list:
+      hidden_elements_count:
+        one: and 1 more
+        other: and %{count} more
+      see_less: "(see less)"
+      see_more: "(see more)"
     components:
       dummy:
         actions:
@@ -198,6 +204,7 @@ en:
         new:
           already_have_an_account?: Already have an account?
           newsletter: Receive an occasional newsletter with relevant information
+          newsletter_title: Contact permission
           nickname_help: Your short, unique identifier in %{organization}
           sign_in: Log in
           sign_up: Sign up
@@ -208,6 +215,7 @@ en:
           subtitle: Sign up to participate in discussions and support proposals.
           terms: the terms and conditions of use
           tos_agreement: By signing up you agree to %{link}.
+          tos_title: Terms of Service
           username_help: Public name that appears on your posts. With the aim of guaranteeing the anonymity, can be any name.
       sessions:
         new:
