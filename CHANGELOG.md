@@ -87,6 +87,7 @@ administrators should keep in mind updating the help texts for each step.
 
 **Fixed**:
 
+- **decidim-core**: Add readonly attribute to date_field [#13](https://github.com/CodiTramuntana/decidim/pull/13)
 - **decidim-core**: Include datepicker locales in front pages too. [\#12](https://github.com/CodiTramuntana/decidim/pull/12)
 - **decidim-core**: Fixes the linked_resources_for method to only show the resources that has the component published. [\#3430](https://github.com/decidim/decidim/pull/3430)
 - **decidim-accountability**: Fixes linking proposals to results for accountability on creation time. [\#3167](https://github.com/decidim/decidim/pull/3262)
