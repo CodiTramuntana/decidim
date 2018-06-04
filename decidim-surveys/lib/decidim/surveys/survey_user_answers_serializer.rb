@@ -20,7 +20,7 @@ module Decidim
       end
 
       private
-      
+
       def normalize_body(answer)
         answer.body || answer.choices.pluck(:body)
       end
