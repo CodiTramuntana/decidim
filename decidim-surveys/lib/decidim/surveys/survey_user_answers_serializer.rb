@@ -22,7 +22,7 @@ module Decidim
       private
 
       def normalize_body(answer)
-        answer.body || answer.choices.pluck(:body)
+        answer.body.presence || answer.choices.pluck(:body)
       end
     end
   end
