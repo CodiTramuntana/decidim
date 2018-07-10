@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c413a827-c89e-4611-b70d-9097a6fc5555" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/decidim-core/app/cells/decidim/amendable/announcement_cell.rb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-core/app/cells/decidim/amendable/announcement_cell.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decidim-core/app/controllers/concerns/decidim/amendments_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-core/app/controllers/concerns/decidim/amendments_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decidim-core/app/helpers/decidim/amendments_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-core/app/helpers/decidim/amendments_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decidim-core/app/models/decidim/amendment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-core/app/models/decidim/amendment.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decidim-core/app/views/decidim/amendments/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-core/app/views/decidim/amendments/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decidim-core/lib/decidim/amendable.rb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-core/lib/decidim/amendable.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decidim-proposals/app/controllers/decidim/proposals/proposals_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-proposals/app/controllers/decidim/proposals/proposals_controller.rb" afterDir="false" />
+    <list default="true" id="34619260-97f0-4ae2-8933-0867d902918d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/decidim-core/app/cells/decidim/follow_button_cell.rb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-core/app/cells/decidim/follow_button_cell.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/decidim-proposals/spec/system/ammend_proposal_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-proposals/spec/system/ammend_proposal_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,45 +17,10 @@
     <SUITE FILE_PATH="coverage/decidim@Development__decidim.rcov" NAME="Development: decidim Coverage Results" MODIFIED="1541928893354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="decidim" />
     <SUITE FILE_PATH="coverage/decidim@Development__development_app.rcov" NAME="Development: development_app Coverage Results" MODIFIED="1542276463669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/development_app" MODULE_NAME="development_app" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="174324382">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="rb" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Ruby" value="11" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="erb" value="2" />
-          <entry key="rb" value="43" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="RHTML" value="2" />
-          <entry key="Ruby" value="43" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/decidim-core/app/cells/decidim/amendable/emendation_actions_cell.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="188">
-                  <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/decidim-core/app/controllers/concerns/decidim/amendments_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
@@ -70,7 +30,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/decidim-core/app/helpers/decidim/amendments_helper.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
@@ -102,6 +62,15 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="45">
                   <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/decidim-proposals/spec/system/ammend_proposal_spec.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
                 </state>
               </provider>
             </entry>
@@ -155,25 +124,10 @@
       </split-second>
     </splitter>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>CreateAmend</find>
-    </findStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/decidim-core/app/cells/decidim/amend_button_card_cell.rb" />
-        <option value="$PROJECT_DIR$/decidim-core/app/views/decidim/amendments/_form.html.erb" />
-        <option value="$PROJECT_DIR$/decidim-core/app/cells/decidim/amendable/announcement_cell.rb" />
-        <option value="$PROJECT_DIR$/decidim-core/app/controllers/concerns/decidim/amendments_controller.rb" />
-        <option value="$PROJECT_DIR$/decidim-core/app/models/decidim/amendment.rb" />
-        <option value="$PROJECT_DIR$/decidim-core/lib/decidim/amendable.rb" />
-        <option value="$PROJECT_DIR$/decidim-proposals/app/controllers/decidim/proposals/proposals_controller.rb" />
-        <option value="$PROJECT_DIR$/decidim-core/app/helpers/decidim/amendments_helper.rb" />
+        <option value="$PROJECT_DIR$/decidim-proposals/spec/system/ammend_proposal_spec.rb" />
       </list>
     </option>
   </component>
@@ -308,9 +262,6 @@
       <pane id="Scope" />
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="decidim-proposals/app/controllers/decidim/proposals/proposals_controller.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-proposals/app/controllers/decidim/proposals/proposals_controller.rb&#10;decidim-core/lib/decidim/amendable.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/lib/decidim/amendable.rb&#10;decidim-core/app/helpers/decidim/amendments_helper.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/app/helpers/decidim/amendments_helper.rb&#10;decidim-core/app/models/decidim/amendment.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/app/models/decidim/amendment.rb&#10;decidim-core/app/controllers/concerns/decidim/amendments_controller.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/app/controllers/concerns/decidim/amendments_controller.rb&#10;crea&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/app/commands/decidim/create_amend.rb&#10;decidim-core/app/cells/decidim/amendable/announcement_cell.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/app/cells/decidim/amendable/announcement_cell.rb&#10;decidim-core/app/views/decidim/amendments/_form.html.erb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/app/views/decidim/amendments/_form.html.erb&#10;decidim-core/app/commands/decidim/create_amend.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/app/commands/decidim/create_amend.rb&#10;decidim-core/app/cells/decidim/amend_button_card_cell.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/app/cells/decidim/amend_button_card_cell.rb&#10;application_helper&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-proposals/app/helpers/decidim/proposals/application_helper.rb&#10;amendments_help&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/app/helpers/decidim/amendments_helper.rb" />
-  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -339,12 +290,12 @@
       <workItem from="1542096987399" duration="13329000" />
       <workItem from="1542116199812" duration="12222000" />
       <workItem from="1542183258994" duration="16116000" />
-      <workItem from="1542202891630" duration="20833000" />
+      <workItem from="1542202891630" duration="20966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2040000" />
+    <option name="totallyTimeSpent" value="16000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
@@ -473,13 +424,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/decidim-core/app/models/decidim/amendment.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/decidim-core/lib/decidim/amendable.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -501,6 +445,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/decidim-core/app/models/decidim/amendment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/decidim-proposals/spec/system/ammend_proposal_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
