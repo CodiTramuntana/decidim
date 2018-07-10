@@ -39,11 +39,5 @@ describe "Amend Proposal", type: :system do
         expect(page).to have_css("#loginModal", visible: true)
       end
     end
-
-    # context "when the user is logged in" do
-    #   before do
-    #     login_as user, scope: :user
-    #   end
-    # end
   end
 end
