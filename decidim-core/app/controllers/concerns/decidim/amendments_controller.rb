@@ -61,7 +61,20 @@ module Decidim
 
     def review; end
 
-    def accept; end
+    def accept
+      @form = form(Decidim::AcceptAmendForm).from_params(params)
+      enforce_permission_to :accept, :amend, amend: @form.amendable
+
+      AcceptAmend.call(@form, current_user) do
+        on(:ok) do
+          render :update_button
+        end
+
+        on(:invalid) do
+          render json: { error: I18n.t("amendments.accept.error", scope: "decidim") }, status: 422
+        end
+      end
+    end
 
     def amendable_gid
       params[:amendable_gid]
