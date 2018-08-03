@@ -49,6 +49,7 @@ module Decidim
     def review; end
 
     def accept
+      return # to do!
       @form = form(Decidim::AcceptAmendForm).from_params(params)
       enforce_permission_to :accept, :amend, amend: @form.amendable
 
