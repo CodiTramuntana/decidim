@@ -7,6 +7,7 @@ module Decidim::Amendable
 
     private
 
+<<<<<<< HEAD
     def emendation
       model.emendation
     end
@@ -15,6 +16,8 @@ module Decidim::Amendable
       model.amendment
     end
 
+=======
+>>>>>>> Refactored due to review
     def accept_button
       link_to "#accept", class: "button success hollow expanded button--icon button--sc" do
         content = icon "thumb-up"
