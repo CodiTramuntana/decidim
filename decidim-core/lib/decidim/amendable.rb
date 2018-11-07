@@ -82,7 +82,8 @@ module Decidim
     end
 
     def state
-      emendation_state
+      return emendation_state if emendation?
+      super
     end
   end
 end
