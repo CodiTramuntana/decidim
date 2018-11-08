@@ -30,11 +30,11 @@ module Decidim
       private
 
       def change_proposal_state_to_withdrawn
-        if @proposal.emendation?
-          @proposal.amendment.update state: "withdrawn"
-        else
-          @proposal.update state: "withdrawn"
-        end
+        @emendation = Decidim.traceability.update!(
+          @emendation,
+          current_user,
+          state: "withdrawn"
+          )
       end
     end
   end

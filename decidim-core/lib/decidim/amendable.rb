@@ -76,14 +76,18 @@ module Decidim
       component.settings.amendments_enabled
     end
 
+    def proposal_state
+      attributes['state']
+    end
+
     def emendation_state
-      # return "widthdrawn" if withdrawn? # todo
+      return proposal_state if proposal_state == "withdrawn"
       amendment.state if emendation?
     end
 
     def state
       return emendation_state if emendation?
-      super
+      proposal_state
     end
   end
 end
