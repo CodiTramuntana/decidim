@@ -29,17 +29,12 @@ module Decidim
 
       private
 
-      def emendation
-        Decidim::Amendment.find_by(emendation: @proposal.id)
-      end
-
-      def withdraw_emendation
-        emendation.update state: "withdrawn"
-      end
-
       def change_proposal_state_to_withdrawn
-        return withdraw_emendation if @proposal.emendation?
-        @proposal.update state: "withdrawn"
+        if @proposal.emendation?
+          @proposal.amendment.update state: "withdrawn"
+        else
+          @proposal.update state: "withdrawn"
+        end
       end
     end
   end
