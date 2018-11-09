@@ -34,7 +34,7 @@ module Decidim
           @emendation,
           current_user,
           state: "withdrawn"
-          )
+        )
       end
     end
   end

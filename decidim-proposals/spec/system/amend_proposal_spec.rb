@@ -72,7 +72,7 @@ describe "Amend Proposal", type: :system do
         end
 
         it "is shown the amend title field" do
-          expect(page).to have_css(".field", text: "Title",visible: true)
+          expect(page).to have_css(".field", text: "Title", visible: true)
         end
         it "is shown the amend body field" do
           expect(page).to have_css(".field", text: "Body", visible: true)
