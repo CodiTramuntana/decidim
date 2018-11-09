@@ -48,6 +48,7 @@ module Decidim::Proposals
 
       context "and is an emendation" do
         subject { cell_html }
+
         let(:my_cell) { cell("decidim/proposals/proposal_m", emendation, context: { show_space: show_space }) }
         let(:cell_html) { my_cell.call }
 
