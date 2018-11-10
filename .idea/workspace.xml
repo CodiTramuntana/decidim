@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34619260-97f0-4ae2-8933-0867d902918d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/decidim-proposals/app/models/decidim/proposals/proposal.rb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-proposals/app/models/decidim/proposals/proposal.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decidim-core/lib/decidim/amendable.rb" beforeDir="false" afterPath="$PROJECT_DIR$/decidim-core/lib/decidim/amendable.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +51,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/decidim-core/lib/decidim/amendable.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="504">
-                  <caret line="93" selection-start-line="93" selection-end-line="93" />
+                <state relative-caret-position="444">
+                  <caret line="89" selection-start-line="89" selection-end-line="89" />
                 </state>
               </provider>
             </entry>
@@ -87,7 +87,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/decidim-proposals/app/models/decidim/proposals/proposal.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="210">
@@ -144,6 +144,7 @@
       <list>
         <option value="$PROJECT_DIR$/decidim-proposals/spec/system/ammend_proposal_spec.rb" />
         <option value="$PROJECT_DIR$/decidim-proposals/app/models/decidim/proposals/proposal.rb" />
+        <option value="$PROJECT_DIR$/decidim-core/lib/decidim/amendable.rb" />
       </list>
     </option>
   </component>
@@ -279,7 +280,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="decidim-proposals/app/models/decidim/proposals/proposal.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-proposals/app/models/decidim/proposals/proposal.rb" />
+    <property name="SearchEverywhereHistoryKey" value="decidim-core/lib/decidim/amendable.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-core/lib/decidim/amendable.rb&#10;decidim-proposals/app/models/decidim/proposals/proposal.rb&#9;FILE&#9;file:///home/marcvaquero/Escritorio/workSpace/decidim/decidim-proposals/app/models/decidim/proposals/proposal.rb" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -309,12 +310,12 @@
       <workItem from="1542096987399" duration="13329000" />
       <workItem from="1542116199812" duration="12222000" />
       <workItem from="1542183258994" duration="16116000" />
-      <workItem from="1542202891630" duration="20994000" />
+      <workItem from="1542202891630" duration="21028000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44000" />
+    <option name="totallyTimeSpent" value="78000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1853" height="1053" extended-state="6" />
@@ -443,13 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/decidim-core/lib/decidim/amendable.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/decidim-core/app/views/decidim/shared/_static_map.html.erb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -485,6 +479,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/decidim-core/lib/decidim/amendable.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
         </state>
       </provider>
     </entry>
