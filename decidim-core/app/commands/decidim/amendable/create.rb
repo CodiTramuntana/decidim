@@ -41,10 +41,12 @@ module Decidim
         @emendation = Decidim.traceability.perform_action!(
           :create,
           form.amendable_type.constantize,
-          form.current_user
+          form.current_user,
+          visibility: Decidim::ActionLog.find_by(resource_id: form.amendable.id).visibility
         ) do
           emendation = form.amendable_type.constantize.new(emendation_attributes)
           emendation.add_coauthor(form.current_user, user_group: form.user_group) if emendation.is_a?(Decidim::Coauthorable)
+          emendation.answer = nil
           emendation.save!
           emendation.reset_counters
           emendation
