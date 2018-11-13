@@ -46,7 +46,6 @@ module Decidim
         ) do
           emendation = form.amendable_type.constantize.new(emendation_attributes)
           emendation.add_coauthor(form.current_user, user_group: form.user_group) if emendation.is_a?(Decidim::Coauthorable)
-          emendation.answer = nil
           emendation.save!
           emendation.reset_counters
           emendation
@@ -54,7 +53,7 @@ module Decidim
       end
 
       def emendation_attributes
-        fields = form[:emendation_fields].as_json
+        fields = {}.as_json
 
         parsed_title = Decidim::ContentProcessor.parse_with_processor(:hashtag, form[:emendation_fields][:title], current_organization: form.current_organization).rewrite
         parsed_body = Decidim::ContentProcessor.parse_with_processor(:hashtag, form[:emendation_fields][:body], current_organization: form.current_organization).rewrite
