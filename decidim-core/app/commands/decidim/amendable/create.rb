@@ -52,7 +52,7 @@ module Decidim
       end
 
       def emendation_attributes
-        fields = form[:emendation_fields].as_json
+        fields = {}
 
         parsed_title = Decidim::ContentProcessor.parse_with_processor(:hashtag, form[:emendation_fields][:title], current_organization: form.current_organization).rewrite
         parsed_body = Decidim::ContentProcessor.parse_with_processor(:hashtag, form[:emendation_fields][:body], current_organization: form.current_organization).rewrite
