@@ -37,7 +37,8 @@ module Decidim
           flash[:alert] = t("created.error", scope: "decidim.amendments")
         end
 
-        redirect_to Decidim::ResourceLocatorPresenter.new(@amendable).path
+        # redirect_to Decidim::ResourceLocatorPresenter.new(@amendable).path
+        redirect_to "/amends/new?amendable_gid=#{@form.amendable_gid}"
       end
     end
 

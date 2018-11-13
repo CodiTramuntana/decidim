@@ -21,11 +21,11 @@ module Decidim
       # Returns nothing.
       def call
         return broadcast(:invalid) if form.invalid?
+        return broadcast(:invalid) if amendable_form.invalid?
 
         transaction do
           create_emendation!
           create_amendment!
-
 
           # The proposal authors and followers are notified that an amendment has been created.
           notify_amendable_authors_and_followers
@@ -52,8 +52,12 @@ module Decidim
         end
       end
 
+      def amendable_form
+        form.amendable.form.from_params(emendation_attributes).with_context(context)
+      end
+
       def emendation_attributes
-        fields = {}.as_json
+        fields = {}
 
         parsed_title = Decidim::ContentProcessor.parse_with_processor(:hashtag, form[:emendation_fields][:title], current_organization: form.current_organization).rewrite
         parsed_body = Decidim::ContentProcessor.parse_with_processor(:hashtag, form[:emendation_fields][:body], current_organization: form.current_organization).rewrite
@@ -63,6 +67,15 @@ module Decidim
         fields[:component] = form.amendable.component
         fields[:published_at] = Time.current if form.emendation_type == "Decidim::Proposals::Proposal"
         fields
+      end
+
+      def context
+        {
+          current_organization: form.amendable.organization,
+          current_component: form.amendable.component,
+          current_user: form.current_user,
+          current_participatory_space: form.amendable.participatory_space
+        }
       end
 
       def create_amendment!
