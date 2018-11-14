@@ -6,7 +6,7 @@ module Decidim
     class Withdraw < Rectify::Command
        # Public: Initializes the command.
       #
-      # proposal     - The proposal to withdraw.
+      # emendation     - The resource to withdraw.
       # current_user - The current user.
       def initialize(emendation, current_user)
         @emendation = emendation
@@ -15,8 +15,8 @@ module Decidim
 
       # Executes the command. Broadcasts these events:
       #
-      # - :ok when everything is valid, together with the proposal.
-      # - :invalid if the proposal already has supports or does not belong to current user.
+      # - :ok when everything is valid, together with the resource.
+      # - :invalid if the resource already has supports or does not belong to current user.
       #
       # Returns nothing.
       def call
