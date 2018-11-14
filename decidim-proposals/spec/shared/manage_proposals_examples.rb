@@ -406,8 +406,6 @@ shared_examples "manage proposals" do
     end
   end
 
-
-
   context "when the votes_enabled component setting is enabled" do
     before do
       current_component.update!(
