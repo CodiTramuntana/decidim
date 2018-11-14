@@ -76,14 +76,18 @@ module Decidim
       component.settings.amendments_enabled
     end
 
+    def resource_state
+      attributes['state']
+    end
+
     def emendation_state
-      # return "widthdrawn" if withdrawn? # todo
+      return resource_state if resource_state == "withdrawn"
       amendment.state if emendation?
     end
 
     def state
       return emendation_state if emendation?
-      super
+      resource_state
     end
   end
 end
