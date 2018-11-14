@@ -21,7 +21,6 @@ module Decidim
       # Returns nothing.
       def call
         return broadcast(:invalid) if form.invalid?
-        return broadcast(:invalid) if amendable_form.invalid?
 
         transaction do
           create_emendation!
@@ -37,12 +36,25 @@ module Decidim
 
       attr_reader :form
 
+      def emendation_attributes
+        fields = {}
+
+        parsed_title = Decidim::ContentProcessor.parse_with_processor(:hashtag, form[:emendation_fields][:title], current_organization: form.current_organization).rewrite
+        parsed_body = Decidim::ContentProcessor.parse_with_processor(:hashtag, form[:emendation_fields][:body], current_organization: form.current_organization).rewrite
+
+        fields[:title] = parsed_title
+        fields[:body] = parsed_body
+        fields[:component] = @amendable.component
+        fields[:published_at] = Time.current if form.emendation_type == "Decidim::Proposals::Proposal"
+        fields
+      end
+
       def create_emendation!
         @emendation = Decidim.traceability.perform_action!(
           :create,
           form.amendable_type.constantize,
           form.current_user,
-          visibility: Decidim::ActionLog.find_by(resource_id: form.amendable.id).visibility
+          visibility: Decidim::ActionLog.find_by(resource_id: @amendable.id).visibility
         ) do
           emendation = form.amendable_type.constantize.new(emendation_attributes)
           emendation.add_coauthor(form.current_user, user_group: form.user_group) if emendation.is_a?(Decidim::Coauthorable)
@@ -52,36 +64,10 @@ module Decidim
         end
       end
 
-      def amendable_form
-        form.amendable.form.from_params(emendation_attributes).with_context(context)
-      end
-
-      def emendation_attributes
-        fields = {}
-
-        parsed_title = Decidim::ContentProcessor.parse_with_processor(:hashtag, form[:emendation_fields][:title], current_organization: form.current_organization).rewrite
-        parsed_body = Decidim::ContentProcessor.parse_with_processor(:hashtag, form[:emendation_fields][:body], current_organization: form.current_organization).rewrite
-
-        fields[:title] = parsed_title
-        fields[:body] = parsed_body
-        fields[:component] = form.amendable.component
-        fields[:published_at] = Time.current if form.emendation_type == "Decidim::Proposals::Proposal"
-        fields
-      end
-
-      def context
-        {
-          current_organization: form.amendable.organization,
-          current_component: form.amendable.component,
-          current_user: form.current_user,
-          current_participatory_space: form.amendable.participatory_space
-        }
-      end
-
       def create_amendment!
         @amendment = Decidim::Amendment.create!(
           amender: form.current_user,
-          amendable: form.amendable,
+          amendable: @amendable,
           emendation: @emendation,
           state: "evaluating"
         )
