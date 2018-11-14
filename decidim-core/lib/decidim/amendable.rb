@@ -76,18 +76,18 @@ module Decidim
       component.settings.amendments_enabled
     end
 
-    def proposal_state
+    def resource_state
       attributes['state']
     end
 
     def emendation_state
-      return proposal_state if proposal_state == "withdrawn"
+      return resource_state if resource_state == "withdrawn"
       amendment.state if emendation?
     end
 
     def state
       return emendation_state if emendation?
-      proposal_state
+      resource_state
     end
   end
 end
