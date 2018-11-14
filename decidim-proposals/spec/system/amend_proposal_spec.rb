@@ -85,7 +85,7 @@ describe "Amend Proposal", type: :system do
         end
       end
 
-      context "and the emendation is sent" do
+      context "and the amend form is filled" do
         before do
           login_as user, scope: :user
           visit decidim.new_amend_path(amendable_gid: proposal.to_sgid.to_s)
@@ -102,9 +102,11 @@ describe "Amend Proposal", type: :system do
         end
 
         it "is shown the emendation in the amendments list" do
-          expect(page).to have_content("More sidewalks and less roads")
-          expect(page).to have_content("Cities need more people, not more cars")
-          expect(page).to have_css(".card__text--status", text: "EVALUATING")
+          emendation = Decidim::Proposals::Proposal.last
+
+          expect(page).to have_content(emendation.title)
+          expect(page).to have_content(emendation.body)
+          expect(page).to have_css(".card__text--status", text: emendation.state.upcase)
         end
       end
     end
