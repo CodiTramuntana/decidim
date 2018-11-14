@@ -51,7 +51,7 @@ module Decidim
         on(:invalid) do
           flash[:alert] = t("created.error", scope: "decidim.amendments")
           params[:amend][:emendation_fields] = params[:amend][:emendation_fields]
-          redirect_to "/amends/new?amendable_gid=#{@form.amendable_gid}"
+          redirect_to new_amend_path(amendable_gid: @form.amendable_gid)
           return false
         end
       end
