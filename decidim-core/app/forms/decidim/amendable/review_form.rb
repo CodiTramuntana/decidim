@@ -13,7 +13,7 @@ module Decidim
       attribute :body, String
       attribute :user_group_id, Integer
 
-      validates :id, :amendable_gid, :emendation_gid, presence: true
+      validates :id, :amendable_gid, :title, :body, :emendation_gid, presence: true
 
       def amendable_gid
         amendment.amendable.to_gid.to_s
