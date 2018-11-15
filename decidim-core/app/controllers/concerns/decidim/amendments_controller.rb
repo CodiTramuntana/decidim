@@ -42,21 +42,6 @@ module Decidim
       end
     end
 
-    def validate(form)
-      Decidim::Amendable::Validate.call(form) do
-        on(:ok) do
-          true
-        end
-
-        on(:invalid) do
-          flash[:alert] = t("created.error", scope: "decidim.amendments")
-          params[:amend][:emendation_fields] = params[:amend][:emendation_fields]
-          redirect_to new_amend_path(amendable_gid: @form.amendable_gid)
-          return false
-        end
-      end
-    end
-
     def reject; end
 
     def review
@@ -82,6 +67,8 @@ module Decidim
       end
     end
 
+    private
+
     def amendable_gid
       params[:amendable_gid]
     end
@@ -92,6 +79,21 @@ module Decidim
 
     def emendation
       @emendation ||= present(Decidim::Amendment.find(params[:id]).emendation)
+    end
+
+    def validate(form)
+      Decidim::Amendable::Validate.call(form) do
+        on(:ok) do
+          true
+        end
+
+        on(:invalid) do
+          flash[:alert] = t("created.error", scope: "decidim.amendments")
+          params[:amend][:emendation_fields] = params[:amend][:emendation_fields]
+          redirect_to new_amend_path(amendable_gid: @form.amendable_gid)
+          return false
+        end
+      end
     end
   end
 end

@@ -80,7 +80,7 @@ module Decidim
         recipients = @amendable.authors + @amendable.followers
         recipients += @emendation.authors + @emendation.followers
         Decidim::EventsManager.publish(
-          event: "decidim.events.amends.amendment_accepted",
+          event: "decidim.events.amendments.amendment_accepted",
           event_class: Decidim::Amendable::AmendmentAcceptedEvent,
           resource: @emendation,
           recipient_ids: recipients.pluck(:id)
