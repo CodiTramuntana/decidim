@@ -61,7 +61,6 @@ module Decidim
     def reject; end
 
     def review
-
       emendation_fields_form = emendation.form.from_model(emendation)
       params = emendation.attributes
       params[:id] = emendation.amendment.id
@@ -72,7 +71,6 @@ module Decidim
         emendation_gid: params[:emendation_gid],
         emendation_fields: emendation_fields_form
       )
-
     end
 
     def accept

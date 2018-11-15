@@ -26,7 +26,6 @@ module Decidim
         return broadcast(:invalid) if @form.invalid?
 
         transaction do
-
           accept_amendment!
           accept_emendation!
           update_amendable!
