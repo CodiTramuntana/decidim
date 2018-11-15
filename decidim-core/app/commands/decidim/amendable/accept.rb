@@ -26,7 +26,6 @@ module Decidim
         return broadcast(:invalid) if @form.invalid?
 
         transaction do
-
           accept_amendment!
           accept_emendation!
           update_amendable!
@@ -78,15 +77,14 @@ module Decidim
       end
 
       def notify_amendable_and_emendation_authors_and_followers
-        # # not implemented - to do!
-        # recipients = @amendable.authors + @amendable.followers
-        # recipients += @emendation.authors + @emendation.followers
-        # Decidim::EventsManager.publish(
-        #   event: "decidim.events.amends.amendment_accepted",
-        #   event_class: Decidim::AmendmentAcceptedEvent,
-        #   resource: @emendation,
-        #   recipient_ids: recipients.pluck(:id)
-        # )
+        recipients = @amendable.authors + @amendable.followers
+        recipients += @emendation.authors + @emendation.followers
+        Decidim::EventsManager.publish(
+          event: "decidim.events.amends.amendment_accepted",
+          event_class: Decidim::Amendable::AmendmentAcceptedEvent,
+          resource: @emendation,
+          recipient_ids: recipients.pluck(:id)
+        )
       end
     end
   end
