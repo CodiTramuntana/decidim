@@ -20,6 +20,7 @@ module Decidim
 
       @form = Decidim::Amendable::CreateForm.from_params(
         amendable_gid: params[:amendable_gid],
+        emendation_gid: params[:emedation_gid],
         emendation_fields: emendation_fields_form
       ).with_context(form_context)
     end
@@ -60,9 +61,18 @@ module Decidim
     def reject; end
 
     def review
+
+      emendation_fields_form = emendation.form.from_model(emendation)
       params = emendation.attributes
       params[:id] = emendation.amendment.id
-      @form = form(Decidim::Amendable::ReviewForm).from_params(params)
+
+      @form = Decidim::Amendable::ReviewForm.from_params(
+        id: params[:id],
+        amendable_gid: amendable_gid,
+        emendation_gid: params[:emendation_gid],
+        emendation_fields: emendation_fields_form
+      )
+
     end
 
     def accept

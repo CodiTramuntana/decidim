@@ -17,23 +17,27 @@ module Decidim
         described_class.from_params(form_params).with_context(form_context)
       end
 
+      let(:emendation_fields) do
+        {
+          title: Decidim::Faker::Localized.sentence(2)
+        }
+      end
 
-      let(:title) { "Loura Hansen II 1" }
-      let(:body) {"Dlksdjfklesjfklew lkdjflksdjflk sdlkfjsdlkfjskdjf lskdfj skjflk sjflksdjf lksjflksdjflks jflksd jlkdsjlckjksd"}
 
 
       let(:form_params) do
         {
           amendable_gid: resource.to_sgid.to_s,
+          emendation_fields: emendation_fields,
           id: amendment.id,
-          title: title,
-          body: body,
+          amender: amender,
           component: resource.component
         }
       end
 
       let(:form_context) do
         {
+          current_user: amender,
           current_organization: resource.organization,
           current_participatory_space: resource.participatory_space,
           current_component: resource.component
@@ -44,13 +48,13 @@ module Decidim
         it { is_expected.to be_valid }
       end
 
-      context "when the title is empty" do
+      context "when the amendable_gid is not present" do
         let(:form_params) do
           {
-            amendable_gid: resource.to_sgid.to_s,
+            amendable_gid: nil,
             id: amendment.id,
-            title: nil,
-            body: body,
+            emendation_fields: emendation_fields,
+            amender: amender,
             component: resource.component
           }
         end
@@ -58,19 +62,6 @@ module Decidim
         it { is_expected.to be_invalid }
       end
 
-      context "when the body is empty" do
-        let(:form_params) do
-          {
-            amendable_gid: resource.to_sgid.to_s,
-            id: amendment.id,
-            title: title,
-            body: nil,
-            component: resource.component
-          }
-        end
-
-        it { is_expected.to be_invalid }
-      end
 
     end
   end

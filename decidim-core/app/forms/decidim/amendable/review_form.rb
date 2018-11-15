@@ -9,11 +9,10 @@ module Decidim
       attribute :id, String
       attribute :amendable_gid, String
       attribute :emendation_gid, String
-      attribute :title, String
-      attribute :body, String
       attribute :user_group_id, Integer
+      attribute :emendation_fields, Object
 
-      validates :id, :amendable_gid, :title, :body, :emendation_gid, presence: true
+      validates :id, :amendable_gid, :emendation_gid, presence: true
 
       def amendable_gid
         amendment.amendable.to_gid.to_s
