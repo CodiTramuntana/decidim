@@ -24,17 +24,17 @@ module Decidim
         t("section_heading", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
       end
 
-      content += if amendable.emendations.positive?
-                   cell(
-                     "decidim/collapsible_list",
-                     amendable.emendations,
-                     cell_options: { context: { current_user: current_user } },
-                     list_class: "row small-up-1 medium-up-2 card-grid",
-                     size: 4
-                   ).to_s
-                 else
-                   t("no_amendments", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
-                 end
+      content += if amendable.emendations.count.positive?
+        cell(
+          "decidim/collapsible_list",
+          amendable.emendations,
+          cell_options: { context: { current_user: current_user } },
+          list_class: "row small-up-1 medium-up-2 card-grid",
+          size: 4
+        ).to_s
+      else
+        t("no_amendments", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
+      end
 
       content_tag :div, content.html_safe, class: "section"
     end
@@ -73,7 +73,7 @@ module Decidim
         return true if current_user.active_role.include?("admin")
       end
 
-      emendation_form.amendable.authored_by?(current_user)
+      current_user && current_user.id == emendation_form.amendable.creator.decidim_author_id
     end
 
     def user_group_select_field(form, name)
