@@ -1,7 +1,7 @@
 <div class="card extra">
   <div class="definition-data__item">
     <span class="definition-data__title">
-      <%= t("amended_by", scope: "decidim.amendments.amendable") %>
+      <%= I18n.t("amended_by", scope: "decidim.amendments.amendable") %>
     </span>
   </div>
   <% if model.size > 0 %>
@@ -12,7 +12,7 @@
     <% end %>
   <% else %>
     <div class="definition-data__item expanded">
-      <small><%= t("no_amenders", scope: "decidim.amendments.amendable") %></small>
+      <small><%= I18n.t("no_amenders", scope: "decidim.amendments.amendable") %></small>
     </div>
   <% end %>
 </div>

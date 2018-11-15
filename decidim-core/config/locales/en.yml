@@ -137,12 +137,12 @@ en:
         success: This emmendation has been accepted successfully.
       amendable:
         amended_by: Amended by
-        button: Amend %{model_name}
+        button: "Amend %{model_name}"
         error: There has been an error amending this resource.
-        help_text: Improve this %{model_name} by modifying its %{amendable_fields}
+        help_text: "Improve this %{model_name} by modifying its %{amendable_fields}"
         no_amenders: There are no amenders
         no_amendments: There are no amendments
-        section_heading: Amendments (%{count})
+        section_heading: "Amendments (%{count})"
       created:
         error: An error ocurred creating this amendment, try again later
         success: The amendment has been created successfully
@@ -488,11 +488,6 @@ en:
       no_followers: No followers yet.
     following:
       no_followings: Doesn't follow anyone or anything yet.
-    amendments:
-      create:
-        button: Amend %{model_name}
-        help_text: "Improve this %{model_name} by modifying its title or description"
-        error: There has been an error amending this resource.
     follows:
       create:
         button: Follow

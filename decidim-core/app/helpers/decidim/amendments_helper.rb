@@ -21,7 +21,7 @@ module Decidim
       return unless amendments_enabled? && amendable.emendations.count
       return if amendable.emendation?
       content = content_tag :h2, class: "section-heading" do
-        t("section_heading", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
+        I18n.t("section_heading", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
       end
 
       content += if amendable.emendations.count.positive?
@@ -33,7 +33,7 @@ module Decidim
           size: 4
         ).to_s
       else
-        t("no_amendments", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
+        I18n.t("no_amendments", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
       end
 
       content_tag :div, content.html_safe, class: "section"
