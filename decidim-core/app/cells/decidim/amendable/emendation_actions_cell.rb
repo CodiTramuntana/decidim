@@ -7,7 +7,6 @@ module Decidim::Amendable
 
     private
 
-<<<<<<< HEAD
     def emendation
       model.emendation
     end
@@ -16,8 +15,6 @@ module Decidim::Amendable
       model.amendment
     end
 
-=======
->>>>>>> Refactored due to review
     def accept_button
       link_content = icon "thumb-up"
       link_content += t(:button_accept, scope: "decidim.amendments.emendation.actions")
