@@ -43,9 +43,7 @@ module Decidim
 
         fields[:title] = parsed_title
         fields[:body] = parsed_body
-        fields[:decidim_component_id] = @amendable.component.id
-        fields[:decidim_scope_id] = @amendable.scope.id
-        fields[:decidim_amendable_id] = @amendable.id
+        fields[:component] = @amendable.component
         fields[:published_at] = Time.current if form.emendation_type == "Decidim::Proposals::Proposal"
         fields
       end
