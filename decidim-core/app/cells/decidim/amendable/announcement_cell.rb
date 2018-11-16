@@ -24,8 +24,7 @@ module Decidim::Amendable
         amendable_type: amendable_type,
         amendable_link: amendable_link,
         announcement_date: announcement_date,
-        publish_as_button: publish_as_button
-      )
+        publish_as_button: publish_as_button)
     end
 
     def amendable_link
