@@ -42,8 +42,6 @@ module Decidim
       end
     end
 
-    private
-
     def reject; end
 
     def review
@@ -68,6 +66,8 @@ module Decidim
         redirect_to Decidim::ResourceLocatorPresenter.new(@emendation).path
       end
     end
+
+    private
 
     def amendable_gid
       params[:amendable_gid]
@@ -94,7 +94,6 @@ module Decidim
           return false
         end
       end
-    end
     end
   end
 end

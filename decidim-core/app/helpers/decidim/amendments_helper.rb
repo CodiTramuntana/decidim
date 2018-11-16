@@ -25,7 +25,6 @@ module Decidim
       end
 
       content += if amendable.emendations.count.positive?
-<<<<<<< HEAD
                    cell(
                      "decidim/collapsible_list",
                      amendable.emendations,
@@ -36,7 +35,6 @@ module Decidim
                  else
                    t("no_amendments", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
                  end
-=======
         cell(
           "decidim/collapsible_list",
           amendable.emendations,
@@ -47,7 +45,6 @@ module Decidim
       else
         t("no_amendments", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
       end
->>>>>>> Fix accept/reject button showing to coauthors
 
       content_tag :div, content.html_safe, class: "section"
     end
