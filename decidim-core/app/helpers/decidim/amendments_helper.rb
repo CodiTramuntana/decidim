@@ -25,16 +25,16 @@ module Decidim
       end
 
       content += if amendable.emendations.count.positive?
-        cell(
-          "decidim/collapsible_list",
-          amendable.emendations,
-          cell_options: { context: { current_user: current_user } },
-          list_class: "row small-up-1 medium-up-2 card-grid",
-          size: 4
-        ).to_s
-      else
-        t("no_amendments", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
-      end
+                   cell(
+                     "decidim/collapsible_list",
+                     amendable.emendations,
+                     cell_options: { context: { current_user: current_user } },
+                     list_class: "row small-up-1 medium-up-2 card-grid",
+                     size: 4
+                   ).to_s
+                 else
+                   t("no_amendments", scope: "decidim.amendments.amendable", count: amendable.emendations.count)
+                 end
 
       content_tag :div, content.html_safe, class: "section"
     end

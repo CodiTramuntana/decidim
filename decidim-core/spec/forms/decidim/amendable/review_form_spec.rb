@@ -11,16 +11,14 @@ module Decidim
       let(:amender) { create :user, :confirmed, organization: resource.organization }
       let(:amendable) { create(:proposal) }
       let(:emendation) { create(:proposal) }
-      let(:amendment) { create :amendment, amender: emendation.creator_author, amendable: amendable, emendation: emendation}
+      let(:amendment) { create :amendment, amender: emendation.creator_author, amendable: amendable, emendation: emendation }
 
       let(:form) do
         described_class.from_params(form_params).with_context(form_context)
       end
 
-
       let(:title) { "Loura Hansen II 1" }
-      let(:body) {"Dlksdjfklesjfklew lkdjflksdjflk sdlkfjsdlkfjskdjf lskdfj skjflk sjflksdjf lksjflksdjflks jflksd jlkdsjlckjksd"}
-
+      let(:body) { "Dlksdjfklesjfklew lkdjflksdjflk sdlkfjsdlkfjskdjf lskdfj skjflk sjflksdjf lksjflksdjflks jflksd jlkdsjlckjksd" }
 
       let(:form_params) do
         {
@@ -71,7 +69,6 @@ module Decidim
 
         it { is_expected.to be_invalid }
       end
-
     end
   end
 end
