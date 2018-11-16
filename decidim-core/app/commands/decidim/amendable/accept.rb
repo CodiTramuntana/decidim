@@ -70,9 +70,10 @@ module Decidim
       end
 
       def amendable_attributes
+        array = form.instance_variable_get(:@emendation_fields)
         {
-          title: form.title,
-          body: form.body
+          title: array[:title],
+          body: array[:body]
         }
       end
 

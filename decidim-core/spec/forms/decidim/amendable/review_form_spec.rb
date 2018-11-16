@@ -12,6 +12,14 @@ module Decidim
       let(:amendable) { create(:proposal) }
       let(:emendation) { create(:proposal) }
       let(:amendment) { create :amendment, amender: emendation.creator_author, amendable: amendable, emendation: emendation }
+      let(:form_context) do
+        {
+          current_user: amender,
+          current_organization: resource.organization,
+          current_participatory_space: resource.participatory_space,
+          current_component: resource.component
+        }
+      end
 
       let(:form) do
         described_class.from_params(form_params).with_context(form_context)
@@ -33,31 +41,8 @@ module Decidim
         }
       end
 
-      let(:form_context) do
-        {
-          current_user: amender,
-          current_organization: resource.organization,
-          current_participatory_space: resource.participatory_space,
-          current_component: resource.component
-        }
-      end
-
       context "when everything is OK" do
         it { is_expected.to be_valid }
-      end
-
-      context "when the amendable_gid is not present" do
-        let(:form_params) do
-          {
-            amendable_gid: nil,
-            id: amendment.id,
-            emendation_fields: emendation_fields,
-            amender: amender,
-            component: resource.component
-          }
-        end
-
-        it { is_expected.to be_invalid }
       end
     end
   end
