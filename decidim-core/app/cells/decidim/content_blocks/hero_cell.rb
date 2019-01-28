@@ -5,13 +5,9 @@ module Decidim
     class HeroCell < Decidim::ViewModel
       include Decidim::CtaButtonHelper
       include Decidim::SanitizeHelper
-        
-      delegate :current_organization, to: :controller
+      include Decidim::ParticipatoryProcesses::Engine.routes.url_helpers
 
-      # Needed so that the `CtaButtonHelper` can work.
-      def decidim_participatory_processes
-        Decidim::ParticipatoryProcesses::Engine.routes.url_helpers
-      end
+      delegate :current_organization, to: :controller
 
       def translated_welcome_text
         translated_attribute(model.settings.welcome_text)
