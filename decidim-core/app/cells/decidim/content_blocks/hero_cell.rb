@@ -5,8 +5,7 @@ module Decidim
     class HeroCell < Decidim::ViewModel
       include Decidim::CtaButtonHelper
       include Decidim::SanitizeHelper
-      include Decidim::ParticipatoryProcesses::Engine.routes.url_helpers
-
+        
       delegate :current_organization, to: :controller
 
       # Needed so that the `CtaButtonHelper` can work.
