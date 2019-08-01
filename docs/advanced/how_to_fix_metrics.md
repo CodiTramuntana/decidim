@@ -10,7 +10,7 @@ We have identified two main problems:
 
 **Metrics generation crashing**
 
-We have identified only one culprit here: "orphans" records, meaning records whose related component or participatory space cannot be found in the database. This is because in a previous decidim release ParticpatorySpaces could be deleted but they were not deleted properly. So any application that has deleted a participatory space in the past, will probably have unrelated records that will make some metrics calculation crash.
+We have identified only one culprit here: "orphans" records, meaning records whose related component or participatory space cannot be found in the database. This is because in a previous decidim release `PartipatorySpaces` could be deleted but they were not deleted properly. So any application that has deleted a participatory space in the past, will probably have unrelated records that will make some metrics calculation crash.
 
 **Peaks in generated metrics**
 
@@ -28,7 +28,7 @@ We cannot offer a definitive solution for duplicate metrics, other than to delet
 
 For orphan records, you can do the following:
 - Back up the database.
-- Clean orphan records, manually in console. (The code is below).
+- Delete orphan records fromt the console (code is below).
 - Recalculate "comments" metrics.
 
 ### Delete orphan records
