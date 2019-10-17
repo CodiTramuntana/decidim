@@ -68,7 +68,7 @@ Decidim::Core::Engine.routes.draw do
 
     get "/authorization_modals/:authorization_action/f/:component_id(/:resource_name/:resource_id)", to: "authorization_modals#show", as: :authorization_modal
 
-    get "/only_verified_votes/:votable_gid/f/:component_id", to: "only_verified_votes#create", as: :only_verified_vote
+    resources :only_verified_votes, only: [:new, :create]
 
     resources :groups, except: [:destroy, :index, :show] do
       resources :join_requests, only: [:create, :update, :destroy], controller: "user_group_join_requests"

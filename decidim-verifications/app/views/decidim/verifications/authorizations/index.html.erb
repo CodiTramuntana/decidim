@@ -5,9 +5,9 @@
     <% component_id = Decidim::Component.find_by(manifest_name: "proposals").id %>
     <%= link_to(
         "Only Verified Vote",
-        decidim.only_verified_vote_path(
-          votable_gid: votable_gid,
-          component_id: component_id
+        decidim.new_only_verified_vote_path(
+          component_id: component_id,
+          redirect_url: URI(request.referer).path
         )) %>
     <!-- /TESTING -->
 

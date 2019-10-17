@@ -2,10 +2,24 @@
 
 module Decidim
   class OnlyVerifiedVotesController < Decidim::ApplicationController
+    include FormFactory
+
     helper_method :handler, :unauthorized_methods
+    before_action :valid_verification_workflows, only: [:new, :create]
     layout false
 
-    def create; end
+    helper Decidim::AuthorizationFormHelper
+
+    def new
+      @form = form(OnlyVerifiedVotesForm).from_params(
+        authorizations: authorization_handlers
+      )
+    end
+
+
+    def create
+      # raise
+    end
 
     private
 
@@ -18,21 +32,45 @@ module Decidim
     end
 
     def unauthorized_methods
-      @unauthorized_methods ||= available_verification_workflows.reject do |handler|
-        active_authorization_methods.include?(handler.key)
+      @unauthorized_methods ||= available_verification_workflows
+    end
+
+    def new_only_verified_user
+      Decidim::User.new(
+        organization: current_organization,
+        managed: true,
+        name: "new_only_verified_user"
+      ) do |u|
+        u.nickname = UserBaseEntity.nicknamize(u.name, organization: current_organization)
+        u.admin = false
+        u.tos_agreement = true
+        u.extended_data = {only_verified: true}
       end
     end
 
-    def active_authorization_methods
-      Verifications::Authorizations.new(organization: current_organization).pluck(:name)
+    def authorization_handlers
+      available_verification_workflows.map do |workflow|
+        Decidim::AuthorizationHandler.handler_for(
+          workflow.name,
+          {user: new_only_verified_user}
+        )
+      end
     end
 
     # Public: Available authorization handlers in order to conditionally
     # show the menu element.
     def available_verification_workflows
-      Verifications::Adapter.from_collection(
-        current_organization.available_authorizations & Decidim.authorization_workflows.map(&:name)
-      )
+      Decidim::Verifications::Adapter.from_collection(
+        current_organization.available_authorization_handlers
+      ).select{|w| w.type == "direct"}
+    end
+
+    # We should validate that only 'direct' verification workflows are allowed.
+    def valid_verification_workflows
+      return if available_verification_workflows.any? &&
+        available_verification_workflows.all?{|w| w.type == "direct"}
+
+      raise "Invalid workflows"
     end
   end
 end
