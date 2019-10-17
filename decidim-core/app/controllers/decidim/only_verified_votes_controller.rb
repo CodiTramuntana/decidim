@@ -4,39 +4,43 @@ module Decidim
   class OnlyVerifiedVotesController < Decidim::ApplicationController
     include FormFactory
 
-    helper_method :handler, :unauthorized_methods
-    before_action :valid_verification_workflows, only: [:new, :create]
-    layout false
+    before_action :validate_verification_adapters!, only: [:new, :create]
 
     helper Decidim::AuthorizationFormHelper
 
     def new
-      @form = form(OnlyVerifiedVotesForm).from_params(
-        authorizations: authorization_handlers
-      )
+      @form = form(OnlyVerifiedVotesForm).from_params(form_params)
     end
 
-
     def create
-      # raise
+      @form = form(OnlyVerifiedVotesForm).from_params(form_params)
+
+      OnlyVerifiedVote.call(@form) do
+        on(:ok) do
+          flash[:notice] = I18n.t("impersonations.create.success", scope: "decidim.admin")
+          redirect_to @form.redirect_url
+        end
+
+        on(:invalid) do
+          flash.now[:alert] = I18n.t("impersonations.create.error", scope: "decidim.admin")
+          render :new
+        end
+      end
     end
 
     private
 
-    def votable_resource
-      @votable_resource ||= GlobalID::Locator.locate_signed(params[:votable_gid])
-    end
-
-    def current_component
-      @current_component ||= Decidim::Component.find(params[:component_id])
-    end
-
-    def unauthorized_methods
-      @unauthorized_methods ||= available_verification_workflows
+    def form_params
+      {
+        authorizations: authorization_handlers,
+        component_id: params[:component_id] || params[:only_verified_votes][:component_id],
+        redirect_url: params[:redirect_url] || params[:only_verified_votes][:redirect_url],
+        votable_gid: params[:votable_gid] || params[:only_verified_votes][:votable_gid]
+      }
     end
 
     def new_only_verified_user
-      Decidim::User.new(
+      @new_only_verified_user ||= Decidim::User.new(
         organization: current_organization,
         managed: true,
         name: "new_only_verified_user"
@@ -44,33 +48,44 @@ module Decidim
         u.nickname = UserBaseEntity.nicknamize(u.name, organization: current_organization)
         u.admin = false
         u.tos_agreement = true
-        u.extended_data = {only_verified: true}
+        u.extended_data = { only_verified: true }
       end
     end
 
     def authorization_handlers
-      available_verification_workflows.map do |workflow|
-        Decidim::AuthorizationHandler.handler_for(
-          workflow.name,
-          {user: new_only_verified_user}
-        )
+      available_verification_adapters.map do |adapter|
+        Decidim::AuthorizationHandler.handler_for(adapter.name, handler_params(adapter.name))
       end
+    end
+
+    def handler_params(handler_name)
+      handler_params = params.dig(:only_verified_votes, :authorizations)
+      return default_handler_params if handler_params.nil?
+
+      handler_params = handler_params.values.find { |h| h["handler_name"] == handler_name }
+      return default_handler_params if handler_params.nil?
+
+      handler_params.merge(default_handler_params)
+    end
+
+    def default_handler_params
+      { user: new_only_verified_user }
     end
 
     # Public: Available authorization handlers in order to conditionally
     # show the menu element.
-    def available_verification_workflows
+    def available_verification_adapters
       Decidim::Verifications::Adapter.from_collection(
         current_organization.available_authorization_handlers
-      ).select{|w| w.type == "direct"}
+      ).select { |w| w.type == "direct" }
     end
 
     # We should validate that only 'direct' verification workflows are allowed.
-    def valid_verification_workflows
-      return if available_verification_workflows.any? &&
-        available_verification_workflows.all?{|w| w.type == "direct"}
+    def validate_verification_adapters!
+      return if available_verification_adapters.any? &&
+                available_verification_adapters.all? { |w| w.type == "direct" }
 
-      raise "Invalid workflows"
+      raise "Invalid verifications"
     end
   end
 end

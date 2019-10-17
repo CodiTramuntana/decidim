@@ -7,7 +7,8 @@
         "Only Verified Vote",
         decidim.new_only_verified_vote_path(
           component_id: component_id,
-          redirect_url: URI(request.referer).path
+          redirect_url: URI(request.referer).path,
+          votable_gid: votable_gid
         )) %>
     <!-- /TESTING -->
 

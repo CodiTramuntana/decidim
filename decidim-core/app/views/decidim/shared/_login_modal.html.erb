@@ -30,6 +30,17 @@
           <p class="text-center">
             <%= link_to t("devise.shared.links.forgot_your_password"), new_password_path(:user) %>
           </p>
+
+          <!-- TESTING -->
+          <% if true # vot sense registre %>
+            <% votable_gid  = "gid" %>
+            <% component_id = Decidim::Component.find_by(manifest_name: "proposals").id %>
+            <% params = {component_id: component_id,
+                        redirect_url: URI(request.original_fullpath).path,
+                        votable_gid: votable_gid} %>
+            <%= link_to("Only Verified Vote", decidim.new_only_verified_vote_path(params)) %>
+          <% end %>
+          <!-- /TESTING -->
       </div>
     </div>
     <%= render "decidim/devise/shared/omniauth_buttons_mini" %>

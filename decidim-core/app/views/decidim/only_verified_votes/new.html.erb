@@ -1,15 +1,22 @@
-<h2 class="process-title-summary">
-  <%= 't(".impersonate_existing_user")' %>
-</h2>
-
-<%= decidim_form_for(@form, url: only_verified_votes_path, html: { class: "form" }) do |f| %>
-  <div class="card">
-    <div class="card-section">
-      <%#= render partial: "form", object: f %>
+<div class="row columns">
+  <h2 class="section-heading"><%= "translated_attribute questionnaire.title" %></h2>
+  <div class="row">
+    <div class="columns large-6 medium-centered lead">
+      <%= "decidim_sanitize translated_attribute questionnaire.description" %>
     </div>
   </div>
+</div>
 
-  <div class="button--double form-general-submit">
-    <%= f.submit 't(".impersonate")' %>
+<div class="row">
+  <div class="columns large-6 medium-centered">
+    <%= decidim_form_for(@form, url: only_verified_votes_path, html: { class: "form" }) do |form| %>
+      <%= render partial: "form", object: form %>
+      <%= form.hidden_field :component_id %>
+      <%= form.hidden_field :redirect_url %>
+      <%= form.hidden_field :votable_gid %>
+      <div class="button--double form-general-submit">
+        <%= form.submit 't(".impersonate")' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
