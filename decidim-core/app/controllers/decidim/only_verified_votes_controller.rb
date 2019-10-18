@@ -2,6 +2,7 @@
 
 module Decidim
   class OnlyVerifiedVotesController < Decidim::ApplicationController
+    include Devise::Controllers::Helpers
     include FormFactory
 
     before_action :validate_verification_adapters!, only: [:new, :create]
@@ -16,8 +17,9 @@ module Decidim
       @form = form(OnlyVerifiedVotesForm).from_params(form_params)
 
       OnlyVerifiedVote.call(@form) do
-        on(:ok) do
+        on(:ok) do |user|
           flash[:notice] = I18n.t("impersonations.create.success", scope: "decidim.admin")
+          sign_in(user)
           redirect_to @form.redirect_url
         end
 
@@ -43,12 +45,12 @@ module Decidim
       @new_only_verified_user ||= Decidim::User.new(
         organization: current_organization,
         managed: true,
-        name: "new_only_verified_user"
+        name: "only_verified_user"
       ) do |u|
         u.nickname = UserBaseEntity.nicknamize(u.name, organization: current_organization)
         u.admin = false
+        u.roles = ["user_manager"] # Decidim::Admin::Permissions#user_manager?
         u.tos_agreement = true
-        u.extended_data = { only_verified: true }
       end
     end
 

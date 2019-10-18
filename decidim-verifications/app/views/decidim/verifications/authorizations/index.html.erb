@@ -1,17 +1,5 @@
 <div class="row column authorizations-list">
   <section class="section">
-    <!-- TESTING -->
-    <% votable_gid  = "gid" %>
-    <% component_id = Decidim::Component.find_by(manifest_name: "proposals").id %>
-    <%= link_to(
-        "Only Verified Vote",
-        decidim.new_only_verified_vote_path(
-          component_id: component_id,
-          redirect_url: URI(request.referer).path,
-          votable_gid: votable_gid
-        )) %>
-    <!-- /TESTING -->
-
     <% if @granted_authorizations.any? %>
       <div class="card card--list">
         <% @granted_authorizations.each do |authorization| %>

@@ -68,8 +68,6 @@ Decidim::Core::Engine.routes.draw do
 
     get "/authorization_modals/:authorization_action/f/:component_id(/:resource_name/:resource_id)", to: "authorization_modals#show", as: :authorization_modal
 
-    resources :only_verified_votes, only: [:new, :create]
-
     resources :groups, except: [:destroy, :index, :show] do
       resources :join_requests, only: [:create, :update, :destroy], controller: "user_group_join_requests"
       resources :invites, only: [:index, :create, :update, :destroy], controller: "group_invites"
@@ -90,6 +88,8 @@ Decidim::Core::Engine.routes.draw do
       end
     end
   end
+
+  resources :only_verified_votes, only: [:new, :create]
 
   resources :profiles, only: [:show], param: :nickname, constraints: { nickname: %r{[^\/]+} }, format: false
   scope "/profiles/:nickname", format: false, constraints: { nickname: %r{[^\/]+} } do

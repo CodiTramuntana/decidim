@@ -13,8 +13,8 @@ module Decidim
 
     validates_presence_of :authorizations, :component_id, :redirect_url, :votable_gid
 
-    def reason
-      "Voting: #{votable_gid}"
+    def unique_id
+      [*authorizations.pluck(:unique_id).sort, component_id].join("-")
     end
   end
 end

@@ -1,0 +1,17 @@
+<% if true %>
+  <div class="row">
+    <div class="columns medium-8 medium-centered">
+      <span class="register__separator">
+        <span class="register__separator__text"><%= t("or", scope: "decidim.devise.shared.omniauth_buttons") %></span>
+      </span>
+      <div class="text-center">
+        <% votable_gid  = "gid" %>
+        <% component_id = Decidim::Component.find_by(manifest_name: "proposals").id %>
+        <% params = {component_id: component_id,
+                    redirect_url: URI(request.original_fullpath).path,
+                    votable_gid: votable_gid} %>
+        <%= link_to("Only Verified Vote", decidim.new_only_verified_vote_path(params)) %>
+      </div>
+    </div>
+  </div>
+<% end %>

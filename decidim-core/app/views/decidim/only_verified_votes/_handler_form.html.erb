@@ -4,6 +4,4 @@
   <%= handler_form.all_fields %>
 <% end %>
 
-<% handler_form.object.errors.full_messages_for(:base).each do |message| %>
-  <small class="form-error is-visible"><%= message %></small>
-<% end %>
+<%= handler_form.error_for(:base) %>
