@@ -6,7 +6,7 @@
       </span>
       <div class="text-center">
         <% votable_gid  = "gid" %>
-        <% component_id = Decidim::Component.find_by(manifest_name: "proposals").id %>
+        <% component_id = request.env["decidim.current_component"]&.id %>
         <% params = {component_id: component_id,
                     redirect_url: URI(request.original_fullpath).path,
                     votable_gid: votable_gid} %>

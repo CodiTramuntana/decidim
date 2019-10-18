@@ -5,7 +5,7 @@ module Decidim
     include Devise::Controllers::Helpers
     include FormFactory
 
-    before_action :validate_verification_adapters!, only: [:new, :create]
+    before_action :validate_verification_adapters!
 
     helper Decidim::AuthorizationFormHelper
 
@@ -35,7 +35,7 @@ module Decidim
     def form_params
       {
         authorizations: authorization_handlers,
-        component_id: params[:component_id] || params[:only_verified_votes][:component_id],
+        component_id: component.id,
         redirect_url: params[:redirect_url] || params[:only_verified_votes][:redirect_url],
         votable_gid: params[:votable_gid] || params[:only_verified_votes][:votable_gid]
       }
@@ -74,15 +74,18 @@ module Decidim
       { user: new_only_verified_user }
     end
 
-    # Public: Available authorization handlers in order to conditionally
-    # show the menu element.
+    def component
+      @component ||= Decidim::Component.find(params[:component_id] || params[:only_verified_votes][:component_id])
+    end
+
+    # Filtering 'direct' verification adapters for TESTING purposes.
     def available_verification_adapters
       Decidim::Verifications::Adapter.from_collection(
-        current_organization.available_authorization_handlers
+        component.permissions["vote"]["authorization_handlers"].keys
       ).select { |w| w.type == "direct" }
     end
 
-    # We should validate that only 'direct' verification workflows are allowed.
+    # We should validate that only 'direct' verification adapters are enabled.
     def validate_verification_adapters!
       return if available_verification_adapters.any? &&
                 available_verification_adapters.all? { |w| w.type == "direct" }
