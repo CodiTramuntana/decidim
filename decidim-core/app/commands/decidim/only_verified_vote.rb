@@ -18,7 +18,7 @@ module Decidim
     #
     # Returns nothing.
     def call
-      return broadcast(:invalid) unless @form.valid? && new_only_verified_user?
+      return broadcast(:invalid) unless @form.valid? # && new_only_verified_user?
 
       transaction do
         user.save!
@@ -27,7 +27,7 @@ module Decidim
 
         update_user_extended_data
 
-        delete_authorizations
+        # delete_authorizations
 
         create_impersonation_log
       end
@@ -72,8 +72,9 @@ module Decidim
     def update_user_extended_data
       user.update(
         extended_data: {
-          unique_id: @form.unique_id,
-          authorizations: authorizations.as_json(only: [:name, :granted_at, :metadata, :unique_id])
+          component_id: @form.component_id,
+          authorizations: authorizations.as_json(only: [:name, :granted_at, :metadata, :unique_id]),
+          unique_id: @form.unique_id
         }
       )
     end

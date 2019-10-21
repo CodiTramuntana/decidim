@@ -21,6 +21,7 @@ module Decidim
       conversation_action?
       user_group_action?
       user_group_invitations_action?
+      only_verified_vote_action?
 
       permission_action
     end
@@ -170,6 +171,16 @@ module Decidim
 
     def user_manager_permissions
       Decidim::UserManagerPermissions.new(user, permission_action, context).permissions
+    end
+
+    def only_verified_vote_action?
+      return unless permission_action.subject == :only_verified
+
+      byebug
+      user_component_id = user.extended_data["component_id"]
+      current_componet_id = context[:component_id]
+      return disallow! unless user_component_id == current_componet_id
+      return disallow! unless permission_action.action.in?(%w(index show vote))
     end
   end
 end

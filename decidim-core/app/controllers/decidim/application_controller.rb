@@ -8,6 +8,7 @@ module Decidim
     include NeedsPermission
     include PayloadInfo
     include ImpersonateUsers
+    include OnlyVerifiedVotes
     include NeedsTosAccepted
     include HttpCachingDisabler
     include ActionAuthorization
