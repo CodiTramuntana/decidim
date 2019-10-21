@@ -45,7 +45,7 @@ module Decidim
       @new_only_verified_user ||= Decidim::User.new(
         organization: current_organization,
         managed: true,
-        name: "only_verified_user"
+        name: Time.now.utc.to_s(:number)
       ) do |u|
         u.nickname = UserBaseEntity.nicknamize(u.name, organization: current_organization)
         u.admin = false

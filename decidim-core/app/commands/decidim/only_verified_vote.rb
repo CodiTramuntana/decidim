@@ -18,7 +18,7 @@ module Decidim
     #
     # Returns nothing.
     def call
-      return broadcast(:invalid) unless @form.valid? # && new_only_verified_user?
+      return broadcast(:invalid) unless @form.valid? || existing_only_verified_user?
 
       transaction do
         user.save!
@@ -26,35 +26,26 @@ module Decidim
         create_authorizations
 
         update_user_extended_data
-
-        # delete_authorizations
-
-        create_impersonation_log
       end
-
-      enqueue_expire_job
 
       broadcast(:ok, user)
     end
 
     private
 
-    def new_only_verified_user?
-      return true if Decidim::User
-                     .managed
-                     .where(organization: current_organization)
-                     .where("extended_data @> ?", { unique_id: @form.unique_id }.to_json)
-                     .empty?
-
-      @form.authorizations.each do |authorization|
-        authorization.errors.add(:base, I18n.t("decidim.authorization_handlers.errors.duplicate_authorization"))
+    def existing_only_verified_user?
+      return unless @form.authorizations.map.all? do |authorization|
+        authorization.send(:duplicates).any?
       end
 
-      false
+      @user = User
+              .managed
+              .where(organization: current_organization)
+              .find_by("extended_data @> ?", { unique_id: @form.unique_id }.to_json)
     end
 
     def user
-      @form.authorizations.first.user
+      @user ||= @form.authorizations.first.user
     end
 
     def create_authorizations
@@ -74,27 +65,10 @@ module Decidim
         extended_data: {
           component_id: @form.component_id,
           authorizations: authorizations.as_json(only: [:name, :granted_at, :metadata, :unique_id]),
-          unique_id: @form.unique_id
+          unique_id: @form.unique_id,
+          session_expired_at: 1.minutes.from_now
         }
       )
-    end
-
-    def delete_authorizations
-      authorizations.delete_all
-    end
-
-    def create_impersonation_log
-      Decidim::ImpersonationLog.create!(
-        admin: user,
-        user: user,
-        started_at: Time.current
-      )
-    end
-
-    def enqueue_expire_job
-      Decidim::Admin::ExpireImpersonationJob
-        .set(wait: Decidim::ImpersonationLog::SESSION_TIME_IN_MINUTES.minutes)
-        .perform_later(user, @form.current_user)
     end
   end
 end

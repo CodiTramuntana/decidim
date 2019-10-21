@@ -88,7 +88,6 @@ module Decidim
                         else
                           {}
                         end
-      byebug
       decidim.authorization_modal_path(authorization_action: action, component_id: current_component.id, **resource_params)
     end
   end
