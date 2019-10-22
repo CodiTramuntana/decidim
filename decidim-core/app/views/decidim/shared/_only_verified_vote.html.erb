@@ -1,4 +1,8 @@
-<% if true %>
+<%
+if respond_to?(:current_component) &&
+   component_settings.try(:only_verified_votes) &&
+   current_component.permissions.try(:[], "vote")
+%>
   <div class="row">
     <div class="columns medium-8 medium-centered">
       <span class="register__separator">
@@ -6,8 +10,7 @@
       </span>
       <div class="text-center">
         <% votable_gid  = "gid" %>
-        <% component_id = request.env["decidim.current_component"]&.id %>
-        <% params = {component_id: component_id,
+        <% params = {component_id: current_component.id,
                     redirect_url: URI(request.original_fullpath).path,
                     votable_gid: votable_gid} %>
         <%= link_to("Only Verified Vote", decidim.new_only_verified_vote_path(params)) %>

@@ -82,10 +82,10 @@ module Decidim
     def available_verification_adapters
       Decidim::Verifications::Adapter.from_collection(
         component.permissions["vote"]["authorization_handlers"].keys
-      ).select { |w| w.type == "direct" }
+      )
     end
 
-    # We should validate that only 'direct' verification adapters are enabled.
+    # Should we validate that only 'direct' verification adapters are enabled?
     def validate_verification_adapters!
       return if available_verification_adapters.any? &&
                 available_verification_adapters.all? { |w| w.type == "direct" }
