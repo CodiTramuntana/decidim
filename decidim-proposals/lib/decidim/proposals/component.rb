@@ -38,6 +38,7 @@ Decidim.register_component(:proposals) do |component|
     settings.attribute :collaborative_drafts_enabled, type: :boolean, default: false
     settings.attribute :participatory_texts_enabled, type: :boolean, default: false
     settings.attribute :amendments_enabled, type: :boolean, default: false
+    settings.attribute :only_verified_votes, type: :boolean, default: false
     settings.attribute :amendments_wizard_help_text, type: :text, translated: true, editor: true, required: false
     settings.attribute :announcement, type: :text, translated: true, editor: true
     settings.attribute :new_proposal_help_text, type: :text, translated: true, editor: true

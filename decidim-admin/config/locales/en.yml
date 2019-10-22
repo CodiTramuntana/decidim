@@ -111,6 +111,10 @@ en:
         file: File
     errors:
       models:
+        permission:
+          attributes:
+            base:
+              invalid_verifications: Component global settings "only_verified_votes" only accepts "Direct" permissions.
         oauth_application:
           attributes:
             redirect_uri:

@@ -2,6 +2,7 @@
   handler_name = local_assigns[:handler_name]
   schema = form.object.options_schema(handler_name)
   attributes = form.object.options_attributes(handler_name)
+  # raise
 %>
 
 <%= form.fields_for(:authorization_handlers_options) do |options_form| %>
@@ -17,3 +18,5 @@
     <% end %>
   <% end %>
 <% end %>
+<br>
+<%= form.error_for(:base) %>

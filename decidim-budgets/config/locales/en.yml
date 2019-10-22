@@ -14,6 +14,12 @@ en:
       decidim/budgets/project:
         one: Project
         other: Projects
+  errors:
+    models:
+      settings:
+        attributes:
+          only_verified_votes:
+            invalid_verifications: "Cannot enable this setting with 'Multi-step' permissions for the 'vote' action"
   decidim:
     budgets:
       actions:
@@ -128,6 +134,8 @@ en:
         name: Budgets
         settings:
           global:
+            only_verified_votes: Only Verified Votes enabled
+            only_verified_votes_help: Only Verified Votes enabled help text
             announcement: Announcement
             comments_enabled: Comments enabled
             projects_per_page: Projects per page

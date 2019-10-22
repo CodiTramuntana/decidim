@@ -48,6 +48,7 @@ Decidim.register_component(:budgets) do |component|
     settings.attribute :vote_threshold_percent, type: :integer, default: 70
     settings.attribute :comments_enabled, type: :boolean, default: true
     settings.attribute :resources_permissions_enabled, type: :boolean, default: true
+    settings.attribute :only_verified_votes, type: :boolean, default: false
     settings.attribute :announcement, type: :text, translated: true, editor: true
   end
 

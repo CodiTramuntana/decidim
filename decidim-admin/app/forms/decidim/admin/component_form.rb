@@ -25,6 +25,7 @@ module Decidim
 
       validate :must_be_able_to_change_participatory_texts_setting
       validate :amendments_visibility_options_must_be_valid
+      validate :only_verified_votes_must_be_valid
 
       def settings?
         settings.manifest.attributes.any?
@@ -73,6 +74,16 @@ module Decidim
 
           step_settings[step].errors.add(:amendments_visibility, :inclusion)
         end
+      end
+
+      # Validates setting `only_verified_votes` is not enabled with Multi-step verification adapters.
+      def only_verified_votes_must_be_valid
+        return unless settings&.only_verified_votes && (component = Component.find_by(id: id))
+        return if Decidim::Verifications::Adapter.from_collection(
+          component.permissions["vote"]["authorization_handlers"].keys
+        ).all? { |adapter| adapter.type == "direct" }
+
+        settings.errors.add(:only_verified_votes, :invalid_verifications)
       end
     end
   end

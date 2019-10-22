@@ -66,7 +66,7 @@ module Decidim
           component_id: @form.component_id,
           authorizations: authorizations.as_json(only: [:name, :granted_at, :metadata, :unique_id]),
           unique_id: @form.unique_id,
-          session_expired_at: 1.minutes.from_now
+          session_expired_at: 30.minutes.from_now
         }
       )
     end

@@ -18,7 +18,9 @@ module Decidim
 
       def update
         enforce_permission_to :update, :component, component: component
-        @permissions_form = PermissionsForm.from_params(params)
+        @permissions_form = PermissionsForm.new(
+          { permissions: permission_forms }.merge(component: component)
+        )
 
         UpdateComponentPermissions.call(@permissions_form, component, resource) do
           on(:ok) do
@@ -58,7 +60,22 @@ module Decidim
       end
 
       def permissions
-        @permissions ||= (component.permissions || {}).merge(resource&.permissions || {})
+        @permissions ||= (parse_permission_form_params || component.permissions || {}).merge(resource&.permissions || {})
+      end
+
+      def parse_permission_form_params
+        return unless (form_params = params.dig(:component_permissions, :permissions))
+
+        form_params.to_unsafe_h.each_with_object({}) do |(action, values), result|
+          next unless (handler_names = values["authorization_handlers"].reject(&:empty?))
+
+          handler_options = values["authorization_handlers_options"]
+          handlers = handler_names.each_with_object({}) do |name, inner_result|
+            inner_result[name] = handler_options[name] ? { "options" => handler_options[name] } : {}
+          end
+
+          result[action] = handlers ? { "authorization_handlers" => handlers } : {}
+        end
       end
     end
   end
