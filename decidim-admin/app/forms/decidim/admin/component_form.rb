@@ -79,8 +79,9 @@ module Decidim
       # Validates setting `only_verified_votes` is not enabled with Multi-step verification adapters.
       def only_verified_votes_must_be_valid
         return unless settings&.only_verified_votes && (component = Component.find_by(id: id))
+        return unless (vote_permissions = component.permissions["vote"])
         return if Decidim::Verifications::Adapter.from_collection(
-          component.permissions["vote"]["authorization_handlers"].keys
+          vote_permissions["authorization_handlers"]&.keys
         ).all? { |adapter| adapter.type == "direct" }
 
         settings.errors.add(:only_verified_votes, :invalid_verifications)
