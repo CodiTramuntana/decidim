@@ -2,6 +2,23 @@
 
 ## [Unreleased](https://github.com/decidim/decidim/tree/HEAD)
 
+**Upgrade notes**:
+
+- In order for the newly searchable entities to be indexed, you'll have to manually trigger a reindex. You can do that executing:
+
+  ```ruby
+Decidim::Assemblies::Assembly.find_each(&:add_to_index_as_search_resource)
+Decidim::ParticipatoryProcesses::ParticipatoryProcess.find_each(&:add_to_index_as_search_resource)
+Decidim::Conferences::Conference.find_each(&:add_to_index_as_search_resource)
+Decidim::Consultations::Consultation.find_each(&:add_to_index_as_search_resource)
+Decidim::Initiatives::Initiative.find_each(&:add_to_index_as_search_resource)
+Decidim::Debates::Debate.find_each(&:add_to_index_as_search_resource)
+# results are ready to be searchable but don't have a card-m so can't be rendered
+# Decidim::Accountability::Result.find_each(&:add_to_index_as_search_resource)
+Decidim::Budgets::Project.find_each(&:add_to_index_as_search_resource)
+Decidim::Blogs::Post.find_each(&:add_to_index_as_search_resource)
+  ```
+
 **Added**:
 
 - **decidim-consultations**: Create groups of responses in multi-choices question consultations. [\#5387](https://github.com/decidim/decidim/pull/5387)
@@ -9,20 +26,27 @@
 - **decidim-participatory_processes**: Export/import feature for ParticipatoryProcess. [#5422](https://github.com/decidim/decidim/pull/5422)
 - **decidim-surveys**: Added a setting to surveys to allow unregistered (aka: anonymous) users to answer a survey. [\#4996](https://github.com/decidim/decidim/pull/4996)
 - **decidim-core**: Added Devise :lockable to Users [#5478](https://github.com/decidim/decidim/pull/5478)
+- **decidim-meetings**: Added help texts for meetings forms to solve doubts about Geocoder fields. [\# #5487](https://github.com/decidim/decidim/pull/5487)
 
 **Changed**:
 
+- **decidim-core**: Add @ prefix to the nickname field in the registration view. [\#5482](https://github.com/decidim/decidim/pull/5482)
+- **decidim-core**: Introduce the ActsAsAuthor concern. [\#5482](https://github.com/decidim/decidim/pull/5482)
 - **decidim-core**: Extract footers into partials. [#5461](https://github.com/decidim/decidim/pull/5461)
 - **decidim-initiatives**: UX improvements to initiatives [#5369](https://github.com/decidim/decidim/pull/5369)
 - **decidim-core**: Update to JQuery 3 [#5433](https://github.com/decidim/decidim/pull/5433)
 
 **Fixed**:
 
+- **decidim-participatory_processes**: Fix participatory process import when some imported elements are null [\#5496](https://github.com/decidim/decidim/pull/5496)
+- **decidim-core**: Upgrade dependecies, specially loofah. [\#5493](https://github.com/decidim/decidim/pull/5493)
+- **decidim-core**: Fix: mispelling when selecting the meetings presenter. [\#5482](https://github.com/decidim/decidim/pull/5482)
 - **decidim-core**, **decidim-participatory_processes**: Fix: Duplicate results in `Decidim::HasPrivateUsers::visible_for(user)` [\#5462](https://github.com/decidim/decidim/pull/5462)
 - **decidim-participatory_processes**: Fix: flaky test when mapping Rails timezone names to PostgreSQL [\#5472](https://github.com/decidim/decidim/pull/5472)
 - **decidim-conferences**: Fix: Add pagination interface to some sections [\#5463](https://github.com/decidim/decidim/pull/5463)
 - **decidim-sortitions**: Fix: Don't include drafts in sortitions [\#5434](https://github.com/decidim/decidim/pull/5434)
 - **decidim-assemblies**: Fix: Fixed assembly parent_id when selecting itself [#5416](https://github.com/decidim/decidim/pull/5416)
+- **decidim-core**: Fix: Search box on mobile (menu) [#5502](https://github.com/decidim/decidim/pull/5502)
 
 **Removed**:
 
