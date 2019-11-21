@@ -8,6 +8,7 @@ module Decidim
       class ParticipatoryProcessesController < Decidim::ParticipatoryProcesses::Admin::ApplicationController
         include Decidim::Admin::Paginable
         include Decidim::Admin::ParticipatorySpaceAdminContext
+        helper ::Decidim::Admin::FiltersHelper
         participatory_space_admin_layout only: [:edit]
 
         helper ProcessGroupsForSelectHelper

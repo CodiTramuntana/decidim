@@ -45,7 +45,15 @@ module Decidim
         admin_filter_scopes_subtree(sorted_root_scopes)
       end
 
+      # Renders the pagination button to be included at the top right of the admin filters.
+      def admin_filters_pagination_btn
+        content_tag(:div, class: "button tiny") do
+          cell("decidim/admin/results_per_page", per_page_options).to_s.html_safe
+        end
+      end
+
       #----------------------------------------------------------------------
+
       private
 
       #----------------------------------------------------------------------
