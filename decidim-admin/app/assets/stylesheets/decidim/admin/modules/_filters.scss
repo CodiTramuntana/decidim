@@ -46,6 +46,10 @@
   .button,
   .input-group{
     margin-bottom: 0;
+
+    .button a{
+      color: #fff;
+    }
   }
 
   .button.dropdown{
