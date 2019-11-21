@@ -6,38 +6,23 @@
   padding: $global-padding $global-padding 0;
 
   & > .fcell{
+
     &.search{
       flex-grow: 1;
       margin: 0 .5rem;
     }
 
-    &.status{
-      width: 100%;
-      margin-top: .5rem;
+    .button.tiny {
+      display: flex;
+      padding: 0;
 
-      .label{
-        font-weight: 600;
-        text-transform: uppercase;
-
-        .type-icon{
-          vertical-align: top;
+      .results-per-page__dropdown{
+        a{
+          color: #fff;
         }
 
-        .action-icon{
-          vertical-align: text-bottom;
-
-          &:first-child{
-            margin-left: .5rem;
-          }
-
-          &.action-icon--remove{
-            color: lighten(#e66a5d, 24);
-            margin-left: .3rem;
-
-            &:hover{
-              color: #e66a5d;
-            }
-          }
+        .submenu a{
+          color: #039be5;
         }
       }
     }

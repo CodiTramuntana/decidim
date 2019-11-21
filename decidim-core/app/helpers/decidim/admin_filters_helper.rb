@@ -25,7 +25,7 @@ module Decidim
     end
 
     def admin_filter_submenu_options(submenus)
-      content_tag(:ul, class: "nested vertical menu") do
+      content_tag(:ul, class: "vertical menu") do
         if submenus.is_a?(Hash)
           content_tag(:li, class: "is-dropdown-submenu-parent") do
             html = content_tag(:a, submenus.keys.first, href: "#")
