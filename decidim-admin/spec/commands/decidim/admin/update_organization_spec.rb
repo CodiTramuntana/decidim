@@ -16,7 +16,8 @@ module Decidim::Admin
             badges_enabled: true,
             user_groups_enabled: true,
             send_welcome_notification: false,
-            rich_text_editor_for_participants: true
+            rich_text_editor_for_participants: true,
+            admin_terms_of_use_body: Faker::Lorem.paragraph
           }
         }
       end
