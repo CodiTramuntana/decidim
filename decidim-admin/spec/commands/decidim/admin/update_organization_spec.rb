@@ -15,8 +15,9 @@ module Decidim::Admin
             default_locale: "en",
             badges_enabled: true,
             user_groups_enabled: true,
-            admin_terms_of_use_body: Faker::Lorem.paragraph,
-            send_welcome_notification: false
+            send_welcome_notification: false,
+            rich_text_editor_for_participants: true,
+            admin_terms_of_use_body: Faker::Lorem.paragraph
           }
         }
       end
@@ -71,6 +72,7 @@ module Decidim::Admin
           organization.reload
 
           expect(organization.name).to eq("My super organization")
+          expect(organization.rich_text_editor_for_participants).to eq(true)
         end
       end
     end

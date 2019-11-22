@@ -5,10 +5,15 @@ module Decidim
     module Admin
       # This controller allows admins to manage proposals in a participatory process.
       class ProposalsController < Admin::ApplicationController
+        include Decidim::Admin::Paginable
         include Decidim::ApplicationHelper
 
         helper Proposals::ApplicationHelper
-        helper_method :proposals, :query, :form_presenter
+        helper Decidim::CategoriesHelper
+        helper Decidim::Admin::FiltersHelper
+        helper_method :categories, :form_presenter, :proposals, :query
+
+        delegate :categories, to: :current_component
 
         def new
           enforce_permission_to :create, :proposal
@@ -97,7 +102,7 @@ module Decidim
         end
 
         def proposals
-          @proposals ||= query.result.page(params[:page]).per(15)
+          @proposals ||= paginate(query.result)
         end
 
         def proposal
