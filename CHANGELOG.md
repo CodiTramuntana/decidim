@@ -30,7 +30,7 @@ Decidim::Blogs::Post.find_each(&:add_to_index_as_search_resource)
 - **decidim-meetings**: Added help texts for meetings forms to solve doubts about Geocoder fields. [\# #5487](https://github.com/decidim/decidim/pull/5487)
 - **decidim-admin** Add terms of use for admin [#5507](https://github.com/decidim/decidim/pull/5507)
 - **decidim-admin** Added per_page option in Admin participant index[#5480](https://github.com/decidim/decidim/pull/5480)
-- **decidim-admin** Add per_page option in Admin for participants, proposals and spaces indexes [#5480](https://github.com/decidim/decidim/pull/5480)
+
 
 **Changed**:
 
