@@ -52,8 +52,9 @@ module Decidim
           github_handler: form.github_handler,
           badges_enabled: form.badges_enabled,
           user_groups_enabled: form.user_groups_enabled,
+          rich_text_editor_for_participants: form.rich_text_editor_for_participants,
           admin_terms_of_use_body: form.admin_terms_of_use_body
-        }.merge(welcome_notification_attributes)
+       }.merge(welcome_notification_attributes)
       end
 
       def welcome_notification_attributes

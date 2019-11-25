@@ -71,6 +71,7 @@ en:
         port: Port
         primary_color: Primary
         reference_prefix: Reference prefix
+        rich_text_editor_for_participants: Enable rich text editor for participants
         secondary_color: Secondary
         send_welcome_notification: Send welcome notification
         show_statistics: Show statistics
@@ -143,6 +144,7 @@ en:
         export: Export
         manage: Manage
         new: New %{name}
+        per_page: Per page
         permissions: Permissions
         reject: Reject
         verify: Verify
@@ -541,7 +543,7 @@ en:
           officialize: Officialize
           officialized: Officialized
           reofficialize: Reofficialize
-          search: Search
+          search: Search by name, nickname or email
           status: Status
           unofficialize: Unofficialize
         new:
@@ -556,6 +558,7 @@ en:
           facebook: Facebook
           github: GitHub
           instagram: Instagram
+          rich_text_editor_for_participants_help: In some text areas, participants will be able to insert some HTML tags by using the rich text editor.
           social_handlers: Social
           twitter: Twitter
           url: Url

@@ -2,6 +2,23 @@
 
 ## [Unreleased](https://github.com/decidim/decidim/tree/HEAD)
 
+**Upgrade notes**:
+
+- In order for the newly searchable entities to be indexed, you'll have to manually trigger a reindex. You can do that executing:
+
+  ```ruby
+Decidim::Assemblies::Assembly.find_each(&:add_to_index_as_search_resource)
+Decidim::ParticipatoryProcesses::ParticipatoryProcess.find_each(&:add_to_index_as_search_resource)
+Decidim::Conferences::Conference.find_each(&:add_to_index_as_search_resource)
+Decidim::Consultations::Consultation.find_each(&:add_to_index_as_search_resource)
+Decidim::Initiatives::Initiative.find_each(&:add_to_index_as_search_resource)
+Decidim::Debates::Debate.find_each(&:add_to_index_as_search_resource)
+# results are ready to be searchable but don't have a card-m so can't be rendered
+# Decidim::Accountability::Result.find_each(&:add_to_index_as_search_resource)
+Decidim::Budgets::Project.find_each(&:add_to_index_as_search_resource)
+Decidim::Blogs::Post.find_each(&:add_to_index_as_search_resource)
+  ```
+
 **Added**:
 
 - **decidim-proposals**: Add: Additional sorting filters for proposals index. [\#5506](https://github.com/decidim/decidim/pull/5506)
@@ -17,6 +34,12 @@
 **Changed**:
 
 - **decidim-meetings**: Change: @meetings_spaces collection to use I18n translations [#5494](https://github.com/decidim/decidim/pull/5494)
+- **decidim-admin** Added per_page option in Admin participant index[#5480](https://github.com/decidim/decidim/pull/5480)
+
+
+**Changed**:
+
+- **decidim-proposals**: Add a filter "My proposals" at the list of proposals. [\#5512](https://github.com/decidim/decidim/pull/5512)
 - **decidim-core**: Add @ prefix to the nickname field in the registration view. [\#5482](https://github.com/decidim/decidim/pull/5482)
 - **decidim-core**: Introduce the ActsAsAuthor concern. [\#5482](https://github.com/decidim/decidim/pull/5482)
 - **decidim-core**: Extract footers into partials. [#5461](https://github.com/decidim/decidim/pull/5461)
