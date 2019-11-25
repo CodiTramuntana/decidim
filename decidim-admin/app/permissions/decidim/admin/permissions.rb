@@ -4,6 +4,7 @@ module Decidim
   module Admin
     class Permissions < Decidim::DefaultPermissions
       def permissions
+        return permission_action if admin_terms_action?
         return permission_action if managed_user_action?
         return permission_action if admin_terms_action?
 
