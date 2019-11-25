@@ -21,6 +21,7 @@ Decidim::Blogs::Post.find_each(&:add_to_index_as_search_resource)
 
 **Added**:
 
+- **decidim-proposals**: Add: Additional sorting filters for proposals index. [\#5506](https://github.com/decidim/decidim/pull/5506)
 - **decidim-core**: Add a searchable users endpoint to the GraphQL api and enable drop-down @mentions helper in comments. [\#5474](https://github.com/decidim/decidim/pull/5474)
 - **decidim-consultations**: Create groups of responses in multi-choices question consultations. [\#5387](https://github.com/decidim/decidim/pull/5387)
 - **decidim-core**, **decidim-participatory_processes**: Export/import space components feature, applied to for ParticipatoryProcess. [#5424](https://github.com/decidim/decidim/pull/5424)
@@ -29,6 +30,10 @@ Decidim::Blogs::Post.find_each(&:add_to_index_as_search_resource)
 - **decidim-core**: Added Devise :lockable to Users [#5478](https://github.com/decidim/decidim/pull/5478)
 - **decidim-meetings**: Added help texts for meetings forms to solve doubts about Geocoder fields. [\# #5487](https://github.com/decidim/decidim/pull/5487)
 - **decidim-admin** Add terms of use for admin [#5507](https://github.com/decidim/decidim/pull/5507)
+
+**Changed**:
+
+- **decidim-meetings**: Change: @meetings_spaces collection to use I18n translations [#5494](https://github.com/decidim/decidim/pull/5494)
 - **decidim-admin** Added per_page option in Admin participant index[#5480](https://github.com/decidim/decidim/pull/5480)
 
 
@@ -43,6 +48,7 @@ Decidim::Blogs::Post.find_each(&:add_to_index_as_search_resource)
 
 **Fixed**:
 
+- **decidim-consultations**: Fix: current_participatory_space raises error in ConsultationsController.[\#5513](https://github.com/decidim/decidim/pull/5513)
 - **decidim-admin**: Admin HasAttachments forces the absolute namespace for the AttachmentForm to `::Decidim::Admin::AttachmentForm`.[\#5511](https://github.com/decidim/decidim/pull/5511)
 - **decidim-participatory_processes**: Fix participatory process import when some imported elements are null [\#5496](https://github.com/decidim/decidim/pull/5496)
 - **decidim-core**: Upgrade dependecies, specially loofah. [\#5493](https://github.com/decidim/decidim/pull/5493)
