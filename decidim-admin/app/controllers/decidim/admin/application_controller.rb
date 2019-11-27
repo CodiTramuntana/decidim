@@ -6,6 +6,7 @@ module Decidim
     class ApplicationController < ::DecidimController
       include NeedsOrganization
       include NeedsPermission
+      include Decidim::Admin::Concerns::NeedsAdminTermsAccepted
       include FormFactory
       include LocaleSwitcher
       include PayloadInfo
@@ -17,6 +18,7 @@ module Decidim
       helper Decidim::Admin::IconLinkHelper
       helper Decidim::Admin::MenuHelper
       helper Decidim::Admin::ScopesHelper
+      helper Decidim::Admin::Paginable::PerPageHelper
       helper Decidim::DecidimFormHelper
       helper Decidim::ReplaceButtonsHelper
       helper Decidim::ScopesHelper

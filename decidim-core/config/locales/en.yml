@@ -91,6 +91,11 @@ en:
         error: There was a problem updating your account.
         success: Your account was successfully updated.
         success_with_email_confirmation: Your account was successfully updated. You'll receive an email to confirm your new email address.
+    admin:
+      actions:
+        cancel: Cancel
+        filter:
+          label: Filter
     admin_log:
       area:
         create: "%{user_name} created the %{resource_name} area"
@@ -1335,8 +1340,11 @@ en:
       left: Deletions
       right: Additions
     dropdown:
+      choose_diff_view_html: 'HTML view mode:'
       choose_diff_view_mode: 'Compare view mode:'
+      option_escaped: Escaped
       option_split: Side-by-side
+      option_unescaped: Unescaped
       option_unified: Unified
   views:
     pagination:

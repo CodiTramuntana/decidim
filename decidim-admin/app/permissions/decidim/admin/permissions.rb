@@ -6,6 +6,7 @@ module Decidim
       def permissions
         return admin_terms_permissions if permission_action.scope == :admin
         return permission_action if managed_user_action?
+        return permission_action if admin_terms_action?
 
         unless permission_action.scope == :admin
           read_admin_dashboard_action?
@@ -152,6 +153,10 @@ module Decidim
         else
           true
         end
+      end
+
+      def admin_terms_action?
+        admin_terms_permissions
       end
 
       def organization
