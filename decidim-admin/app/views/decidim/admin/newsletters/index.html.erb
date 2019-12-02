@@ -2,6 +2,12 @@
   <div class="card-divider">
     <h2 class="card-title">
       <%= t ".title" %>
+    </h2>
+    <h2 class="card-title">
+      <%= t ".title" %>
+      <%= @recipients %>
+    </h2>
+    <h2 class="card-title">
       <% if allowed_to? :create, :newsletter %>
         <%= link_to t("actions.new", scope: "decidim.admin", name: t("models.newsletter.name", scope: "decidim.admin").downcase), ["new", "newsletter"], class: "button tiny button--title new" %>
       <% end %>

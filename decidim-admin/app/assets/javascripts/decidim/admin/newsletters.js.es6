@@ -66,5 +66,22 @@ $(() => {
         }
       });
     })
+
+
+
+    // $.ajax({url: "/admin/newsletters/3/select_recipients_to_deliver.js", data: { string: "javi!"}})
+
+    $(".form.newsletter_deliver").on("change","select",function(){
+      console.log("changed select")
+    //   var periods = $(this).val();
+    //   var string = $("#id_of_age_input").val();
+
+    //   $.ajax({
+    //     type: "GET",
+    //     url: window.location.href,
+    //     // url: "/rate",
+    //     data: { string: string } //this will enable you to use params[:periods] and params[:age] in your controller
+    //   });
+    });
   }
 });

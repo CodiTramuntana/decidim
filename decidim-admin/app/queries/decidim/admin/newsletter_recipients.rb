@@ -7,13 +7,18 @@ module Decidim
     class NewsletterRecipients < Rectify::Query
       # newsletter - the Newsletter that will be send and needs to be selected the recipients.
       # form - params to filter the query
-      def initialize(newsletter, form)
-        @newsletter = newsletter
+
+            def initialize(form)
+        # @newsletter = newsletter
         @form = form
       end
+      # def initialize(newsletter, form)
+      #   @newsletter = newsletter
+      #   @form = form
+      # end
 
       def query
-        recipients = Decidim::User.where(organization: @newsletter.organization)
+        recipients = Decidim::User.where(organization: @form.current_organization)
                                   .where.not(newsletter_notifications_at: nil, email: nil, confirmed_at: nil)
                                   .not_deleted
 
