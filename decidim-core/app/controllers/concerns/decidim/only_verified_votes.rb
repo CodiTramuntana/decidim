@@ -7,7 +7,7 @@ module Decidim
   module OnlyVerifiedVotes
     extend ActiveSupport::Concern
 
-    include Devise::Controllers::Helpers
+    include ::Devise::Controllers::Helpers
 
     included do
       before_action :check_only_verified_session_expired
