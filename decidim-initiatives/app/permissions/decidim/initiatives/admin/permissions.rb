@@ -140,7 +140,7 @@ module Decidim
           when :export_pdf_signatures
             toggle_allow(initiative.published? || initiative.accepted? || initiative.rejected?)
           when :export_votes
-            toggle_allow(initiative.offline? || initiative.any?)
+            toggle_allow(initiative.offline_signature_type? || initiative.any_signature_type?)
           when :accept
             allowed = initiative.published? &&
                       initiative.signature_end_date < Date.current &&
@@ -151,6 +151,8 @@ module Decidim
                       initiative.signature_end_date < Date.current &&
                       initiative.percentage < 100
             toggle_allow(allowed)
+          when :send_to_technical_validation
+            toggle_allow(allowed_to_send_to_technical_validation?)
           else
             allow!
           end
@@ -180,17 +182,19 @@ module Decidim
           when :update
             toggle_allow(initiative.created?)
           when :send_to_technical_validation
-            allowed = initiative.created? && (
-                        !initiative.created_by_individual? ||
-                        initiative.enough_committee_members?
-                      )
-
-            toggle_allow(allowed)
+            toggle_allow(allowed_to_send_to_technical_validation?)
           when :manage_membership
-            allow!
+            toggle_allow(initiative.promoting_committee_enabled?)
           else
             disallow!
           end
+        end
+
+        def allowed_to_send_to_technical_validation?
+          initiative.created? && (
+            !initiative.created_by_individual? ||
+            initiative.enough_committee_members?
+          )
         end
       end
     end

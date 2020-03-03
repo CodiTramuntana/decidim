@@ -3,8 +3,11 @@
 module Decidim
   # The main application controller that inherits from Rails.
   class ApplicationController < ::DecidimController
+    include Browser::ActionController
+
     include NeedsOrganization
     include LocaleSwitcher
+    include UseOrganizationTimeZone
     include NeedsPermission
     include PayloadInfo
     include ImpersonateUsers
@@ -42,8 +45,6 @@ module Decidim
     layout "layouts/decidim/application"
 
     skip_before_action :disable_http_caching, unless: :user_signed_in?
-
-    before_action :track_continuity_badge
 
     private
 
@@ -90,12 +91,6 @@ module Decidim
     # displays the JS response instead of the HTML one.
     def add_vary_header
       response.headers["Vary"] = "Accept"
-    end
-
-    def track_continuity_badge
-      return unless current_user
-
-      Decidim::ContinuityBadgeTracker.new(current_user).track!(Time.zone.today)
     end
   end
 end

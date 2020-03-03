@@ -8,7 +8,6 @@ module Decidim
     class ProposalPresenter < SimpleDelegator
       include Rails.application.routes.mounted_helpers
       include ActionView::Helpers::UrlHelper
-      include ActionView::Helpers::SanitizeHelper
       include Decidim::SanitizeHelper
 
       def author
@@ -16,13 +15,7 @@ module Decidim
                       Decidim::Proposals::OfficialAuthorPresenter.new
                     else
                       coauthorship = coauthorships.first
-                      if coauthorship.user_group
-                        Decidim::UserGroupPresenter.new(coauthorship.user_group)
-                      elsif coauthorship.author.is_a?(Decidim::User)
-                        Decidim::UserPresenter.new(coauthorship.author)
-                      elsif coauthorship.author.is_a?(Decidim::Meeting)
-                        Decidim::MeetingPresenter.new(coauthorship.author)
-                      end
+                      coauthorship.user_group&.presenter || coauthorship.author.presenter
                     end
       end
 

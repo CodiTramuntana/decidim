@@ -44,6 +44,7 @@ module Decidim
 
         moderator_action?
         collaborator_action?
+        valuator_action?
         process_admin_action?
 
         permission_action
@@ -205,6 +206,14 @@ module Decidim
         allow! if permission_action.action == :preview
       end
 
+      # Valuators can only read the components of a process.
+      def valuator_action?
+        return unless can_manage_process?(role: :valuator)
+
+        allow! if permission_action.action == :read && permission_action.subject == :component
+        allow! if permission_action.action == :export && permission_action.subject == :component_data
+      end
+
       # Process admins can eprform everything *inside* that process. They cannot
       # create a process or perform actions on process groups or other
       # processes.
@@ -223,7 +232,9 @@ module Decidim
           :moderation,
           :process,
           :process_step,
-          :process_user_role
+          :process_user_role,
+          :export_space,
+          :import
         ].include?(permission_action.subject)
         allow! if is_allowed
       end
@@ -241,7 +252,9 @@ module Decidim
           :process,
           :process_step,
           :process_user_role,
-          :space_private_user
+          :space_private_user,
+          :export_space,
+          :import
         ].include?(permission_action.subject)
         allow! if is_allowed
       end
