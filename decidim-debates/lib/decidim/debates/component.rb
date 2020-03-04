@@ -8,6 +8,7 @@ Decidim.register_component(:debates) do |component|
   component.icon = "decidim/debates/icon.svg"
   component.permissions_class_name = "Decidim::Debates::Permissions"
 
+  component.query_type = "Decidim::Debates::DebatesType"
   component.data_portable_entities = ["Decidim::Debates::Debate"]
 
   component.newsletter_participant_entities = ["Decidim::Debates::Debate"]
@@ -31,9 +32,15 @@ Decidim.register_component(:debates) do |component|
     Decidim::Debates::Debate.where(component: components).not_hidden.count
   end
 
+  component.register_stat :followers_count, tag: :followers, priority: Decidim::StatsRegistry::LOW_PRIORITY do |components, _start_at, _end_at|
+    debates_ids = Decidim::Debates::Debate.where(component: components).not_hidden.pluck(:id)
+    Decidim::Follow.where(decidim_followable_type: "Decidim::Debates::Debate", decidim_followable_id: debates_ids).count
+  end
+
   component.register_resource(:debate) do |resource|
     resource.model_class_name = "Decidim::Debates::Debate"
     resource.card = "decidim/debates/debate"
+    resource.searchable = true
   end
 
   component.actions = %w(create)

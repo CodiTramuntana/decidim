@@ -11,10 +11,11 @@ module Decidim
       attribute :permissions, Hash[String => PermissionForm]
 
       validate :vote_permissions_must_be_valid_with_only_verified_vote
+      private
 
-      # Overriding Rectify::Form#form_attributes_valid?
+      # Overriding Rectify::Form#form_attributes_valid? to preserve errors from custom method validations.
       def form_attributes_valid?
-        return false unless errors.empty? && permissions.each_value.map(&:errors).all?(&:empty?) # Preserves errors from custom validation methods
+        return false unless errors.empty? && permissions.each_value.map(&:errors).all?(&:empty?)
 
         super && permissions.values.all?(&:valid?)
       end

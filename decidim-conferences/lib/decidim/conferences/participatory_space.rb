@@ -15,9 +15,12 @@ Decidim.register_participatory_space(:conferences) do |participatory_space|
     "Decidim::Conferences::ConferenceInvite"
   ]
 
+  participatory_space.query_type = "Decidim::Conferences::ConferenceType"
+
   participatory_space.register_resource(:conference) do |resource|
     resource.model_class_name = "Decidim::Conference"
     resource.card = "decidim/conferences/conference"
+    resource.searchable = true
   end
 
   participatory_space.context(:public) do |context|
@@ -71,6 +74,7 @@ Decidim.register_participatory_space(:conferences) do |participatory_space|
           Decidim::Faker::Localized.paragraph(3)
         end
       )
+      conference.add_to_index_as_search_resource
 
       # Create users with specific roles
       Decidim::ConferenceUserRole::ROLES.each do |role|

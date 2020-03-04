@@ -18,8 +18,8 @@ en:
         automatic_hashtags: Hashtags automatically added
         body: Body
         category_id: Category
+        decidim_scope_id: Scope
         has_address: Has address
-        scope_id: Scope
         state: State
         suggested_hashtags: Suggested hashtags
         title: Title
@@ -32,6 +32,9 @@ en:
       proposals_import:
         import_proposals: Import proposals
         keep_authors: Keep original authors
+      valuation_assignment:
+        admin_log:
+          valuator_role_id: Valuator name
     errors:
       models:
         participatory_text:
@@ -43,6 +46,7 @@ en:
             attachment:
               needs_to_be_reattached: Needs to be reattached
             body:
+              cant_be_equal_to_template: cannot be equal to the template
               identical: AND title cannot be identical
             title:
               identical: AND body cannot be identical
@@ -55,6 +59,7 @@ en:
     models:
       decidim/proposals/accepted_proposal_event: Proposal accepted
       decidim/proposals/admin/update_proposal_category_event: Proposal category changed
+      decidim/proposals/admin/update_proposal_scope_event: Proposal scope changed
       decidim/proposals/creation_enabled_event: Proposal creation enabled
       decidim/proposals/endorsing_enabled_event: Proposal endorsing enabled
       decidim/proposals/evaluating_proposal_event: Proposal is being evaluated
@@ -81,6 +86,25 @@ en:
         one: Support
         other: Supports
   decidim:
+    admin:
+      filters:
+        is_emendation_true:
+          label: Type
+          values:
+            'false': Proposals
+            'true': Amendments
+        search_placeholder:
+          id_string_or_title_cont: Search %{collection} by ID or title.
+        state_eq:
+          values:
+            evaluating: Evaluating
+            withdrawn: Withdrawn
+        state_null:
+          label: Status
+          values:
+            'true': Not answered
+        valuator_role_ids_has:
+          label: Assigned to valuator
     components:
       proposals:
         actions:
@@ -94,6 +118,7 @@ en:
           global:
             only_verified_votes: Only Verified Votes enabled
             only_verified_votes_help: Only Verified Votes enabled help text
+            allow_card_image: Allow card image
             amendments_enabled: Amendments enabled
             amendments_enabled_help: If active, configure Amendment features for each step.
             amendments_wizard_help_text: Amendments Wizard help text
@@ -104,6 +129,8 @@ en:
             comments_enabled: Comments enabled
             geocoding_enabled: Geocoding enabled
             minimum_votes_per_user: Minimum supports per user
+            new_proposal_body_template: New proposal body template
+            new_proposal_body_template_help: You can define prefilled text that the new Proposals will have
             new_proposal_help_text: New proposal help text
             official_proposals_enabled: Official proposals enabled
             participatory_texts_disabled_help: Cannot interact with this setting if there are existing proposals. Please, create a new `Proposals component` if you want to enable this feature or discard all imported proposals in the `Participatory Texts` menu if you want to disable it.
@@ -129,6 +156,7 @@ en:
             amendments_visibility: Amendment visibility
             amendments_visibility_help: If the option "Amendments are visible only to their authors" is selected, participant must be logged in to see the amendments made.
             announcement: Announcement
+            answers_with_costs: Enable costs on proposal answers
             automatic_hashtags: Hashtags added to all proposals
             comments_blocked: Comments blocked
             creation_enabled: Proposal creation enabled
@@ -239,6 +267,11 @@ en:
           email_outro: You have received this notification because you are the author of the proposal.
           email_subject: The %{resource_title} proposal category has been updated
           notification_title: The <a href="%{resource_path}">%{resource_title}</a> proposal category has been updated by an admin.
+        proposal_update_scope:
+          email_intro: 'An admin has updated the scope of your proposal "%{resource_title}", check it out in this page:'
+          email_outro: You have received this notification because you are the author of the proposal.
+          email_subject: The %{resource_title} proposal scope has been updated
+          notification_title: The <a href="%{resource_path}">%{resource_title}</a> proposal scope has been updated by an admin.
         voting_enabled:
           email_intro: 'You can support proposals in %{participatory_space_title}! Start participating in this page:'
           email_outro: You have received this notification because you are following %{participatory_space_title}. You can stop receiving notifications following the previous link.
@@ -305,12 +338,12 @@ en:
         see_all: See all (%{count})
     proposals:
       actions:
-        answer: Answer
+        answer_proposal: Answer proposal
         edit_proposal: Edit proposal
         import: Import from another component
         new: New proposal
         participatory_texts: Participatory texts
-        private_notes: Private notes
+        show: Show proposal
         title: Actions
       admin:
         actions:
@@ -355,7 +388,7 @@ en:
           update:
             success: Participatory text successfully updated.
         proposal_answers:
-          edit:
+          form:
             accepted: Accepted
             answer_proposal: Answer
             evaluating: Evaluating
@@ -389,8 +422,11 @@ en:
             select_a_meeting: Select a meeting
           index:
             actions: Actions
+            assign_to_valuator: Assign to valuator
+            assign_to_valuator_button: Assign
             cancel: Cancel
             change_category: Change category
+            change_scope: Change scope
             merge: Merge into a new one
             merge_button: Merge
             select_component: Select a component
@@ -398,15 +434,50 @@ en:
             split: Split proposals
             split_button: Split
             title: Proposals
+            unassign_from_valuator: Unassign from valuator
+            unassign_from_valuator_button: Unassign
             update: Update
+            update_scope_button: Update Scope
           new:
             create: Create
             title: Create proposal
+          show:
+            amendments_count: Amendments count
+            assigned_valuators: Assigned valuators
+            authors: Authors
+            body: Body
+            comments_count: Comments count
+            comments_negative_count: Against
+            comments_neutral_count: Neutral
+            comments_positive_count: Favor
+            created_at: Creation date
+            documents: Documents
+            endorsements_count: Endorsements count
+            endorsements_ranking: Ranking by endorsements
+            endorsers: Endorsers
+            link: Link
+            n_more_endorsers:
+              one: and 1 more
+              other: and %{count} more
+            photos: Photos
+            proposals: Proposals
+            ranking: "%{ranking} of %{total}"
+            related_meetings: Related meetings
+            remove_assignment: Remove assignment
+            remove_assignment_confirmation: Are you sure you want to remove the valuator from this proposal?
+            valuators: Valuators
+            votes_count: Supports count
+            votes_ranking: Ranking by supports
           update_category:
-            invalid: 'These proposals already had the %{category} category: %{proposals}.'
+            invalid: 'These proposals already had the %{subject_name} category: %{proposals}.'
             select_a_category: Please select a category
             select_a_proposal: Please select a proposal
-            success: 'Proposals successfully updated to the %{category} category: %{proposals}.'
+            success: 'Proposals successfully updated to the %{subject_name} category: %{proposals}.'
+          update_scope:
+            invalid: 'These proposals already had the %{subject_name} scope: %{proposals}.'
+            select_a_proposal: Please select a proposal
+            select_a_scope: Please select a scope
+            success: 'Proposals successfully updated to the %{subject_name} scope: %{proposals}.'
         proposals_imports:
           create:
             invalid: There was a problem importing the proposals
@@ -424,12 +495,13 @@ en:
           create:
             invalid: There was a problem spliting the selected proposals.
             success: Successfully splitted the proposals into new ones.
-        shared:
-          info_proposal:
-            body: Body
-            created_at: Creation date
-            proposal_votes_count: Supports count
-            proposals: Proposals
+        valuation_assignments:
+          create:
+            invalid: There was an error assigning proposals to a valuator
+            success: Proposals assigned to a valuator successfully
+          delete:
+            invalid: There was an error unassigning proposals from a valuator
+            success: Valuator unassigned from proposals successfully
       admin_log:
         proposal:
           answer: "%{user_name} answered the %{resource_name} proposal on the %{space_name} space"
@@ -437,6 +509,9 @@ en:
           update: "%{user_name} updated the %{resource_name} official proposal on the %{space_name} space"
         proposal_note:
           create: "%{user_name} left a private note on the %{resource_name} proposal on the %{space_name} space"
+        valuation_assignment:
+          create: "%{user_name} assigned the %{resource_name} proposal to a valuator"
+          delete: "%{user_name} unassigned a valuator from the %{proposal_title} proposal"
       answers:
         accepted: Accepted
         evaluating: Evaluating
@@ -444,17 +519,21 @@ en:
         rejected: Rejected
         withdrawn: Withdrawn
       application_helper:
+        filter_category_values:
+          all: All
         filter_origin_values:
           all: All
           citizens: Citizens
           meetings: Meetings
           official: Official
           user_groups: Groups
+        filter_scope_values:
+          all: All
         filter_state_values:
           accepted: Accepted
           all: All
           evaluating: Evaluating
-          except_rejected: All except rejected
+          not_answered: Not answered
           rejected: Rejected
         filter_type_values:
           all: All
@@ -503,10 +582,10 @@ en:
           all: All
           amendment: Amendments
           category: Category
-          category_prompt: Category Prompt
           open: Open
           published: Published
           related_to: Related to
+          scope: Scope
           search: Search
           state: Status
           withdrawn: Withdrawn
@@ -547,7 +626,7 @@ en:
           hidden_authors_count:
             one: and %{count} more person
             other: and %{count} more people
-          info-message: This is a <strong>collaborative draft</strong> for a proposal. This means that you can help their authors to shape the proposal using the comment section below or improve it directly by requesting access to edit it. Once the authors grant you access, youl'll be able to make changes to this draft.
+          info-message: This is a <strong>collaborative draft</strong> for a proposal. This means that you can help their authors to shape the proposal using the comment section below or improve it directly by requesting access to edit it. Once the authors grant you access, you'll be able to make changes to this draft.
           of_versions: "(of %{number})"
           publish: Publish
           publish_info: Publish this version of the draft or
@@ -600,6 +679,8 @@ en:
             scope: Scope
             state: Status
             title: Title
+            valuator: Valuator
+            valuators: Valuators
             votes: Votes
       new:
         limit_reached: You can't create new proposals since you've exceeded the limit.
@@ -653,14 +734,17 @@ en:
         endorsements_card_row:
           comments: Comments
         filters:
-          activity: Activity
+          activity: My activity
+          all: All
           amendment_type: Type
           category: Category
-          category_prompt: Select a category
+          my_proposals: My proposals
           origin: Origin
           related_to: Related to
+          scope: Scope
           search: Search
           state: Status
+          type: Type
           voted: Supported
         filters_small_view:
           close_modal: Close modal
@@ -681,9 +765,13 @@ en:
           title: Create Your Proposal
         orders:
           label: 'Order proposals by:'
+          most_commented: Most commented
+          most_endorsed: Most endorsed
+          most_followed: Most followed
           most_voted: Most supported
           random: Random
           recent: Recent
+          with_more_authors: With more authors
         participatory_texts:
           index:
             document_index: Document index
@@ -700,10 +788,12 @@ en:
           creation_date: 'Creation: %{date}'
           view_proposal: View proposal
         show:
+          answer: Answer
           back_to: Back to
           changes_at_title: Amendment to "%{title}"
           edit_proposal: Edit proposal
           endorsements_list: List of Endorsements
+          estimated_cost: Estimated cost
           hidden_endorsers_count:
             one: and %{count} more person
             other: and %{count} more people
@@ -716,13 +806,14 @@ en:
           proposal_accepted_reason: 'This proposal has been accepted because:'
           proposal_in_evaluation_reason: This proposal is being evaluated
           proposal_rejected_reason: 'This proposal has been rejected because:'
+          read_less: Read less
+          read_more: Read more
           report: Report
           withdraw_btn_hint: You can withdraw your proposal if you change your mind, as long as you have not received any support. The proposal is not deleted, it will appear in the list of withdrawn proposals.
           withdraw_confirmation: Are you sure you want to withdraw this proposal?
           withdraw_proposal: Withdraw proposal
         tags:
-          changed_from: "(changed from <u>%{previous_category}</u> by an administrator)"
-          filed_as: Filed as
+          changed_from: "(changed from <u>%{previous_name}</u> by an administrator)"
         vote_button:
           already_voted: Already supported
           already_voted_hover: Withdraw support
