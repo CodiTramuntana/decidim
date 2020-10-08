@@ -130,6 +130,7 @@ module Decidim
         if form_params[:default_step_settings]
           form_params[:default_step_settings] = new_settings_schema(:step, form_params[:default_step_settings])
         else
+          form_params[:step_settings] ||= {}
           form_params[:step_settings].each do |key, value|
             form_params[:step_settings][key] = new_settings_schema(:step, value)
           end
