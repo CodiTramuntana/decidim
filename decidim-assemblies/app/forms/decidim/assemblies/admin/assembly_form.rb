@@ -44,7 +44,7 @@ module Decidim
         attribute :parent_id, Integer
         attribute :participatory_processes_ids, Array[Integer]
         attribute :scope_id, Integer
-        attribute :weight, Integer
+        attribute :weight, Integer, default: 0
 
         attribute :is_transparent, Boolean
         attribute :promoted, Boolean
@@ -82,6 +82,8 @@ module Decidim
         validates :hero_image,
                   file_size: { less_than_or_equal_to: ->(_record) { Decidim.maximum_attachment_size } },
                   file_content_type: { allow: ["image/jpeg", "image/png"] }
+
+        validates :weight, presence: true
 
         def ensure_parent_cannot_be_child
           return if id.blank?

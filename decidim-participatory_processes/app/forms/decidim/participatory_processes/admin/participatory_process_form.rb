@@ -31,7 +31,7 @@ module Decidim
         attribute :scope_id, Integer
         attribute :related_process_ids, Array[Integer]
         attribute :scope_type_max_depth_id, Integer
-        attribute :weight, Integer
+        attribute :weight, Integer, default: 0
 
         attribute :private_space, Boolean
         attribute :promoted, Boolean
@@ -61,6 +61,8 @@ module Decidim
         validates :hero_image,
                   file_size: { less_than_or_equal_to: ->(_record) { Decidim.maximum_attachment_size } },
                   file_content_type: { allow: ["image/jpeg", "image/png"] }
+
+        validates :weight, presence: true
 
         def map_model(model)
           self.scope_id = model.decidim_scope_id
