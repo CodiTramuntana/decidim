@@ -146,7 +146,7 @@ module Decidim
               "instagram_handler" => instagram_handler,
               "youtube_handler" => youtube_handler,
               "github_handler" => github_handler,
-              "weight" => weight, 
+              "weight" => weight,
               "parent_id" => parent_id
             }
           }

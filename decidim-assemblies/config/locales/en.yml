@@ -51,8 +51,8 @@ en:
         target: Who participates
         title: Title
         twitter: Twitter
-        youtube: YouTube
         weight: Weight
+        youtube: YouTube
       assembly_member:
         birthday: Birthday
         birthplace: Birthplace

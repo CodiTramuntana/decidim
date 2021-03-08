@@ -19,6 +19,7 @@ module Decidim::ParticipatoryProcesses
         invalid?: invalid,
         title: { en: "title" },
         subtitle: { en: "subtitle" },
+        weight: 1,
         slug: "slug",
         hashtag: "hashtag",
         meta_scope: "meta scope",
