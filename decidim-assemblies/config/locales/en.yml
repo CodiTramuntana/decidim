@@ -52,6 +52,7 @@ en:
         title: Title
         twitter: Twitter
         youtube: YouTube
+        weight: Weight
       assembly_member:
         birthday: Birthday
         birthplace: Birthplace
