@@ -206,7 +206,8 @@ describe "Assemblies", type: :system do
       end
 
       context "when the assembly has children assemblies" do
-        let!(:child_assembly) { create :assembly, organization: organization, parent: assembly }
+        let!(:child_assembly) { create :assembly, organization: organization, parent: assembly, weight: 0 }
+        let!(:second_child_assembly) { create :assembly, organization: organization, parent: assembly, weight: 1 }
         let!(:unpublished_child_assembly) { create :assembly, :unpublished, organization: organization, parent: assembly }
 
         before do
@@ -218,6 +219,11 @@ describe "Assemblies", type: :system do
             expect(page).to have_link translated(child_assembly.title)
             expect(page).not_to have_link translated(unpublished_child_assembly.title)
           end
+        end
+
+        it "shows the children assemblies by weigth" do
+          expect(page).to have_selector("#assemblies-grid .row .column:first-child", text: child_assembly.title[:en])
+          expect(page).to have_selector("#assemblies-grid .row .column:last-child", text: second_child_assembly.title[:en])
         end
       end
 
