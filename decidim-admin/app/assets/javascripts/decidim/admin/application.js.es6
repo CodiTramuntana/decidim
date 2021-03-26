@@ -29,6 +29,7 @@
 // = require decidim/input_character_counter
 // = require decidim/geocoding/attach_input
 // = require_self
+// = require decidim/configuration
 
 window.Decidim = window.Decidim || {};
 window.DecidimAdmin = window.DecidimAdmin || {};
