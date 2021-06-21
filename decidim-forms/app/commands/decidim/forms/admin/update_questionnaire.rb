@@ -19,9 +19,11 @@ module Decidim
         #
         # Broadcasts :ok if successful, :invalid otherwise.
         def call
+            byebug
           return broadcast(:invalid) if @form.invalid?
 
           Decidim::Forms::Questionnaire.transaction do
+            byebug
             if @questionnaire.questions_editable?
               update_questionnaire_questions
               delete_answers unless @questionnaire.published?

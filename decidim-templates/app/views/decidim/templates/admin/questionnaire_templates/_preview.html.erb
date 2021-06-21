@@ -14,7 +14,8 @@
     <div class="card">
       <div class="card__content">
         <div class="answer-questionnaire">
-          <%= decidim_form_for(@preview_form, url: "", method: :post, html: { class: "form answer-questionnaire" }, data: { "safe-path" => "" }) do |form| %>
+          <% byebug %>
+          <%= decidim_form_for(@preview_form, url: answer_questionnaire_preview_path(questionnaire.template), method: :post, html: { class: "form answer-questionnaire" }, data: { "safe-path" => "" }) do |form| %>
             <%= invisible_captcha %>
             <% answer_idx = 0 %>
             <% cleaned_answer_idx = 0 %>
@@ -58,7 +59,7 @@
                   "decidim/forms/step_navigation",
                   step_index,
                   total_steps: @preview_form.total_steps,
-                  button_disabled: true,
+                  button_disabled: false,
                   form: form
                 ) %>
               </div>

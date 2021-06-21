@@ -20,6 +20,7 @@ module Decidim
       #
       # Broadcasts :ok if successful, :invalid otherwise.
       def call
+        byebug
         return broadcast(:invalid) if @form.invalid?
 
         answer_questionnaire
