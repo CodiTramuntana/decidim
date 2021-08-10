@@ -21,7 +21,7 @@ module Decidim
           order_by: order,
           after: params.fetch(:after, 0).to_i
         )
-        @comments_count = commentable.comments.count
+        @comments_count = commentable.comments_count
 
         respond_to do |format|
           format.js do
@@ -44,7 +44,7 @@ module Decidim
           params.merge(commentable: commentable)
         ).with_context(
           current_organization: current_organization,
-          current_component: commentable.try(:component) || commentable.participatory_space
+          current_component: current_component
         )
         Decidim::Comments::CreateComment.call(form, current_user) do
           on(:ok) do |comment|
@@ -61,6 +61,12 @@ module Decidim
             end
           end
         end
+      end
+
+      def current_component
+        return commentable.component if commentable.respond_to?(:component)
+        return commentable.participatory_space if commentable.respond_to?(:participatory_space)
+        return commentable if Decidim.participatory_space_manifests.find { |manifest| manifest.model_class_name == commentable.class.name }
       end
 
       private
@@ -80,9 +86,9 @@ module Decidim
         @comments_count = begin
           case commentable
           when Decidim::Comments::Comment
-            commentable.root_commentable.comments.count
+            commentable.root_commentable.comments_count
           else
-            commentable.comments.count
+            commentable.comments_count
           end
         end
       end
