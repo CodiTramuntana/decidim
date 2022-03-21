@@ -6,7 +6,7 @@ module Decidim
       layout "decidim/admin/users"
 
       def index
-        @conflicts = Decidim::Verifications::Conflict.all
+        @conflicts = Decidim::Verifications::Conflict.where(current_user: current_organization_users_ids)
       end
 
       def edit
@@ -40,6 +40,12 @@ module Decidim
             redirect_to decidim.root_path
           end
         end
+      end
+
+      private
+
+      def current_organization_users_ids
+        @current_organization_users_ids ||= Decidim::User.where(decidim_organization_id: current_organization.id).pluck(:id)
       end
     end
   end
