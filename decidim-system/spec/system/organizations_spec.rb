@@ -28,7 +28,6 @@ describe "Organizations", type: :system do
         choose "organization_default_locale_en"
         choose "Allow participants to register and login"
         check "Example authorization (Direct)"
-        check "Automate steps in processes"
         click_button "Create organization & invite admin"
 
         expect(page).to have_css("div.flash.success")
@@ -79,7 +78,6 @@ describe "Organizations", type: :system do
         fill_in "Secondary hosts", with: "foobar.citizen.corp\n\rbar.citizen.corp"
         choose "Don't allow participants to register, but allow existing participants to login"
         check "Example authorization (Direct)"
-        check "Automate steps in processes"
 
         check "organization_omniauth_settings_facebook_enabled"
         fill_in "organization_omniauth_settings_facebook_app_id", with: "facebook-app-id"
