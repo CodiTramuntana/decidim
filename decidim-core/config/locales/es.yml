@@ -663,6 +663,17 @@ es:
           email_outro: Has recibido esta notificación porque estás siguiendo a %{nickname}. Puedes dejar de recibir notificaciones siguiendo el enlace anterior.
           email_subject: "%{nickname} ha actualizado su perfil"
           notification_title: La página <a href="%{resource_path}"> de perfil </a> de %{name} (%{nickname}), a quien estás siguiendo, se ha actualizado.
+        user_officialized:
+          email_intro: La participante %{name} (%{nickname}) ha sido oficializada.
+          email_outro: has recibido esta notificación porque eres administradora de la organización.
+          email_subject: "%{name} ha sido oficializada"
+          notification_title: La participante %{name} (%{nickname}) ha sido oficializada.
+      verifications:
+        verify_with_managed_user:
+          email_intro: La participante <a href="%{resource_path}">%{resource_title}</a> se ha intentado verificar utilizando los datos de la participante gestionada <a href="%{managed_user_path}">%{managed_user_name}</a>.
+          email_outro: Comprueba la lista de <a href="/admin/conflicts">conflictos de verificación</a> y contacta la participante para solucionar el problema.
+          email_subject: Intento de verificación fallado por conflicto con usuario impersonado
+          notification_title: La participante <a href="%{resource_path}">%{resource_title}</a> se ha intentado verificar utilizando los datos de la participante gestionada <a href="%{managed_user_path}">%{managed_user_name}</a>.
     export_mailer:
       data_portability_export:
         click_button: 'Haz clic en el siguiente enlace para descargar tus datos.<br/>El archivo estará disponible hasta %{date}.<br/>Necesitarás <a href="https://www.7-zip.org/">7-Zip</a> (para Windows), <a href="https://www.keka.io/en/">Keka</a> (para MacOS) o <a href="https://peazip.github.io">PeaZip</a> (para Linux) para abrirlo. Contraseña: %{password}'
