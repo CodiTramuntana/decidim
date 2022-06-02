@@ -281,7 +281,6 @@ describe "Meeting registrations", type: :system do
           input_element = find("input[type='file']", visible: :all)
           input_element.attach_file(Decidim::Dev.asset("verify_user_groups.csv"))
 
-          expect(page).to have_field("public_participation", checked: false)
           find(".tos-agreement").set(true)
           click_button "Submit"
 
