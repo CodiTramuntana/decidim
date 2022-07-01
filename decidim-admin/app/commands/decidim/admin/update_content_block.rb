@@ -28,8 +28,9 @@ module Decidim
 
         transaction do
           update_content_block_settings
-          content_block.save!
-
+          if content_block.valid?
+            content_block.save!
+          end
           # Saving the images will cause the image file validations to run
           # according to their uploader settings and the organization settings.
           # The content block validation will fail in case there are processing
