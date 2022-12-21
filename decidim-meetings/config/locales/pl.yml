@@ -397,7 +397,7 @@ pl:
         count:
           meetings_count:
             one: "%{count} spotkanie"
-            few: "%{count} spotkań"
+            few: "%{count} spotkania"
             many: "%{count} spotkań"
             other: "%{count} spotkań"
         create:
@@ -536,6 +536,7 @@ pl:
           invalid: Wystąpił błąd podczas próby opuszczenia tego spotkania.
           success: Opuściłeś spotkanie.
       type_of_meeting:
+        hybrid: Hybrydowe
         in_person: Osobiście
         online: Online
       types:

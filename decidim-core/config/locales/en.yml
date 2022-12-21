@@ -30,6 +30,7 @@ en:
         password_confirmation: Confirm your password
         personal_url: Personal URL
         remove_avatar: Remove avatar
+        tos_agreement: Terms and conditions of use agreement
     models:
       decidim/attachment_created_event: Attachment
       decidim/component_published_event: Active component
@@ -828,6 +829,8 @@ en:
         allowed_file_extensions: 'Allowed file extensions: %{extensions}'
         max_file_dimension: 'Maximum file dimensions: %{resolution} pixels'
         max_file_size: 'Maximum file size: %{megabytes}MB'
+      files:
+        extension_allowlist: 'Accepted formats: %{extensions}'
       upload:
         labels:
           add_attachment: Add attachment
@@ -866,18 +869,6 @@ en:
           how: How can you earn it
           page_description: Badges are recognitions to participant actions and progress in the platform. As you start discovering, participating and interacting in the platform, you will earn different badges. Here is the list of badges and some ways you can earn them.
           title: Badges
-        invitations:
-          conditions:
-          - Use the “invite friends” link on your user page to invite your friends
-          - Customize, if you want, the message you are sending
-          - You’ll level up by sending invitations and getting them registered.
-          description: This badge is granted when you’ve invited some people and they have spend a little time to register in %{organization_name} and become participants. Thank you for making %{organization_name} known to others and helping to expand the community!
-          description_another: This participant has invited %{score} people.
-          description_own: You have invited %{score} people.
-          name: Invitations
-          next_level_in: Invite %{score} more people to reach the next level!
-          unearned_another: This participant has not yet invited anyone.
-          unearned_own: You haven't invited anyone yet.
       description: Badges are recognitions to participant actions and progress in the platform. As you start discovering, participating and interacting in the platform, you will earn different badges.
       level: Level %{level}
       reached_top: You've reached the top level for this badge.
@@ -1657,15 +1648,6 @@ en:
       updated_not_active: Your password has been successfully changed.
     registrations:
       destroyed: Your account has been successfully cancelled. We hope to see you again soon.
-      edit:
-        are_you_sure: Are you sure?
-        cancel_my_account: Cancel my account
-        currently_waiting_confirmation_for_email: 'Currently waiting confirmation for: %{email}'
-        leave_blank_if_you_don_t_want_to_change_it: leave blank if you don't want to change it
-        title: Edit %{resource}
-        unhappy: Unhappy?
-        update: Update
-        we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
       new:
         sign_up: Sign up
       signed_up: Welcome! You have signed up successfully.
@@ -1703,6 +1685,7 @@ en:
       public: Your public information.
   errors:
     messages:
+      allowed_file_content_types: 'only files with the following extensions are allowed: %{types}'
       already_confirmed: was already confirmed, please try signing in
       confirmation_period_expired: needs to be confirmed within %{period}, please request a new one
       content_type_allowlist_error: the file type is not valid
@@ -1720,7 +1703,7 @@ en:
         other: 'There were multiple errors when processing your request:'
       too_many_marks: is using too many consecutive punctuation marks (e.g. ! and ?)
       too_much_caps: is using too many capital letters (over 25% of the text)
-      too_short: is too short (under 15 characters)
+      too_short: is too short (under %{count} characters)
   forms:
     correct_errors: There are errors on the form, please correct them to continue.
     length_validator:
@@ -1734,56 +1717,60 @@ en:
     timestamp_error_message: Sorry, that was too quick! Please resubmit.
   layouts:
     decidim:
-      cookie_consent:
-        cookie_details:
+      data_consent:
+        details:
           columns:
             description: Description
             name: Name
             service: Service
             type: Type
-          cookies:
+          items:
             _session_id:
               description: Allows websites to remember user within a website when they move between web pages.
               service: This website
             decidim-consent:
               description: Stores information about the cookies allowed by the user on this website.
               service: This website
+            pwaInstallPromptSeen:
+              description: Stores status if the progressive web application (PWA) install notification has been already seen by the user.
+              service: This website
           types:
             cookie: Cookie
+            local_storage: Local storage
         dialog:
           accept_all: Accept all
           accept_only_essential: Accept only essential
-          cookie_settings: Settings
           description: We use cookies on our website to improve the performance and content of the site. The cookies enable us to provide a more individual user experience and social media channels.
+          settings: Settings
           title: Information about the cookies used on the website
         modal:
           accept_all: Accept all
           accept_only_essential: Accept only essential
           analytics:
-            description: Analytics cookies are cookies that track how users navigate and interact with a website. The information collected is used to help the website owner improve the website.
+            description: These cookies are used to measure and analyse the website audience to help improve the website.
             title: Analytics and statistics
-          description: We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want.
+          description: We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can configure and accept the use of the cookies, and modify your consent options, at any time.
           essential:
-            description: These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly.
+            description: These cookies enable key functionality of the website and help to keep its users secured. They are automatically saved in the browser and cannot be disabled.
             title: Essential
           marketing:
-            description: These cookies collect information about how you use the website, which pages you visited and which links you clicked on.
+            description: These cookies collect information about how you use the website and they can be utilized to provide you more personalized marketing across the different websites you use.
             title: Marketing
           preferences:
-            description: These cookies allow the website to remember the choices you have made in the past
+            description: These cookies allow the website to remember the choices you have made in the past on this website to provide a more personalized experience for the website users.
             title: Preferences
           save_settings: Save settings
           title: Cookie settings
           toggle: Toggle %{consent_category}
         warning:
-          all_cookies: all cookies
-          change_cookie_settings: Change cookie settings
-          need_cookies: You need to enable %{cookies} in order to see this content.
+          all_categories: all cookies
+          change_settings: Change cookie settings
+          consent_required: You need to enable %{categories} in order to see this content.
       edit_link:
         edit: Edit
       footer:
         cc_by_license: Creative Commons License
-        cookie_settings: Cookie settings
+        data_consent_settings: Cookie settings
         decidim_logo: Decidim Logo
         download_open_data: Download Open Data files
         made_with_open_source: Website made with <a target="_blank" href="https://github.com/decidim/decidim">free software</a>.

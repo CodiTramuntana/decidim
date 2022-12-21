@@ -124,6 +124,10 @@
         file: Fil
     errors:
       models:
+        newsletter:
+          attributes:
+            base:
+              at_least_one_space: Velg minst et rom
         organization:
           attributes:
             official_img_footer:
@@ -173,13 +177,14 @@
         permissions: Tillatelser
         reject: Avvis
         share: Del
+        user:
+          new: Ny admin
         verify: Verifiser
       admin_terms_of_use:
         accept:
           error: Det oppstod et problem med å godkjenne administrator vilkårene.
           success: Flott! Du har godtatt administratorenes vilkår for bruk.
         actions:
-          accept: Jeg godtar følgende vilkår
           are_you_sure: Er du sikker på at du vil avslå administratorvilkårene for bruk?
           refuse: Avslå administratorvilkårene
           title: Godta vilkårene for bruk
@@ -339,6 +344,7 @@
       dashboard:
         show:
           view_more_logs: Vis flere logger
+          welcome: Velkommen til Admin-panelet.
       domain_whitelist:
         form:
           domain_too_short: Domene er for kort
@@ -831,6 +837,12 @@
           invalid: Det oppstod et problem med å lese CSV-filen.
           success: CSV fil lastet opp. Vi sender en invitasjons email til deltakerne. Dette kan ta en stund.
         new:
+          destroy:
+            button: Slett alle private deltakere
+            confirm: Er du sikker på at du vil slette alle private deltakere? Denne handlingen kan ikke angres, du vil ikke kunne gjenopprette dem.
+            empty: Du har ingen private deltakere.
+            explanation: Du har %{count} private deltakere.
+            title: Slett private deltakere
           explanation: 'Last opp din CSV-fil. Det må være to kolonner uten overskrifter, e-post i den første kolonnen og navn i den siste kolonnen (e-post, navn) til brukerne du vil legge til i det deltakende rommet. Unngå å bruke ugyldige tegn som `<>?%&^*#@()[]=+:;"{}\″` med brukernavn.'
           title: Last opp din CSV fil
           upload: Last opp
@@ -960,6 +972,7 @@
         static_pages: Sider
         statistics: Aktivitet
         user_groups: Grupper
+        users: Administratorer
       user_group:
         csv_verify:
           invalid: Det oppstod et problem med å lese CSV-filen.
@@ -995,6 +1008,7 @@
           role: Rolle
         new:
           create: Inviter
+          title: Inviter ny administrator
       users_statistics:
         users_count:
           admins: Adminer
@@ -1045,6 +1059,7 @@
             hidden_at: Skjult på
             participatory_space: Deltakerrom
             report_count: Antall
+            reportable_id: ID
             reportable_type: Type
             reported_content_url: Rapportert innholds URL
             reports: Rapporter
