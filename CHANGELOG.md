@@ -1,4 +1,5 @@
 # Change Log
+
 ## [0.27.3](https://github.com/decidim/decidim/tree/0.27.3)
 
 ### Added
@@ -58,6 +59,9 @@ Nothing.
 - **decidim-initiatives**: Backport 'Fix initiative creation without fallback hash attribute' to v0.27 [\#10817](https://github.com/decidim/decidim/pull/10817)
 - **decidim-core**: Backport 'Fix: Inconsistent datetime distance_in_words translations' to 0.27 [\#10793](https://github.com/decidim/decidim/pull/10793)
 - **decidim-core**: Backport 'Refactor attachment title' to v0.27 [\#10664](https://github.com/decidim/decidim/pull/10664)
+- **decidim-budgets**: Backport 'Fix budget summary mail when a scope is defined and enabled' to v0.27 [\#10838](https://github.com/decidim/decidim/pull/10838)
+- **decidim-core**, **decidim-proposals**: Backport 'Fix File attachments in proposals' to v0.27 [\#10827](https://github.com/decidim/decidim/pull/10827)
+- **decidim-initiatives**: Backport 'Change the participant initiatives editor toolbars type' to v0.27 [\#10844](https://github.com/decidim/decidim/pull/10844)
 
 ### Removed
 
@@ -72,6 +76,7 @@ Nothing.
 - Backport 'Switch to the official Codecov action for CI' to v0.27 [\#10462](https://github.com/decidim/decidim/pull/10462)
 - **decidim-proposals**: Backport 'Fix flaky collaborative drafts specs' to v0.27 [\#10667](https://github.com/decidim/decidim/pull/10667)
 - Backport 'Fix menu spec after #9928' to v0.27 [\#10769](https://github.com/decidim/decidim/pull/10769)
+- Backport 'Remove parallel spec from the core system specs' to v0.27 [\#10843](https://github.com/decidim/decidim/pull/10843)
 
 ## [0.27.2](https://github.com/decidim/decidim/tree/0.27.2)
 
