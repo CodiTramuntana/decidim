@@ -92,7 +92,7 @@ jobs:
       - run: RAILS_ENV=test bundle exec rails assets:precompile
         name: Precompile assets
         working-directory: ./spec/decidim_dummy_app/
-      - uses: nanasess/setup-chromedriver@v1.0.1
+      - uses: nanasess/setup-chromedriver@v2.2.0
       - run: bundle exec rspec spec/system/admin
         name: RSpec
         working-directory: ${{ env.DECIDIM_MODULE }}
