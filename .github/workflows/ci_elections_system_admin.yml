@@ -22,7 +22,7 @@ on:
 env:
   CI: "true"
   SIMPLECOV: "true"
-  RUBY_VERSION: 2.7.1
+  RUBY_VERSION: 2.7.5
   NODE_VERSION: 16.9.1
   DECIDIM_MODULE: decidim-elections
 
@@ -92,7 +92,7 @@ jobs:
       - run: RAILS_ENV=test bundle exec rails assets:precompile
         name: Precompile assets
         working-directory: ./spec/decidim_dummy_app/
-      - uses: nanasess/setup-chromedriver@v1.0.1
+      - uses: nanasess/setup-chromedriver@v2.2.0
       - run: bundle exec rspec spec/system/admin
         name: RSpec
         working-directory: ${{ env.DECIDIM_MODULE }}
