@@ -6,16 +6,19 @@ module Decidim
       include TranslatableAttributes
       helper Decidim::SanitizeHelper
 
-      def confirmation(user, questionnaire, component, answers)
-        @user = user
-        @questionnaire_title = translated_attribute(questionnaire.title)
-        @participatory_space_title = translated_attribute(component.participatory_space.title)
-
+      def confirmation(user, questionnaire, answers)
         return if answers.blank? || user.nil?
 
-        add_file_with_answers(answers)
+        with_user(user) do
+          @user = user
+          @questionnaire_title = translated_attribute(questionnaire.title)
+          @participatory_space_title = translated_attribute(questionnaire.questionnaire_for.component.participatory_space.title)
+          @organization = user.organization
 
-        mail(to: "#{@user.name} <#{@user.email}>", subject: t(".subject", questionnaire_title: @questionnaire_title))
+          add_file_with_answers(answers)
+
+          mail(to: "#{@user.name} <#{@user.email}>", subject: t(".subject", questionnaire_title: @questionnaire_title))
+        end
       end
 
       private
