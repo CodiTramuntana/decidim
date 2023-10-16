@@ -100,17 +100,6 @@ module Decidim
       def user_already_answered?
         questionnaire.answered_by?(current_user || form.context.session_token)
       end
-
-      # This method send confirmation email with answers to user when a questionnaire is answered.
-      def send_confirmation_email
-        component = @questionnaire.questionnaire_for.component
-        answers = Decidim::Forms::QuestionnaireUserAnswers.for(@questionnaire)
-        user_answers = answers.select { |a| a.first.session_token == session_token }
-
-        if component.manifest_name == "surveys" && answers.present?
-          Decidim::Surveys::SurveyConfirmationMailer.confirmation(current_user, questionnaire, user_answers).deliver_later
-        end
-      end
     end
   end
 end

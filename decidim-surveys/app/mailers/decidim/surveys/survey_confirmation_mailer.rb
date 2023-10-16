@@ -12,7 +12,7 @@ module Decidim
         @questionnaire_title = translated_attribute(questionnaire.title)
         @participatory_space_title = translated_attribute(component.participatory_space.title)
 
-        return if answers.blank?
+        return if answers.blank? || user.nil?
 
         add_file_with_answers(answers)
 
