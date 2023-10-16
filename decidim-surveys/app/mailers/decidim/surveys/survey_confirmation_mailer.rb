@@ -8,7 +8,6 @@ module Decidim
 
       def confirmation(user, questionnaire, component, answers)
         @user = user
-        @organization = user.organization
         @questionnaire_title = translated_attribute(questionnaire.title)
         @participatory_space_title = translated_attribute(component.participatory_space.title)
 
