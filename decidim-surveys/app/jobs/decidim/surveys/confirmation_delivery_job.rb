@@ -5,8 +5,8 @@ module Decidim
     class ConfirmationDeliveryJob < ApplicationJob
       queue_as :default
 
-      def perform(user, questionnaire, component, answers)
-        SurveyConfirmationMailer.confirmation(user, questionnaire, component, answers).deliver_now
+      def perform(user, questionnaire, answers)
+        SurveyConfirmationMailer.confirmation(user, questionnaire, answers).deliver_now
       end
     end
   end

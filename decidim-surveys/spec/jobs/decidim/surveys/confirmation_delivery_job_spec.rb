@@ -27,12 +27,12 @@ module Decidim
         it "notifies the confirmation of answer" do
           allow(Decidim::Surveys::SurveyConfirmationMailer)
             .to receive(:confirmation)
-            .with(user, questionnaire, component, collection)
+            .with(user, questionnaire, collection)
             .and_return(mailer)
           expect(mailer)
             .to receive(:deliver_now)
 
-          subject.perform_now(user, questionnaire, component, collection)
+          subject.perform_now(user, questionnaire, collection)
         end
       end
     end
