@@ -456,7 +456,6 @@
           newsletter: Motta et sporadisk nyhetsbrev med relevant informasjon
           newsletter_title: Kontakt tillatelse
           nickname_help: Ditt alias i %{organization}, kan bare inneholde bokstaver, tall, '-' og '_'.
-          sign_in: Logg inn
           sign_up: Registrer deg
           sign_up_as:
             legend: Registrer deg som
@@ -1262,7 +1261,7 @@
       follow_button:
         sign_in_before_follow: Logg på før du utfører denne handlingen
       login_modal:
-        close_modal: Lukk dialogboks
+        close_modal: Lukk modal
         please_sign_in: Vennligst logg inn
         sign_up: Registrer deg
       participatory_space_filters:
@@ -1311,13 +1310,13 @@
         success: Samtalen startet vellykket!
       index:
         add_max_users: 'Legg til brukere i samtale: maks 9 brukere'
-        add_users_placeholder: Søk..
+        add_users_placeholder: Søk...
         close: Lukk
         conversations_info: Samtaler er private. Ingen andre kan se dem. En samtale kan startes med alle deltakere eller grupper som er registrert på plattformen.
         from: Fra
         last_message: Siste melding
-        modal_title: Ny samtale
-        new_conversation: Ny samtale
+        modal_title: Ny Samtale
+        new_conversation: Ny Samtale
         next: Neste
         no_conversations_warning: Det er ingen samtaler ennå.
         no_results: Ingen resultater
@@ -1373,7 +1372,7 @@
     versions_list:
       show:
         back_to_resource: Gå tilbake
-        changes_at_title: Endringer på "%{title}"
+        changes_at_title: Endringer på"%{title}
         number_of_versions: Versjoner
         title: Versjoner
     versions_list_item:
@@ -1498,8 +1497,6 @@
       updated: Kontoen din er oppdatert.
     sessions:
       already_signed_out: Logget ut.
-      new:
-        sign_in: Logg inn
       signed_in: Logget inn.
       signed_out: Logget ut.
     shared:
@@ -1508,7 +1505,6 @@
         didn_t_receive_confirmation_instructions: Mottok ikke bekreftelse instruksjonen?
         didn_t_receive_unlock_instructions: Mottok ikke instruksjoner om opplåsing?
         forgot_your_password: Glemt ditt passord?
-        sign_in: Logg inn
         sign_in_with_provider: Logg deg på med %{provider}
         sign_up: Registrer deg
       minimum_password_length:
@@ -1555,6 +1551,10 @@
     timestamp_error_message: Beklager, det var for raskt! Vennligst, send inn på nytt.
   layouts:
     decidim:
+      data_consent:
+        details:
+          columns:
+            type: Type
       edit_link:
         edit: Rediger
       footer:

@@ -304,7 +304,7 @@ fr-CA:
             child_scope_threshold_enabled_help: 'Cette option de configuration ne prend pas en charge les votes hors-ligne, elle permet d''activer des sous-secteurs et fonctionne avec un gestionnaire d''autorisation qui associe un secteur à l''utilisateur. Assurez-vous de sélectionner cette autorisation dans les paramètres d''autorisation ci-dessous. Pour que cela fonctionne, les secteurs doivent être configurés de manière hiérarchique : 1 Parent - N Enfants. Pour plus d''informations sur le fonctionnement de cette configuration, consultez la <a href="https://docs.decidim.org/en/admin/spaces/initiatives/" target="_blank">documentation sur l''administration des initiatives</a>.'
             only_global_scope_enabled_help: Cochez cette case si vous avez activé "Autoriser les signatures par sous-secteur" et configurer la portée globale comme votre portée parente. En activant cette option, la sélection du type de pétition sera ignorée dans l'assistant de création d'initiative. Pour plus d'informations sur le fonctionnement de cette configuration, voir ce <a href="https://docs.decidim.org/en/admin/spaces/initiatives/" target="_blank">lien</a>.
             options: Paramètres
-            title: informations générales
+            title: Informations générales
           initiative_type_scopes:
             title: Secteurs pour ce type d'initiative
           new:
@@ -440,7 +440,7 @@ fr-CA:
           email_subject: "%{applicant_nickname} veut rejoindre le comité de promotion de votre pétition"
           notification_title: <a href="%{applicant_profile_url}">%{applicant_nickname}</a> a postulé pour faire partie du comité de promotion de votre pétition <a href="%{resource_url}">%{resource_title}</a>. Pour accepter ou rejeter la demande, cliquez <a href="%{resource_url}/edit">ici</a>.
       form:
-        add_attachments: Pièces-jointes
+        add_attachments: Documents
         attachment_legend: "(Facultatif) Ajouter une pièce jointe"
         delete_attachment: Supprimer
       index:
@@ -591,8 +591,8 @@ fr-CA:
       pages:
         home:
           highlighted_initiatives:
-            active_initiatives: Initiatives actives
-            see_all_initiatives: Voir toutes les initiatives
+            active_initiatives: Pétitions actives
+            see_all_initiatives: Voir toutes les pétitions
       show:
         badge_name:
           accepted: Assez de signatures
@@ -633,7 +633,7 @@ fr-CA:
         promotal_committee: Comité de promotion
         select_initiative_type: Sélectionnez le type de d'initiative
         show_similar_initiatives: Comparez avec les autres initiatives
-        step: Étape %{current} de %{total}
+        step: Étape %{current} sur %{total}
         title: Créer une nouvelle initiative
       initiative_header:
         initiative_menu_item: Pétition

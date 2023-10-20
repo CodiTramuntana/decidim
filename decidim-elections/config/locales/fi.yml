@@ -208,7 +208,7 @@ fi:
           publish:
             success: Vaalin julkaisu onnistui.
           unpublish:
-            success: Vaalin julkaisu epäonnistui.
+            success: Vaalin julkaisun lopettaminen epäonnistui.
           update:
             invalid: Vaalin päivitys epäonnistui
             success: Vaalin päivitys onnistui
@@ -392,7 +392,7 @@ fi:
           start_key_ceremony: "%{user_name} aloitti avainseremonian vaalille %{resource_name} osallistumistilan %{space_name} sähköisellä ääniuurnalla"
           start_tally: "%{user_name} aloitti ääntenlaskennan vaalille %{resource_name} osallistumistilan %{space_name} sähköisellä ääniuurnalla"
           start_vote: "%{user_name} aloitti äänestysajan vaalille %{resource_name} osallistumistilan %{space_name} sähköisellä ääniuurnalla"
-          unpublish: "%{user_name} lopetti vaalin %{resource_name} julkaisemisen osallistumistilassa %{space_name}"
+          unpublish: "%{user_name} lopetti vaalin %{resource_name} julkaisun osallistumistilassa %{space_name}"
           update: "%{user_name} päivitti vaalia %{resource_name} osallistumistilassa %{space_name}"
         trustee:
           create: "%{user_name} määritti käyttäjän %{trustee_user} luottamushenkilöksi"
@@ -596,7 +596,7 @@ fi:
               task: Tehtävä
             process_warning: Kun prosessi on käynnistetty, sinun ei tule poistua tältä sivulta ennen kuin prosessi päättyy. Tämä kestää useita minuutteja, koska kaikkien luottamushenkilöiden tulee olla yhteydessä samanaikaisesti, jotta prosessi voidaan suorittaa.
             start: Aloitettu
-            start_icon: Kuvake, joka ilmaisee aloituspainikkeen avainten luonnin aloittamiselle
+            start_icon: Kuvake, joka ilmaisee aloituspainikkeen avainten luonnille
             status:
               completed: Valmis
               pending: Odottaa
@@ -659,7 +659,7 @@ fi:
           header: Kirjataan ääntä...
           text: Ääntäsi lähetetään sähköiseen ääniuurnaan.
         confirm:
-          answer: Vastaa
+          answer: Vastaus
           answer_number: 'vastaus #%{number}'
           confirm: Vahvista
           edit: muokkaa
@@ -841,7 +841,6 @@ fi:
             timeline:
               name: Äänestyksen aikajana
         index:
-          not_published: Julkaisematon
           published: Julkaistu
         landing_page:
           content_blocks:

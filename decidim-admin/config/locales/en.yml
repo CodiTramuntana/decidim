@@ -93,7 +93,7 @@ en:
         success_color: Success
         time_zone: Time Zone
         tos_version: Terms of service version
-        twitter_handler: Twitter handler
+        twitter_handler: X handler
         user_groups_enabled: Enable groups
         users_registration_mode: Users registration mode
         warning_color: Warning
@@ -799,7 +799,7 @@ en:
           instagram: Instagram
           rich_text_editor_in_public_views_help: In some text areas, participants will be able to insert some HTML tags by using the rich text editor.
           social_handlers: Social
-          twitter: Twitter
+          twitter: X
           url: URL
           youtube: YouTube
         update:
@@ -895,7 +895,7 @@ en:
           update: Update
         new:
           create: Create scope type
-          title: New scope
+          title: New scope type
         update:
           error: There was a problem updating this scope type.
           success: Scope type updated successfully
@@ -982,9 +982,12 @@ en:
         areas: Areas
         authorization_workflows: Verification methods
         dashboard: Dashboard
+        edit_external_domains: External domain whitelist
+        edit_organization_appearance: Edit homepage appearance
         impersonatable_users: Manageable participants
         impersonations: Participants management
         metrics: Metrics
+        pages: Pages
         panel: Admin
         participants: Participants
         scope_types: Scope types
