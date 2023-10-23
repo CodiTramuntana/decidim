@@ -66,14 +66,6 @@ module Decidim
           ip_hash: ip_hash
         )
       end
-      let(:ip_hash) { tokenize(remote_ip) }
-      let(:remote_ip) { "1.1.1.1" }
-      let(:session_token) { tokenize(current_user&.id || session_id) }
-      let(:session_id) { "session-string" }
-      let(:current_user) { create(:user, organization: current_organization) }
-      let(:current_organization) { create(:organization) }
-
-      it_behaves_like "fires an ActiveSupport::Notification event", "decidim.forms.answer_questionnaire:after"
 
       def tokenize(id)
         "fake-hash-for-#{id}"
@@ -265,28 +257,18 @@ module Decidim
 
           let!(:component) do
             create(:component,
-                   manifest:,
+                   manifest: manifest,
                    participatory_space: participatory_process,
                    published_at: nil)
           end
-          let!(:survey) { create(:survey, component:, questionnaire:) }
+          let!(:survey) { create(:survey, component: component, questionnaire: questionnaire) }
 
           let(:answers) do
             survey.questionnaire.questions.map do |question|
-              create(:answer, questionnaire: survey.questionnaire, question:, user: current_user)
+              create(:answer, questionnaire: survey.questionnaire, question: question, user: current_user)
             end
           end
 
-          let(:event_arguments) do
-            {
-              resource: questionnaire,
-              extra: {
-                session_token:,
-                questionnaire:,
-                event_author: current_user
-              }
-            }
-          end
           let(:mailer) { double :mailer }
 
           it_behaves_like "fires an ActiveSupport::Notification event", "decidim.forms.answer_questionnaire:after"

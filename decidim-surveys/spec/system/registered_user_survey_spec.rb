@@ -22,9 +22,9 @@ describe "Answer a survey", type: :system do
       "es" => "<p>Contenido de la encuesta</p>"
     }
   end
-  let!(:questionnaire) { create(:questionnaire, title:, description:) }
-  let!(:survey) { create(:survey, component:, questionnaire:) }
-  let!(:question) { create(:questionnaire_question, questionnaire:, position: 0) }
+  let!(:questionnaire) { create(:questionnaire, title: title, description: description) }
+  let!(:survey) { create(:survey, component: component, questionnaire: questionnaire) }
+  let!(:question) { create(:questionnaire_question, questionnaire: questionnaire, position: 0) }
   let(:mailer) { double(deliver_later: true) }
 
   include_context "with a component"
@@ -44,7 +44,7 @@ describe "Answer a survey", type: :system do
 
   context "when the survey allow answers" do
     let(:organization) { create(:organization) }
-    let!(:user) { create(:user, :confirmed, organization:) }
+    let!(:user) { create(:user, :confirmed, organization: organization) }
 
     before do
       component.update!(
