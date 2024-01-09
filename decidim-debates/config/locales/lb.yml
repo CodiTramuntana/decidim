@@ -47,7 +47,11 @@ lb:
         debates:
           index:
             title: Debatten
+        models:
+          debate:
+            name: Debatte
       debates:
+        closed: Geschlossen
         filters:
           scope: Bereich
           search: Suche

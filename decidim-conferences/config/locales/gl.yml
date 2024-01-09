@@ -315,9 +315,6 @@ gl:
         title: Ponentes
     conferences:
       admin:
-        conference_copies:
-          form:
-            slug_help: 'As babosas de URL úsanse para xerar os URL que apuntan a esta conferencia. Só acepta letras, números e guións, e debe comezar cunha letra. Exemplo: %{url}'
         conference_invites:
           create:
             error: Houbo un problema ao invitar ao usuario a unirse á conferencia.
@@ -330,9 +327,7 @@ gl:
             select_user: Seleccionar usuario
           index:
             filter:
-              accepted: Aceptada
               all: Todo
-              rejected: Rexeitado
               sent: Enviado
             filter_by: Filtrar por
             invite_attendee: Invitar asistente
@@ -359,7 +354,6 @@ gl:
             registrations_count:
               one: Houbo 1 rexistro.
               other: Houbo %{count} rexistros.
-            slug_help: 'As babosas de URL úsanse para xerar os URL que apuntan a esta conferencia. Só acepta letras, números e guións, e debe comezar cunha letra. Exemplo: %{url}'
         diplomas:
           edit:
             save: Gardar

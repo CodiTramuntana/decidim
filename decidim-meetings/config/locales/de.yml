@@ -8,7 +8,7 @@ de:
         closing_report: Protokoll
         closing_visible: Ist sichtbar
         contributions_count: Anzahl der Beiträge
-        proposal_ids: An der Sitzung entstandene Vorschläge
+        proposal_ids: Vorschläge aus der Veranstaltung
         video_url: Video-URL
       meeting:
         address: Adresse
@@ -223,7 +223,7 @@ de:
             one: 'Die Besprechung kann nicht gelöscht werden, da %{count} Vorschlag mit dieser verbunden ist:'
             other: 'Die Besprechung kann nicht gelöscht werden, da %{count} Vorschläge mit dieser verbunden sind:'
         manage_poll: Umfrage verwalten
-        new: Neue Sitzung
+        new: Neue Besprechung
         preview: Vorschau
         registrations: Anmeldungen
         title: Aktionen
@@ -281,7 +281,7 @@ de:
             select_user: Nutzer wählen
           index:
             filter:
-              accepted: Akzeptiert
+              accepted: Angenommen
               all: Alle
               rejected: Abgelehnt
               sent: Geschickt
@@ -355,7 +355,7 @@ de:
             success: Veranstaltungsumfrage erfolgreich aktualisiert
         models:
           meeting:
-            name: Treffen
+            name: Sitzung
         registrations:
           edit:
             save: Speichern
@@ -479,6 +479,7 @@ de:
             all: Alle
             citizens: Einzelpersonen
             official: Offiziell
+            user_groups: Gruppen
           scope: Umfang
           search: Suche
           type: Art
@@ -530,8 +531,10 @@ de:
           close_meeting: Sitzung beenden
           contributions: Beiträge zählen
           date: Datum
+          edit_close_meeting: Veranstaltungsbericht bearbeiten
           edit_meeting: Meeting bearbeiten
           going: Sie haben sich für diese Sitzung angemeldet
+          join: Veranstaltung beitreten
           leave: Registrierung stornieren
           leave_confirmation: Sind Sie sicher dass Sie Ihre Registrierung für diese Sitzung stornieren möchten?
           link_available_soon: Link in Kürze verfügbar
@@ -647,7 +650,7 @@ de:
         see_all: Alle anzeigen (%{count})
         upcoming_meetings: Bevorstehende Treffen
       upcoming_meeting_for_card:
-        upcoming_meeting: Kommendes Treffen
+        upcoming_meeting: Kommende Sitzung
     resource_links:
       meetings_through_proposals:
         meeting_result: 'Ähnliche Ergebnisse:'

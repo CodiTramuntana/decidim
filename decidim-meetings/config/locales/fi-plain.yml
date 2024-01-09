@@ -223,7 +223,7 @@ fi-pl:
             one: 'Tapahtumaa ei voi poistaa, koska siihen on liitetty %{count} ehdotus:'
             other: 'Tapahtumaa ei voi poistaa, koska siihen on liitetty %{count} ehdotusta:'
         manage_poll: Hallitse mielipidetiedustelua
-        new: Uusi kokous
+        new: Uusi tapahtuma
         preview: Esikatsele
         registrations: Ilmoittautumiset
         title: Toiminnot
@@ -281,9 +281,7 @@ fi-pl:
             select_user: Valitse käyttäjä
           index:
             filter:
-              accepted: Hyväksytyt
               all: Kaikki
-              rejected: Hylätyt
               sent: Lähetetyt
             filter_by: Rajaa hakua
             invite_attendee: Kutsu osallistuja
@@ -479,6 +477,7 @@ fi-pl:
             all: Kaikki
             citizens: Kansalaiset
             official: Viralliset
+            user_groups: Ryhmät
           scope: Teema
           search: Hae
           type: Tyyppi
@@ -530,8 +529,10 @@ fi-pl:
           close_meeting: Sulje tapahtuma
           contributions: Kontribuutioiden määrä
           date: Päivämäärä
+          edit_close_meeting: Muokkaa tapaamisraporttia
           edit_meeting: Muokkaa tapaamista
           going: Olet ilmoittautunut tähän tapaamiseen
+          join: Ilmoittaudu tapaamiseen
           leave: Peruuta ilmoittautumisesi
           leave_confirmation: Haluatko varmasti peruuttaa ilmoittautumisesi tähän tapaamiseen?
           link_available_soon: Linkki julkaistaan pian
