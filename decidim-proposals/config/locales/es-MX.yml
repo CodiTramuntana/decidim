@@ -117,7 +117,7 @@ es-MX:
           state_null:
             label: Estado
             values:
-              'true': No contestadas
+              'true': No contestada
           valuator_role_ids_has:
             label: Asignada a evaluadora
         search_placeholder:
@@ -429,7 +429,7 @@ es-MX:
               other: propuestas
           title:
             answers: Importar respuestas de propuestas
-            proposals: Importar propuestas
+            proposals: Propuestas de importación
         models:
           proposal:
             name: Propuesta
@@ -571,7 +571,7 @@ es-MX:
             no_components: No hay otros componentes propuesta en este espacio participativo desde el que importar.
             select_component: Por favor selecciona un componente
             select_states: Verifica los estados de las propuestas para importar
-            title: Importar propuestas
+            title: Propuestas de importación
         proposals_merges:
           create:
             invalid: 'Ha habido un problema al fusionar las propuestas seleccionadas porque algunas de ellas:'
@@ -813,9 +813,9 @@ es-MX:
           type: Tipo
           voted: Apoyadas
         filters_small_view:
-          close_modal: Cerrar ventana
+          close_modal: Cerrar modal
           filter: Filtrar
-          filter_by: Filtrar por
+          filter_by: Filtrado por
           unfold: Desplegar
         index:
           click_here: Ver todas las propuestas
@@ -922,7 +922,7 @@ es-MX:
           vote_limit:
             description: Puedes apoyar hasta %{limit} propuestas.
             left: Restante
-            votes: Apoyos
+            votes: Votos
         wizard_aside:
           back: Volver
           back_from_step_1: Volver a propuestas

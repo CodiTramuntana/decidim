@@ -207,7 +207,7 @@ ro:
         conference:
           fields:
             created_at: Creat la
-            promoted: Evident
+            promoted: Evidenţiat
             published: Publicat
             title: Titlu
         conference_speaker:
@@ -331,9 +331,6 @@ ro:
         title: Vorbitori
     conferences:
       admin:
-        conference_copies:
-          form:
-            slug_help: 'URL slugs sunt utilizate pentru a genera URL-urile care indică această conferință. Acestea acceptă doar litere, numere și cratime și trebuie să înceapă cu o literă. Exemplu: %{url}'
         conference_invites:
           create:
             error: A apărut o problemă la invitarea participantului să participe la conferinţă.
@@ -346,9 +343,7 @@ ro:
             select_user: Selectați un participant
           index:
             filter:
-              accepted: Acceptat
               all: Toate
-              rejected: Respins
               sent: Trimis
             filter_by: Filtrare după
             invite_attendee: Invite participant
@@ -376,7 +371,6 @@ ro:
               one: A existat o înregistrare.
               few: Au fost %{count} înregistrări.
               other: Au fost %{count} înregistrări.
-            slug_help: 'URL slugs sunt utilizate pentru a genera URL-urile care indică această conferință. Acestea acceptă doar litere, numere și cratime și trebuie să înceapă cu o literă. Exemplu: %{url}'
         diplomas:
           edit:
             save: Salvează
@@ -510,7 +504,6 @@ ro:
           highlighted_conferences:
             active_conferences: Conferințe active
             conferences_button_title: Link către pagina de conferințe care afișează toate conferințele
-            see_all_conferences: Vezi toate conferințele
       photo:
         image:
           attributes:

@@ -14,17 +14,24 @@ pl:
         description: Opis
         file: Plik
         title: Nazwa załącznika lub obrazu
+        weight: Kolejność
       attachment_collection:
         description: Opis
         name: Nazwa
+        weight: Kolejność
       category:
         description: Opis
         name: Nazwa
         parent_id: Element nadrzędny
+        weight: Kolejność
       component:
         name: Nazwa
         published_at: Opublikowano
         weight: Kolejność na stronie
+      external_domain:
+        value: Wartość
+      help_section:
+        content: Zawartość
       id: ID
       import:
         user_group_id: Utwórz import jako
@@ -92,6 +99,9 @@ pl:
         welcome_notification_body: Treść komunikatu powitalnego
         welcome_notification_subject: Tytuł komunikatu powitalnego
         youtube_handler: Handler YouTube
+      participatory_space_private_user:
+        email: E-mail
+        name: Nazwa
       scope:
         code: Kod
         name: Nazwa
@@ -113,6 +123,7 @@ pl:
         show_in_footer: Pokaż w stopce
         slug: URL slug
         title: Tytuł
+        topic_id: Temat
         weight: Kolejność na stronie
       static_page_topic:
         description: Opis
@@ -184,11 +195,14 @@ pl:
           error: Wystąpił błąd podczas akceptowania warunków użytkowania dla administratorów.
           success: Świetnie! Zaakceptowano warunki użytkowania dla administratorów.
         actions:
+          accept: Zgadzam się z warunkami
           are_you_sure: Czy na pewno nie wyrażasz zgody na warunki użytkowania dla administratorów?
+          refuse: Odrzuć warunki użytkowania administratora
           title: Akceptuję warunki użytkowania
         required_review:
           alert: 'Wymagane: Zapoznaj się z warunkami użytkowania dla administratorów'
           callout: Poświęć chwilę, aby zapoznać się z Warunkami użytkowania dla administratorów. W przeciwnym razie nie uzyskasz dostępu do administrowania platformą.
+          cta: Zapoznaj się z nimi teraz.
         title: Warunki użytkowania dla administratorów
       area_types:
         create:
@@ -210,6 +224,7 @@ pl:
           error: Wystąpił błąd podczas tworzenia nowej ketegorii.
           success: Kategoria została utworzona.
         destroy:
+          has_spaces: Ten obszar ma przestrzenie zależne. Upewnij się przed jego usunięciem, że żadna przestrzeń partycypacji nie odnosi się do tego obszaru.
           success: Kategoria została usunięta
         edit:
           title: Edytuj kategorię
@@ -636,6 +651,7 @@ pl:
           nickname: Pseudonim
           reason: Powód
           reports: Liczba zgłoszeń
+          title: Zgłoszeni uczestnicy
         report:
           reasons:
             does_not_belong: Nie należy
@@ -645,6 +661,8 @@ pl:
           blocked: Zablokowany
           unblocked: Niezablokowany
       moderations:
+        index:
+          title: Zgłoszona zawartość
         report:
           reasons:
             does_not_belong: Nie należy
@@ -792,7 +810,6 @@ pl:
             colors_title: Kolory organizacji
             colors_warning_html: Uwaga! Zmiana tych kolorów może ograniczyć czytelność. Możesz sprawdzić kontrast wybranych kolorów korzystając z <a href="%{link}">WebAIM Contrast Checker</a> albo innych podobnych narzędzi.
             header_snippets_help: Użyj tego pola, aby dodać elementy do nagłówka kodu HTML. Najczęstszym zastosowaniem jest zintegrowanie usług innych firm, które wymagają dodatkowego kodu JavaScript lub CSS. Można również użyć go do dodawania dodatkowych meta tagów do HTML. Zauważ, że będzie to widoczne tylko na stronach publicznych, a nie w sekcji administracyjnej.
-          cta_button_path_help: 'Możesz nadpisać adres do jakiego kieruje przycisk CTA na stronie głównej. Należy wpisać tylko to, co ma znaleźć się na końcu po znaku „/”, a nie pełen adres. Można użyć liter, cyfr, myślników i ukośników. Musi zaczynać się od litery. Przycisk CTA zostanie wyświetlony na stronie głównej między tekstem powitalnym a opisem. Przykład: %{url}'
           cta_button_text_help: Można nadpisać tekst przycisku CTA na stronie głównej dla każdego dostępnego języka organizacji. Jeśli to pole nie zostanie wypełnione, zostanie użyta wartość domyślna. Przycisk CTA zostanie wyświetlony na stronie głównej między tekstem powitalnym a opisem.
           homepage_appearance_title: Edytuj wygląd strony głównej
           homepage_highlighted_content_banner_title: Wyróżniony baner tekstowy
@@ -814,7 +831,7 @@ pl:
       organization_homepage:
         edit:
           active_content_blocks: Aktywne bloki treści
-          inactive_content_blocks: Bloki nieaktywnych treści
+          inactive_content_blocks: Nieaktywne bloki treści
       organization_homepage_content_blocks:
         edit:
           update: Aktualizuj
@@ -926,7 +943,6 @@ pl:
           update: Aktualizuj
         form:
           none: Bez tematu
-          slug_help: 'Wpisz tutaj tylko to, co ma znaleźć się na końcu po znaku „/”, a nie pełny adres URL. Można użyć liter, cyfr i myślników. Musi zaczynać się od litery. Przykład: %{url}'
         index:
           last_notable_change: Ostatnia istotna zmiana
         new:
@@ -1001,7 +1017,7 @@ pl:
           last_week: Poprzedni tydzień
           no_users_count_statistics_yet: Nie ma jeszcze statystyk dotyczących liczby użytkowników
           participants: Użytkownicy
-      view_public_page: Zobacz stronę publiczną
+      view_public_page: Wyświetl stronę publiczną
     forms:
       errors:
         impersonate_user:

@@ -35,6 +35,8 @@ pt-BR:
         title: Título
         undo_online_signatures_enabled: Permitir que os usuários desfizessem suas assinaturas on-line
         validate_sms_code_on_votes: Adicionar etapa de validação do código SMS ao processo de assinatura
+      initiatives_type_scope:
+        supports_required: Apoios requeridos
       initiatives_vote:
         date_of_birth: Data de nascimento
         document_number: Número do documento
@@ -548,7 +550,7 @@ pt-BR:
         home:
           highlighted_initiatives:
             active_initiatives: Iniciativas ativas
-            see_all_initiatives: Veja todas as iniciativas
+            see_all_initiatives: Ver todas as iniciativas
       show:
         badge_name:
           accepted: Assinaturas suficientes
@@ -577,7 +579,7 @@ pt-BR:
   layouts:
     decidim:
       initiative_creation_header:
-        back: De volta
+        back: Costas
         fill_data: Criar
         finish: Finalizar
         previous_form: Começar
@@ -589,7 +591,7 @@ pt-BR:
       initiative_header:
         initiative_menu_item: Iniciativa
       initiative_signature_creation_header:
-        back: De volta
+        back: Costas
         fill_personal_data: Complete seus dados
         finish: Terminar
         finished: Assinatura de iniciativa criada

@@ -18,8 +18,6 @@ ar:
         models:
           answer:
             name: الإجابة
-          question:
-            name: سؤال
         steps:
           tally:
             invalid: كانت هناك مشكلة في الإبلاغ عن الأمين المفقود
@@ -42,6 +40,9 @@ ar:
           show:
             identification_keys:
               cancel: إلغاء
+      votes:
+        confirm:
+          answer: الإجابة
     votings:
       admin:
         models:

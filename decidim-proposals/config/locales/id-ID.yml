@@ -67,6 +67,13 @@ id:
       decidim/proposals/proposal_vote:
         other: Suara
   decidim:
+    admin:
+      filters:
+        proposals:
+          state_null:
+            label: Negara
+            values:
+              'true': Tidak dijawab
     components:
       proposals:
         actions:
@@ -264,6 +271,9 @@ id:
           preview: Preview
         exports:
           proposals: Proposal
+        imports:
+          title:
+            proposals: Impor proposal
         models:
           proposal:
             name: Usul
@@ -366,6 +376,7 @@ id:
             no_components: Tidak ada komponen proposal lain dalam ruang partisipatif ini untuk mengimpor proposal dari.
             select_component: Silakan pilih komponen
             select_states: Periksa status proposal untuk diimpor
+            title: Impor proposal
         proposals_merges:
           create:
             success: Berhasil menggabungkan proposal menjadi proposal baru.
@@ -501,6 +512,9 @@ id:
           info: Anda membuat <strong>draf kolaboratif</strong>.
         wizard_header:
           title: Buat draf kolaboratif Anda
+      content_blocks:
+        highlighted_proposals:
+          proposals: Proposal
       create:
         error: Sudah ada kesalahan saat menyimpan proposal.
         success: Proposal berhasil dibuat. Disimpan sebagai Draf.
@@ -591,8 +605,6 @@ id:
           random: Acak
           recent: Baru
         participatory_texts:
-          index:
-            document_index: Indeks dokumen
           view_index:
             see_index: Lihat indeks
         preview:

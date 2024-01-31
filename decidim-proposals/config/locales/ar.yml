@@ -131,9 +131,9 @@ ar:
               validating: تحقق تقني
               withdrawn: تم السحب
           state_null:
-            label: الحالة
+            label: حالة
             values:
-              'true': لم تتم الإجابة عليها
+              'true': بلا جواب
           valuator_role_ids_has:
             label: تم إسناده إلى مُقيِّم
         search_placeholder:
@@ -453,7 +453,7 @@ ar:
               other: اقتراحات
           title:
             answers: استيراد إجابات الاقتراح
-            proposals: استيراد الاقتراحات
+            proposals: مقترحات الاستيراد
         models:
           proposal:
             name: اقتراح
@@ -599,7 +599,7 @@ ar:
             no_components: لا توجد مكونات اقتراح أخرى في هذه المساحة التشاركية لاستيراد المقترحات منها.
             select_component: يرجى اختيار عنصر
             select_states: تحقق من حالة مقترحات الاستيراد
-            title: استيراد الاقتراحات
+            title: مقترحات الاستيراد
         proposals_merges:
           create:
             invalid: 'طرأت مشكلة في دمج الاقتراحات المحددة لأن بعضها:'
@@ -762,7 +762,7 @@ ar:
           title: إنشاء مسودتك التعاونية
       content_blocks:
         highlighted_proposals:
-          proposals: الاقتراحات
+          proposals: اقتراحات
       create:
         error: كانت هناك مشكلة في حفظ الاقتراح.
         success: تم إنشاء الاقتراح بنجاح. تم الحفظ كمسودة.
@@ -885,8 +885,6 @@ ar:
           recent: الأخيرة
           with_more_authors: مع المزيد من المؤلفين
         participatory_texts:
-          index:
-            document_index: فهرس الوثيقة
           view_index:
             see_index: انظر الفهرس
         placeholder:

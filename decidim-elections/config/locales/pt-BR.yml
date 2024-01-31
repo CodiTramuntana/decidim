@@ -11,12 +11,24 @@ pt-BR:
         end_time: A votação termina às
         start_time: Votação começa às
         title: Título
+      polling_station:
+        address: Endereço
+        location: Localização
+        location_hints: Dicas de localização
+        polling_station_managers: Gerentes
+        polling_station_president_id: Presidente
+        title: Título
       question:
         max_selections: Número máximo de seleções
         min_selections: Nenhuma das opções acima
         title: Título
+      trustees_participatory_space:
+        user_id: Participante
       voting:
         end_time: Votação termina
+        introductory_image: Imagem introdutória
+        scope_id: Escopo
+        show_check_census: Mostrar página "checar censo"
         start_time: A votação começa
     errors:
       models:
@@ -389,7 +401,7 @@ pt-BR:
           active: Ativo
           all: Todos
           finished: Finalizado
-          search: Pesquisa
+          search: Pesquisar
           state: Status
           upcoming: Próximos
         filters_small_view:
@@ -560,7 +572,6 @@ pt-BR:
               upload_legend: O Decidim tem suas chaves públicas de identificação, mas seu navegador ainda não tem. Você precisa importar o arquivo com as suas chaves de identificação para o seu computador a partir do backup que você criou após gerá-las.
             not_supported_browser_description: Parece que você está usando um navegador da web que não pode ser usado para atuar como um curador. Certifique-se de estar usando a versão mais recente do seu navegador, ou tente usar qualquer um dos navegadores mais populares para conseguir completar suas tarefas de confiança.
             not_supported_browser_title: Atualize o navegador para agir como um curador
-            trustee_role_description: Você foi designado para agir como um curador em algumas das eleições realizadas nesta plataforma.
           update:
             success: Sua chave pública de identificação foi armazenada com sucesso.
       votes:
@@ -651,7 +662,6 @@ pt-BR:
           continue: Próxima
       warnings:
         no_elections_warning: Nenhuma eleição corresponde aos seus critérios de pesquisa ou não há nenhuma eleição agendada.
-        no_scheduled_elections_warning: Atualmente, não há eleições agendadas, mas aqui podem encontrar uma lista de todas as últimas eleições.
     events:
       elections:
         election_published:
@@ -734,30 +744,9 @@ pt-BR:
           highlighted_votings:
             max_results: Quantidade máxima de elementos para mostrar
           landing_page:
-            attachments_and_folders:
-              name: Anexos e pastas de votação
             description:
               name: Descrição da votação
-            elections:
-              name: Eleição
-            header:
-              name: Cabeçalho do voto
-            html_block_1:
-              name: Bloco de votação html 1
-            html_block_2:
-              name: Bloco de votação html 2
-            html_block_3:
-              name: Bloco de votação html 3
-            metrics:
-              name: Métricas de votação
-            polling_stations:
-              name: Estações de votação
-            stats:
-              name: Estatísticas de votação
-            timeline:
-              name: Linha do tempo da votação
         index:
-          not_published: Despublicado
           published: Publicado
         landing_page:
           content_blocks:
@@ -954,8 +943,10 @@ pt-BR:
             assign_missing_officers: Existem estações de votação sem Presidente e/ou gerentes. Por favor atribua-as a partir da seção estações de enquete
             update: Atualizar
           form:
+            banner_image: Imagem de banner
+            census_contact_information: Informação de contato do censo
+            introductory_image: Imagem introdutória
             select_a_voting_type: Por favor, selecione um tipo de votação
-            slug_help: 'Os slugs de URL são usados ​​para gerar os URLs que apontam para esse processo. Apenas aceita letras, números e traços, e deve começar com uma carta. Exemplo: %{url}'
             title: Título
             voting_type:
               hybrid: Híbrido
@@ -1056,8 +1047,6 @@ pt-BR:
       pages:
         home:
           highlighted_votings:
-            active_votings: Votações Ativas
-            see_all_votings: Ver todos os votações
             votings_button_title: Link para a Página de Votação exibindo todos os votos
       polling_officer_zone:
         closures:
@@ -1065,7 +1054,6 @@ pt-BR:
           certify:
             add_images: Adicionar imagens
             error: Ocorreu um erro ao anexar o certificado, por favor tente novamente.
-            form_legend: Envie uma foto do Certificado de Encerramento Eleitoral
             heading: Recontagem de voto - Upload de certificado
             info_text: Por favor envie uma foto do Certificado de Encerramento Eleitoral.
             submit: Carregar o certificado
@@ -1091,7 +1079,7 @@ pt-BR:
             info_text: 'Por favor, introduza o número total de votos (envelopes) recontados nesta Estação de Enquete:'
             modal_ballots_count_error:
               btn_validate_total: Validar a recontagem total de votos
-              close_modal: Fechar
+              close_modal: Fechado
               info_text: O número total de votos (envelopes) introduzidos não corresponde ao registro de pessoas que votaram nesta Estação.
               message_for_monitoring_committee: Mensagem para o Comitê de Monitoramento
               review_recount: Revisar a recontagem
@@ -1108,7 +1096,7 @@ pt-BR:
           sign:
             cancel: Cancelar
             check_box: Eu revisei isso e é o mesmo que o certificado de fechamento eleitoral físico
-            close_modal: Fechar
+            close_modal: Fechado
             confirm: Ok, continuar
             error: Ocorreu um erro. Por favor, tente novamente.
             heading: Recontagem de votos - Assinatura de encerramento
@@ -1242,7 +1230,7 @@ pt-BR:
         elections_log:
           bb_status: Status da eleição
           description: O registro das eleições mostrar-lhe-á todas as informações relevantes sobre cada votação. Por exemplo, o estatuto da cerimonia chave, ou apuração ou se os resultados já estão publicados. Clique sobre a eleição sobre a qual você quer as informações de registro.
-          election_log: Log da Eleição
+          election_log: Log de Eleições
           title: Log da Eleição
         filters:
           active: Ativo
@@ -1287,7 +1275,7 @@ pt-BR:
         footer_button_text:
           participate: Participar
           view: Visualizar
-          vote: Votar
+          vote: Voto
         unspecified: Não especificado
         voting_type:
           hybrid: Híbrido

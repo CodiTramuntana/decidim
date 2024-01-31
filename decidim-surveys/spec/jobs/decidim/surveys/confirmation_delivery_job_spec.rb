@@ -11,8 +11,8 @@ module Decidim
       let(:component) { survey.component }
       let(:user) { create(:user, organization: component.organization) }
       let(:questionnaire) { survey.questionnaire }
-      let!(:questions) { create_list(:questionnaire_question, 3, questionnaire:) }
-      let!(:answers) { questions.map { |q| create(:answer, question: q, questionnaire:) } }
+      let!(:questions) { create_list(:questionnaire_question, 3, questionnaire: questionnaire) }
+      let!(:answers) { questions.map { |q| create(:answer, question: q, questionnaire: questionnaire) } }
       let!(:collection) { [answers] }
 
       describe "queue" do
@@ -27,12 +27,12 @@ module Decidim
         it "notifies the confirmation of answer" do
           allow(Decidim::Surveys::SurveyConfirmationMailer)
             .to receive(:confirmation)
-            .with(user, questionnaire, component, collection)
+            .with(user, questionnaire, collection)
             .and_return(mailer)
           expect(mailer)
             .to receive(:deliver_now)
 
-          subject.perform_now(user, questionnaire, component, collection)
+          subject.perform_now(user, questionnaire, collection)
         end
       end
     end

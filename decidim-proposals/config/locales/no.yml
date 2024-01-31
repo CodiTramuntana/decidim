@@ -112,7 +112,7 @@
               validating: Teknisk validering
               withdrawn: Tilbakekalt
           state_null:
-            label: Tilstand
+            label: Delstat
             values:
               'true': Ikke besvart
         search_placeholder:
@@ -512,6 +512,7 @@
             no_components: Det er ingen andre forslags komponetner i dette deltaker området å importere forslagene fra.
             select_component: Velg en komponent
             select_states: Sjekk statusen til forslagene som skal importeres
+            title: Importer forslag
         proposals_merges:
           create:
             success: Slo sammen forslagene til et nytt ett.
@@ -649,6 +650,9 @@
           info: Du oppretter et <strong>samarbeids utkast</strong>.
         wizard_header:
           title: Opprett ditt samarbeids utkast
+      content_blocks:
+        highlighted_proposals:
+          proposals: Forslag
       create:
         error: Det oppstod et problem med å lagre forslaget.
         success: Forslag opprettet. Lagret som et utkast.
@@ -751,8 +755,6 @@
           recent: Nylig
           with_more_authors: Med flere forfattere
         participatory_texts:
-          index:
-            document_index: Dokument indeks
           view_index:
             see_index: Se index
         placeholder:

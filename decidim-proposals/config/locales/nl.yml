@@ -96,6 +96,10 @@ nl:
     admin:
       filters:
         proposals:
+          state_null:
+            label: Staat
+            values:
+              'true': Nog niet beantwoord
           valuator_role_ids_has:
             label: Toegewezen aan beoordelaar
         search_placeholder:
@@ -375,7 +379,7 @@ nl:
               other: voorstellen
           title:
             answers: Importeer antwoorden op voorstellen
-            proposals: Importeer voorstellen
+            proposals: Voorstellen importeren
         models:
           proposal:
             name: Voorstel
@@ -516,6 +520,7 @@ nl:
             no_components: Er zijn geen andere componenten van het voorstel in deze participatieruimte om de voorstellen in te voeren.
             select_component: Selecteer een onderdeel
             select_states: Controleer de status van de voorstellen om te importeren
+            title: Voorstellen importeren
         proposals_merges:
           create:
             invalid: 'Er is een probleem opgetreden bij het samenvoegen van de geselecteerde voorstellen omdat:'
@@ -707,7 +712,7 @@ nl:
         buttons:
           amend: Wijzigen
           comment: Commentaar
-          comments: Commentaren
+          comments: Reacties
       proposal_votes:
         create:
           error: Er zijn fouten geweest bij het stemmen van het voorstel.
@@ -756,10 +761,10 @@ nl:
           type: Type
           voted: Gestemd
         filters_small_view:
-          close_modal: Dialoogvenster sluiten
+          close_modal: Sluit venster
           filter: Filter
           filter_by: Filteren op
-          unfold: Uitvouwen
+          unfold: Ontvouwen
         index:
           click_here: Bekijk alle voorstellen
           collaborative_drafts_list: Toegang tot samenwerkende concepten
@@ -784,8 +789,6 @@ nl:
           recent: Meest recent
           with_more_authors: Met meer auteurs
         participatory_texts:
-          index:
-            document_index: Documentindex
           view_index:
             see_index: Zie index
         preview:
@@ -862,7 +865,7 @@ nl:
           vote_limit:
             description: U kunt tot %{limit} voorstellen stemmen.
             left: Resterend
-            votes: Stemmen
+            votes: stemmen
         wizard_aside:
           back: Terug
           back_from_step_1: Terug naar voorstellen

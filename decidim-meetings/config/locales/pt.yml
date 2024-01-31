@@ -254,10 +254,8 @@ pt:
             select_user: Selecione o participante
           index:
             filter:
-              accepted: Aceite
               all: Todos
-              rejected: Rejeitados
-              sent: Enviados
+              sent: Enviado
             filter_by: Filtrar por
             invite_attendee: Convidar participante
             invites: Convites
@@ -363,6 +361,9 @@ pt:
           value_types:
             organizer_presenter:
               not_found: 'O(A) organizador(a) não foi encontrado(a) na base de dados (ID: %{id})'
+      application_helper:
+        filter_scope_values:
+          all: Todos
       calendar_modal:
         calendar_url: URL do calendário
         close_window: Fechar janela
@@ -370,6 +371,7 @@ pt:
       conference_venues: Locais da Conferência
       content_blocks:
         upcoming_meetings:
+          upcoming_meetings: Próximas reuniões
           view_all_meetings: Ver todos
       directory:
         meetings:
@@ -432,7 +434,6 @@ pt:
             all: Todos
             citizens: Cidadãos
             official: Oficial
-            user_groups: Grupos
           scope: Âmbito
           search: Pesquisar
           type: Tipo
@@ -479,7 +480,6 @@ pt:
           date: Data
           edit_meeting: Editar reunião
           going: Inscreveu-se para esta reunião
-          join: Adira à reunião
           leave: Cancele o seu registo
           leave_confirmation: Tem a certeza que quer cancelar o seu registo para esta reunião?
           link_available_soon: Ligação disponível em breve

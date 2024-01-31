@@ -2,8 +2,13 @@ de:
   activemodel:
     attributes:
       initiative:
+        answer: Antwort
+        answer_url: Antwort-URL
+        area_id: Gebiet
+        decidim_scope_id: Thema
         decidim_user_group_id: Autor
         description: Beschreibung
+        hashtag: Hashtag
         offline_votes: Face-to-Face-Unterstützung
         offline_votes_for_scope: Persönliche Unterschriften für %{scope_name}
         scope_id: Umfang
@@ -16,6 +21,7 @@ de:
           online: Online
         state: Zustand
         title: Titel
+        type_id: Typ
       initiatives_committee_member:
         user: Ausschussmitglied
       initiatives_settings:
@@ -34,9 +40,13 @@ de:
         online_signature_enabled: Online-Signatur aktiviert
         only_global_scope_enabled: Nur die Erstellung globaler Initiativen zulassen
         promoting_committee_enabled: Förderkomitee freigeben
+        signature_type: Unterschrifttyp
         title: Titel
         undo_online_signatures_enabled: Ermöglichen Sie Benutzern, ihre Online-Signaturen rückgängig zu machen
         validate_sms_code_on_votes: Fügen Sie dem Signaturprozess einen SMS-Validierungsschritt hinzu
+      initiatives_type_scope:
+        decidim_scopes_id: Themen
+        supports_required: Erforderliche Unterstützungen
       initiatives_vote:
         date_of_birth: Geburtsdatum
         document_number: Dokumentnummer
@@ -97,8 +107,8 @@ de:
       models:
         initiatives:
           fields:
-            created_at: Hergestellt in
-            id: ICH WÜRDE
+            created_at: Erstellt am
+            id: ID
             published_at: Veröffentlicht am
             state: Zustand
             supports_count: Unterschriften
@@ -110,7 +120,7 @@ de:
           name: Typ der Initiative
         initiatives_types:
           fields:
-            created_at: Hergestellt in
+            created_at: Erstellt am
             title: Arten von Initiativen
           name: Art der Initiative
         initiatives_votes:
@@ -173,7 +183,7 @@ de:
             - Befolgen Sie die Schritte, um eine neue Initiative zu erstellen
           description: Dieses Abzeichen wird gewährt, wenn Sie neue Initiativen starten und mit anderen zusammenarbeiten, um sie durchzuführen.
           description_another: Dieser Benutzer hat %{score} Initiativen veröffentlicht.
-          description_own: Du hast %{score} Initiativen veröffentlicht.
+          description_own: Sie haben %{score} Initiativen veröffentlicht.
           name: Veröffentlichte Initiativen
           next_level_in: Holen Sie sich %{score} weitere Initiativen veröffentlicht, um das nächste Level zu erreichen!
           unearned_another: Dieser Benutzer hat noch keine Initiativen veröffentlicht.
@@ -193,7 +203,7 @@ de:
             answer: Antworten
             title: Antwort für %{title}
           info_initiative:
-            created_at: Hergestellt in
+            created_at: Erstellt am
             description: Beschreibung
             initiative_votes_count: Stimmen zählen
             initiatives: Initiativen
@@ -201,7 +211,7 @@ de:
         committee_requests:
           index:
             approve: Genehmigen
-            confirm_revoke: Bist du sicher?
+            confirm_revoke: Sind Sie sicher?
             invite_to_committee_help: Teilen Sie diesen Link, um andere Benutzer zum Promotionskomitee einzuladen
             no_members_yet: Es gibt keine Mitglieder im Promoter-Ausschuss
             revoke: Widerrufen
@@ -218,8 +228,8 @@ de:
         initiatives:
           edit:
             accept: Initiative akzeptieren
-            confirm: Bist du sicher?
-            confirm_send_to_technical_validation: Sind Sie sicher?
+            confirm: Sind Sie sich sicher?
+            confirm_send_to_technical_validation: Sind Sie sich sicher?
             discard: Verwerfen Sie die Initiative
             export_pdf_signatures: Exportieren von PDF-Signaturen
             export_votes: Export unterstützt
@@ -228,7 +238,7 @@ de:
             success: Die Initiative wurde an die technische Validierung gesendet
             update: Aktualisieren
           form:
-            attachments: Beilagen
+            attachments: Anhänge
             settings: Einstellungen
             title: Allgemeine Information
           index:
@@ -251,7 +261,7 @@ de:
             success: Der Bereich wurde erfolgreich entfernt
           edit:
             back: Zurück
-            confirm_destroy: Bist du sicher?
+            confirm_destroy: Sind Sie sicher?
             destroy: Löschen
             title: Initiativentyp bearbeiten
             update: Aktualisieren
@@ -269,11 +279,13 @@ de:
           destroy:
             success: Der Initiativentyp wurde erfolgreich entfernt
           edit:
-            confirm_destroy: Bist du sicher?
+            confirm_destroy: Sind Sie sicher?
             destroy: Löschen
             update: Aktualisieren
           form:
             authorizations: Autorisierungseinstellungen
+            child_scope_threshold_enabled_help: 'Diese Einstellung unterstützt keine Offline-Abstimmungen. Es aktiviert Unter-Themenbereiche und arbeitet mit einem Autorisierungs-Handler zusammen, der dem Teilnehmenden einen Themenbereich zuordnet. Stellen Sie sicher, dass Sie diese Autorisierung unten in den Autorisierungseinstellungen auswählen. Hierfür müssen die Themenbereiche auf hierarchische Weise konfiguriert werden: 1 Überthema - N Unterthemen. Weitere Informationen wie diese Konfiguration funktioniert, finden Sie unter diesem <a href="https://docs.decidim.org/en/admin/spaces/initiatives/" target="_blank">Link</a>.'
+            only_global_scope_enabled_help: Aktivieren Sie diese Einstellung, wenn Sie "Unterthemen-Signaturen" aktiviert haben und den globalen Themenbereich als Ihren Elternbereich konfiguriert haben. Dadurch wird die Auswahl des Initialtyps im Assistenten zur Erstellung der Initiative übersprungen. Weitere Informationen darüber, wie diese Konfiguration funktioniert, finden Sie <a href="https://docs.decidim.org/en/admin/spaces/initiatives/" target="_blank">hier</a>.
             options: Optionen
             title: Allgemeine Information
           initiative_type_scopes:
@@ -328,6 +340,7 @@ de:
         fill_data:
           back: Zurück
           continue: Fortsetzen
+          decidim_user_group_id_help: Es ist nicht möglich, die Autorschaft der Initiative nach der Erstellung zu ändern
           fill_data_help: "<ul> <li>Inhalt Ihrer Initiative überprüfen. Ist Ihr Titel leicht verständlich? Ist das Ziel Ihrer Initiative klar?</li> <li>Sie müssen die Art der Unterschrift wählen. Persönlich, online oder eine Kombination aus beidem</li> <li>Was ist die geografische Reichweite der Initiative? Stadt, Bezirk?</li> </ul>"
           more_information: "(Weitere Informationen)"
           select_area: Wählen Sie einen Bereich aus
@@ -370,7 +383,7 @@ de:
       edit:
         accept: Initiative akzeptieren
         back: Zurück
-        confirm: Bist du dir sicher?
+        confirm: Sind Sie sich sicher?
         discard: Initiative verwerfen
         export_pdf_signatures: PDF der Unterschriften exportieren
         export_votes: Unterschriften exportieren
@@ -404,11 +417,12 @@ de:
           email_subject: "%{applicant_nickname} möchte Ihrer Initiative beitreten"
           notification_title: <a href="%{applicant_profile_url}">%{applicant_nickname}</a> hat sich für das Promoter-Komittee Ihrer Initiative <a href="%{resource_url}">%{resource_title}</a> beworben. Um anzunehmen oder abzulehnen, klicken Sie <a href="%{resource_url}/edit">hier</a>.
       form:
-        add_attachments: Dokumente
+        add_attachments: Unterlagen
         attachment_legend: "(Optional) Anhang hinzufügen"
         delete_attachment: Löschen
       index:
         title: Initiativen
+        uninitialized: Initiativen sind noch nicht von einem Admin konfiguriert
       initiative_signatures:
         fill_personal_data:
           continue: Fortsetzen
@@ -445,7 +459,7 @@ de:
             other: und %{count} weitere Leute
         committee_members:
           approve: Genehmigen
-          confirm_revoke: Bist du dir sicher?
+          confirm_revoke: Sind Sie sicher?
           invite_to_committee_help: Teilen Sie diesen Link, um andere Benutzer zum Promotionskomitee einzuladen
           no_members_yet: Es gibt keine Mitglieder im Promoter-Ausschuss
           revoke: Widerrufen
@@ -504,6 +518,7 @@ de:
             title: 'Titel:'
             type: Art der Initiative
           legal_text: Die erhobenen personenbezogenen Daten werden von der Organisation entsprechend der geltenden Gesetzgebung vertraulich behandelt und aufgenommen.
+          members_header: Mitglieder des Unterstützungskomitees der Initiative
           phone_number: Telefonnummer
           place_date: Ort, Datum
           postal_code: Postleitzahl
@@ -554,7 +569,7 @@ de:
         home:
           highlighted_initiatives:
             active_initiatives: Aktive Initiativen
-            see_all_initiatives: Sehen Sie alle Initiativen
+            see_all_initiatives: Alle Initiativen anzeigen
       show:
         badge_name:
           accepted: Ausreichend Unterschriften

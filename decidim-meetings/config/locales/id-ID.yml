@@ -140,7 +140,6 @@ id:
         confirm_destroy: Anda yakin ingin menghapus rapat ini?
         destroy: Menghapus
         edit: Edit
-        new: Pertemuan baru
         preview: Preview
         registrations: Pendaftaran
         title: Tindakan
@@ -196,9 +195,6 @@ id:
             select_user: Pilih pengguna
           index:
             filter:
-              accepted: Diterima
-              all: Semua
-              rejected: Ditolak
               sent: Terkirim
             filter_by: Filter berdasarkan
             invite_attendee: Undang hadirin
@@ -280,6 +276,7 @@ id:
       conference_venues: Tempat Konferensi
       content_blocks:
         upcoming_meetings:
+          upcoming_meetings: Pertemuan yang akan datang
           view_all_meetings: Lihat semua
       directory:
         meetings:
@@ -301,6 +298,7 @@ id:
         filters:
           category: Kategori
           date: Tanggal
+          scope: Cakupan
           search: Pencarian
         filters_small_view:
           close_modal: Tutup modal
@@ -317,8 +315,9 @@ id:
           confirm: Memastikan
         show:
           attendees: Jumlah peserta
+          close_meeting: Tutup rapat
           contributions: Kontribusi dihitung
-          join: Bergabunglah dengan rapat
+          date: Tanggal
           meeting_minutes: Risalah Pertemuan
           no_slots_available: Tidak ada slot yang tersedia
           organizations: Menghadiri organisasi

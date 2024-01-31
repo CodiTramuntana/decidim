@@ -823,8 +823,8 @@ fi-pl:
           title: Sallittujen ulkoisten verkkotunnusten lista
       organization_homepage:
         edit:
-          active_content_blocks: Aktiiviset sisältöblokit
-          inactive_content_blocks: Ei-aktiiviset sisältöblokit
+          active_content_blocks: Aktiiviset sisältölohkot
+          inactive_content_blocks: Käytöstä poistetut sisältölohkot
       organization_homepage_content_blocks:
         edit:
           update: Päivitä
@@ -956,9 +956,12 @@ fi-pl:
         areas: Alueet
         authorization_workflows: Vahvistusmenetelmät
         dashboard: Hallintapaneeli
+        edit_external_domains: Sallittujen ulkoisten verkkotunnusten lista
+        edit_organization_appearance: Muokkaa kotisivun ulkoasua
         impersonatable_users: Hallittavat käyttäjät
         impersonations: Käyttäjien hallinta
         metrics: Tilastomittarit
+        pages: Sivut
         panel: Hallintakäyttäjä
         participants: Käyttäjät
         scope_types: Teematyypit
@@ -1077,4 +1080,4 @@ fi-pl:
         settings:
           title: Asetukset
         users:
-          title: Käyttäjät
+          title: Osallistujat

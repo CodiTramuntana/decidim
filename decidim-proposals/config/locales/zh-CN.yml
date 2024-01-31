@@ -328,6 +328,9 @@ zh-CN:
           preview: 预览
         exports:
           proposals: 建议
+        imports:
+          title:
+            proposals: 导入提议
         models:
           proposal:
             name: 建议
@@ -463,6 +466,7 @@ zh-CN:
             no_components: 在这个参与性空间中，没有其他提案组成部分可以从中导入。
             select_component: 请选择一个组件
             select_states: 检查要导入的建议的状态
+            title: 导入提议
         proposals_merges:
           create:
             success: 成功地将提案合并为一个新提案。
@@ -610,6 +614,9 @@ zh-CN:
           info: 您正在创建一个 <strong>协作草案</strong>。
         wizard_header:
           title: 创建您的协作草稿
+      content_blocks:
+        highlighted_proposals:
+          proposals: 建议
       create:
         error: 保存建议时出现问题。
         success: 建议已成功创建为草稿。
@@ -715,8 +722,6 @@ zh-CN:
           recent: 最近的
           with_more_authors: 有更多作者
         participatory_texts:
-          index:
-            document_index: 文档索引
           view_index:
             see_index: 查看索引
         preview:

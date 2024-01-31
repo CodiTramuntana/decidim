@@ -636,7 +636,7 @@ fr-CA:
               upload_legend: Decidim a vos clés d'identification publiques, mais votre navigateur ne l'a toujours pas. Vous devez importer le fichier avec vos clés d'identification sur votre ordinateur à partir de la sauvegarde que vous avez créée après leur génération.
             not_supported_browser_description: On dirait que vous utilisez un navigateur Web qui ne peut pas être utilisé pour agir en tant que garant. Assurez-vous d'utiliser la version la plus récente de votre navigateur, ou essayez d'utiliser l'un des navigateurs les plus populaires pour accomplir vos tâches de garant.
             not_supported_browser_title: Mettre à niveau le navigateur pour agir en tant que garant
-            trustee_role_description: Vous avez été assigné à agir en tant que garant lors de certaines des élections mises en place sur cette plateforme.
+            trustee_role_description: Vous avez été assigné à agir en tant que garant lors de certaines élections mises en place sur cette plateforme.
           update:
             success: Votre clé d'identification publique a bien été stockée.
       votes:
@@ -651,7 +651,7 @@ fr-CA:
           header: Vote en cours...
           text: Votre bulletin a bien été pris en compte.
         confirm:
-          answer: Répondre
+          answer: Réponse
           answer_number: répondre à %{number}
           confirm: Valider
           edit: éditer
@@ -820,7 +820,7 @@ fr-CA:
             elections:
               name: Élections
             header:
-              name: Header du vote
+              name: En-tête de vote
             html_block_1:
               name: Bloc HTML 1 du Vote
             html_block_2:
@@ -1041,7 +1041,7 @@ fr-CA:
             promoted: Mis en avant
             select_a_voting_type: Veuillez sélectionner un type de vote
             slug: Slug
-            slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui renvoient vers cette élection. Ils ne contiennent que des lettres, des chiffres et des tirets et doivent commencer par une lettre. Exemple : %{url}'
+            slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui pointent vers ce vote. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple : %{url}'
             title: Titre
             voting_type:
               hybrid: Hybride
@@ -1220,7 +1220,7 @@ fr-CA:
           sign:
             cancel: Annuler
             check_box: J'ai passé en revue ce certificat, il est identique à celui de fermeture des élections physiques
-            close_modal: Clore
+            close_modal: Fermer
             confirm: Ok, continuer
             error: Une erreur est survenue, veuillez réessayer.
             heading: Recomptage des voix - Signer la fermeture

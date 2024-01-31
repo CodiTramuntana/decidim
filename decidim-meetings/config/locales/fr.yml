@@ -56,6 +56,8 @@ fr:
           attributes:
             iframe_embed_type:
               not_embeddable: Cette URL ne peut pas être intégrée dans la page de rencontre ou d'événement en direct
+            online_meeting_url:
+              url_format: Veuillez saisir une adresse URL valide
         meeting_agenda:
           attributes:
             base:
@@ -279,15 +281,13 @@ fr:
             select_user: Sélectionner un utilisateur
           index:
             filter:
-              accepted: Acceptée
-              all: Tout
-              rejected: Rejeté
+              all: Toutes
               sent: Envoyé
             filter_by: Filtrer par
             invite_attendee: Inviter un participant
             invites: Invitations
             registrations_disabled: Vous ne pouvez pas inviter un participant car les invitations sont désactivées.
-            search: Chercher
+            search: Rechercher
         meeting_closes:
           edit:
             close: Clore
@@ -396,7 +396,7 @@ fr:
         filter_meeting_space_values:
           all: Tout
         filter_scope_values:
-          all: Tout
+          all: Toutes
       calendar_modal:
         calendar_url: URL du calendrier
         close_window: Fermer la fenêtre
@@ -478,7 +478,7 @@ fr:
             citizens: Citoyens
             official: Officiel
             user_groups: Groupes
-          scope: Secteur
+          scope: Périmètre d'application
           search: Rechercher
           type: Type
           type_values:

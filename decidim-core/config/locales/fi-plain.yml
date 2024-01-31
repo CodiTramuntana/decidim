@@ -92,6 +92,27 @@ fi-pl:
         one: noin kuukausi
         other: noin %{count} kuukautta
       half_a_minute: puoli minuuttia
+      less_than_x_minutes:
+        one: alle minuutti
+        other: alle %{count} minuuttia
+      less_than_x_seconds:
+        one: alle 1 sekunti
+        other: alle %{count} sekuntia
+      x_days:
+        one: 1 päivä
+        other: "%{count} päivää"
+      x_hours:
+        one: 1 tunti
+        other: "%{count} tuntia"
+      x_minutes:
+        one: 1 minuutti
+        other: "%{count} minuuttia"
+      x_months:
+        one: 1 kuukausi
+        other: "%{count} kuukautta"
+      x_seconds:
+        one: 1 sekunti
+        other: "%{count} sekuntia"
   decidim:
     accessibility:
       external_link: Ulkoinen linkki
@@ -472,6 +493,8 @@ fi-pl:
           subtitle: Täytä seuraava lomake viimeistelläksesi rekisteröitymisesi
           username_help: Julkinen nimi, joka näkyy viesteissäsi. Anonyymiteetin taataksemme, voi olla mikä tahansa nimi.
       registrations:
+        create:
+          error: Käyttäjätilin luonti epäonnistui.
         new:
           already_have_an_account?: Onko sinulla jo käyttäjätili?
           newsletter: Vastaanota silloin tällöin olennaista tietoa sisältävä uutiskirje
@@ -532,7 +555,7 @@ fi-pl:
         success: Kuvan lähettäminen onnistui
       drag_and_drop_help: Lisää kuvia raahaamalla ja pudottamalla tai liittämällä niitä leikepöydältä.
     endorsable:
-      endorsements: Suosituksia
+      endorsements: Suositusta
       endorsements_count: Suositusten määrä
     endorsement_buttons_cell:
       already_endorsed: Suositeltu
@@ -1107,7 +1130,7 @@ fi-pl:
           proposals: Ehdotukset
           proposals_explanation: Tee ehdotuksia, tue muiden tekemiä ehdotuksia ja edistä muutoksia, joita haluat nähdä.
         footer_sub_hero:
-          footer_sub_hero_body: Rakennetaan avoimempi, läpinäkyvämpi ja yhteisöllisempi yhteiskunta.<br /> Liity, osallistu ja päätä.
+          footer_sub_hero_body: Rakennetaan entistä avoimempi, läpinäkyvämpi ja yhteistyökykyisempi yhteiskunta.<br /> Liity, osallistu ja päätä.
           footer_sub_hero_headline: Tervetuloa yhteisölliseen osallisuuspalveluun %{organization}.
           register: Rekisteröidy
         hero:
@@ -1573,9 +1596,11 @@ fi-pl:
       not_saved:
         one: 'Virhe käsiteltäessä pyyntöä:'
         other: 'Virheitä käsiteltäessä pyyntöä:'
+      password_confirmation_message: '"Vahvista salasanasi" -kenttä ei vastaa antamaasi salasanaa'
       too_many_marks: liian monta välimerkkiä peräkkäin (esim. ! ja ?)
       too_much_caps: liian monta isoa kirjainta (yli 25% tekstistä)
       too_short: liian lyhyt (alle %{count} merkkiä)
+      url_format: Tämä URL-osoite on väärässä muodossa
   forms:
     correct_errors: Lomakkeella on virheitä, korjaa ne jatkaaksesi.
     length_validator:

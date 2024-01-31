@@ -566,7 +566,7 @@ zh-TW:
             no_components: 這個參與空間中沒有其他的提案元件可以匯入提案。
             select_component: 請選擇一個組件
             select_states: 檢查要匯入的提案狀態。
-            title: 匯入提案
+            title: 導入提案
         proposals_merges:
           create:
             invalid: '由於其中一些提案存在問題，因此無法合併所選提案：'
@@ -833,8 +833,6 @@ zh-TW:
           recent: 最近
           with_more_authors: 有更多作者
         participatory_texts:
-          index:
-            document_index: 文件索引
           view_index:
             see_index: 查看索引
         placeholder:
@@ -910,7 +908,7 @@ zh-TW:
           vote_limit:
             description: 您最多可以支持 %{limit} 個提案。
             left: 剩餘
-            votes: 支持
+            votes: 支援
         wizard_aside:
           back: 返回
           back_from_step_1: 返回提案

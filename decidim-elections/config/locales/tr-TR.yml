@@ -124,8 +124,6 @@ tr:
             name: Cevap
           election:
             name: Seçim
-          question:
-            name: Soru
           trustee:
             name: Vekil
         proposals_imports:
@@ -199,7 +197,6 @@ tr:
           active: Aktif
           all: Tümü
           finished: Bitti
-          search: Arama
           state: Statü
           upcoming: Yakında
         filters_small_view:
@@ -287,7 +284,6 @@ tr:
               upload_legend: Decidim'de sizin genel kimlik anahtarlarınız var, ancak tarayıcınızda hala bu anahtarlar yok. Kimlik anahtarlarınızın olduğu dosyayı, oluşturduktan sonra oluşturduğunuz yedekten bilgisayarınıza aktarmanız gerekir.
             not_supported_browser_description: Vekil olarak hareket etmek için kullanılamayan bir web tarayıcısı kullanıyorsunuz gibi görünüyor. Vekil görevlerinizi tamamlayabilmek için tarayıcınızın en son sürümünü kullandığınızdan emin olun veya en popüler tarayıcılardan herhangi birini kullanmayı deneyin.
             not_supported_browser_title: Vekil kişi olarak hareket etmek için tarayıcıyı yükseltin
-            trustee_role_description: Bu platformda kutlanan bazı seçimlerde Vekil olarak görev yapmakla görevlendirildiniz.
           update:
             success: Tanımlama genel anahtarınız başarıyla saklandı.
       votes:
@@ -329,7 +325,6 @@ tr:
           continue: Sonraki
       warnings:
         no_elections_warning: Arama kriterlerinize uyan seçim yok veya planlanmış bir seçim yok.
-        no_scheduled_elections_warning: Şu anda planlanmış bir seçim yok, ancak burada listelenen tüm geçmiş seçimleri bulabilirsiniz.
     events:
       elections:
         election_published:
@@ -349,9 +344,61 @@ tr:
             email_subject: '%{resource_name} için vekil birisiniz.'
             notification_title: <a href="%{participatory_space_url}">%{resource_name} </a> için vekil birisiniz.
     votings:
+      admin:
+        content_blocks:
+          landing_page:
+            attachments_and_folders:
+              name: Oylama ekleri ve klasörleri
+            elections:
+              name: Seçim ve Seçmenler
+            header:
+              name: Oylama Başlığı
+            html_block_1:
+              name: Oylama html bloğu 1
+            html_block_2:
+              name: Oylama html bloğu 2
+            html_block_3:
+              name: Oylama html bloğu 3
+            metrics:
+              name: Oylama Metrikleri
+            polling_stations:
+              name: Oy kullanma yeri
+            stats:
+              name: Oylama istatistikleri
+            timeline:
+              name: Oylama Zaman Çizelgesi
+        polling_officers:
+          polling_officers_picker:
+            close: Kapat
+        votings:
+          actions:
+            publish: Yayınla
+            unpublish: Yayımdan Kaldır
+      content_blocks:
+        landing_page:
+          description:
+            title: Bu Oylama Hakkında
+      pages:
+        home:
+          highlighted_votings:
+            active_votings: Aktif oylamalar
+            see_all_votings: Tüm Oylamaları Görün
+      polling_officer_zone:
+        closures:
+          new:
+            modal_ballots_count_error:
+              close_modal: Kapat
+          sign:
+            close_modal: Kapat
       votings:
         filters:
           state: Statü
+        show:
+          dates: Tarihler
+      votings_m:
+        footer_button_text:
+          view: Görünüm
+          vote: Oy ver
   layouts:
     decidim:
       election_votes_header:

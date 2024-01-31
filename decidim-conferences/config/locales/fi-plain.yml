@@ -346,7 +346,7 @@ fi-pl:
               accepted: Hyväksytyt
               all: Kaikki
               rejected: Hylätyt
-              sent: Lähetetyt
+              sent: Lähetetty
             filter_by: Suodata
             invite_attendee: Kutsu osallistuja
             invites: Kutsut
@@ -506,7 +506,7 @@ fi-pl:
           highlighted_conferences:
             active_conferences: Aktiiviset konferenssit
             conferences_button_title: Linkki Konferenssit-sivulle, jossa näkyvät kaikki konferenssit
-            see_all_conferences: Katso kaikki konferenssit
+            see_all_conferences: Näytä kaikki konferenssit
       photo:
         image:
           attributes:
