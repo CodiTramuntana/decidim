@@ -148,11 +148,12 @@ module Decidim
 
           # This method send confirmation email with answers to user when a questionnaire is answered.
           def send_confirmation_email
-            component = @questionnaire.questionnaire_for.component
-            answers = Decidim::Forms::QuestionnaireUserAnswers.for(@questionnaire)
-            user_answers = answers.select { |a| a.first.session_token == session_token }
+            return if current_user.blank?
 
-            Decidim::Surveys::ConfirmationDeliveryJob.perform_now(current_user, @questionnaire, user_answers) if component.manifest_name == "surveys" && answers.present?
+            component = @questionnaire.questionnaire_for.component
+            user_answers = Decidim::Forms::QuestionnaireUserAnswers.for(questionnaire, current_user)
+
+            Decidim::Surveys::ConfirmationDeliveryJob.perform_now(current_user, questionnaire, user_answers) if component.manifest_name == "surveys" && user_answers.first.present?
           end
         end
       end
