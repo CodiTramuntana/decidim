@@ -153,7 +153,7 @@ module Decidim
             component = @questionnaire.questionnaire_for.component
             user_answers = Decidim::Forms::QuestionnaireUserAnswers.for(questionnaire, current_user)
 
-            Decidim::Surveys::ConfirmationDeliveryJob.perform_now(current_user, @questionnaire, user_answers) if component.manifest_name == "surveys" && user_answers.present?
+            Decidim::Surveys::ConfirmationDeliveryJob.perform_now(current_user, questionnaire, user_answers) if component.manifest_name == "surveys" && user_answers.first.present?
           end
         end
       end
