@@ -46,7 +46,7 @@ module Decidim
               enforce_permission_to :export_response, :questionnaire_answers
 
               session_token = params[:session_token]
-              answers = QuestionnaireUserAnswers.for(questionnaire)
+              answers = QuestionnaireUsersAnswers.for(questionnaire)
 
               # i18n-tasks-use t("decidim.forms.admin.questionnaires.answers.export_response.title")
               title = t("export_response.title", scope: i18n_scope, token: session_token)

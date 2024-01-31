@@ -76,7 +76,7 @@ Decidim.register_component(:surveys) do |component|
   component.exports :survey_user_answers do |exports|
     exports.collection do |f|
       survey = Decidim::Surveys::Survey.find_by(component: f)
-      Decidim::Forms::QuestionnaireUserAnswers.for(survey.questionnaire)
+      Decidim::Forms::QuestionnaireUsersAnswers.for(survey.questionnaire)
     end
 
     exports.formats %w(CSV JSON Excel FormPDF)
