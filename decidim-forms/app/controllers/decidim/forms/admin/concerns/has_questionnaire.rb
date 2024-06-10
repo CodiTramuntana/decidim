@@ -16,12 +16,12 @@ module Decidim
           included do
             helper Decidim::Forms::Admin::ApplicationHelper
             include Decidim::TranslatableAttributes
+            include Decidim::Templates::Admin::Concerns::Templatable
 
             helper_method :questionnaire_for, :questionnaire, :blank_question, :blank_answer_option, :blank_matrix_row,
                           :blank_display_condition, :question_types, :display_condition_types, :update_url, :public_url, :answer_options_url, :edit_questionnaire_title
 
             if defined?(Decidim::Templates::Admin::Concerns::Templatable)
-              include Decidim::Templates::Admin::Concerns::Templatable
               helper Decidim::DatalistSelectHelper
 
               def templatable_type
