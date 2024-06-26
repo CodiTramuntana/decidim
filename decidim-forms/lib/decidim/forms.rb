@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "decidim/templates" if Decidim.module_installed?(:templates)
+
 require "decidim/forms/admin"
 require "decidim/forms/api"
 require "decidim/forms/engine"

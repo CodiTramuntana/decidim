@@ -4,7 +4,7 @@ require "decidim/templates/menu"
 
 module Decidim
   module Templates
-    # This is the engine that runs on the public interface of `Templates`.
+    # This is the engine that runs on the admin panel interface of `Templates`.
     class AdminEngine < ::Rails::Engine
       isolate_namespace Decidim::Templates::Admin
 
