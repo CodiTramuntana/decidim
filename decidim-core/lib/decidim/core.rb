@@ -770,9 +770,12 @@ module Decidim
     # user lists e.g. "decidim-core" and "decidim-budgets" in it. In this
     # situation, "decidim-comments" is also needed because it is a dependency
     # for "decidim-budgets".
-    require "decidim/#{mod}"
-
-    true
+    if mod.to_sym == :templates
+      Bundler.definition.dependencies.find { |d| d.name == "decidim-templates" }.present? && require("decidim/#{mod}")
+    else
+      require "decidim/#{mod}"
+      true
+    end
   rescue LoadError
     false
   end
