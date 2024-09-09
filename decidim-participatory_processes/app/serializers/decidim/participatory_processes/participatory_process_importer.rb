@@ -52,20 +52,22 @@ module Decidim
         end
       end
 
-      def import_process_group(attributes)
-        title = compact_translation(attributes["title"] || attributes["name"])
-        description = compact_translation(attributes["description"])
+      def import_process_group(participatory_process_group)
+        return if participatory_process_group.nil?
+
+        title = compact_translation(participatory_process_group["title"] || participatory_process_group["name"])
+        description = compact_translation(participatory_process_group["description"])
 
         return if title.blank? && description.blank?
 
         Decidim.traceability.perform_action!("create", ParticipatoryProcessGroup, @user) do
           group = ParticipatoryProcessGroup.find_or_initialize_by(
-            title: attributes["title"] || attributes["name"],
-            description: attributes["description"],
+            title:,
+            description:,
             organization: @organization
           )
 
-          group.remote_hero_image_url = attributes["remote_hero_image_url"] if remote_file_exists?(attributes["remote_hero_image_url"])
+          group.remote_hero_image_url = participatory_process_group["remote_hero_image_url"] if remote_file_exists?(participatory_process_group["remote_hero_image_url"])
           group.save!
           group
         end
