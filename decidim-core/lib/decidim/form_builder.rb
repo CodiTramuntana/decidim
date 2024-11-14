@@ -185,6 +185,7 @@ module Decidim
     #           :disabled - Whether the editor should be disabled
     #
     # Renders a container with both hidden field and editor container
+    # rubocop: disable Metrics/CyclomaticComplexity
     def editor(name, options = {})
       options[:disabled] ||= false
       toolbar = options.delete(:toolbar) || "basic"
@@ -194,7 +195,7 @@ module Decidim
       options.delete(:required)
       hashtaggable = options.delete(:hashtaggable)
       hidden_options = extract_validations(name, options).merge(options)
-      sanitized_value = sanitize_editor_value(object.send(name))
+      sanitized_value = object.respond_to?(name) ? sanitize_editor_value(object.send(name)) : hidden_options[:value]
 
       content_tag(:div, class: "editor #{"hashtags__container" if hashtaggable}") do
         template = ""
@@ -211,6 +212,7 @@ module Decidim
         template.html_safe
       end
     end
+    # rubocop: enable Metrics/CyclomaticComplexity
 
     # Public: Generates a select field with the categories. Only leaf categories can be set as selected.
     #
