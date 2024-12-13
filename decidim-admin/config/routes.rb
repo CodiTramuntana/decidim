@@ -18,7 +18,6 @@ Decidim::Admin::Engine.routes.draw do
     Decidim.participatory_space_manifests.each do |manifest|
       mount manifest.context(:admin).engine, at: "/", as: "decidim_admin_#{manifest.name}"
     end
-    mount Decidim::Templates::AdminEngine, at: "/", as: "decidim_admin_templates"
 
     resources :static_pages do
       put :update_content_blocks, on: :member
