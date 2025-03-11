@@ -82,6 +82,7 @@ id:
             initiative_title: Judul inisiatif
             name_and_surname: Nama dan nama keluarga
             postal_code: Kode Pos
+            scope: Cakupan
             time_and_date: Waktu dan tanggal
             timestamp: Stempel waktu
       titles:
@@ -277,6 +278,7 @@ id:
           recent: Terbaru
         print:
           city: Kota
+          print: Mencetak
         result:
           initiative_rejected_reason: Inisiatif ini telah ditolak karena kurangnya dukungan.
         signatures_count:
@@ -310,6 +312,7 @@ id:
     resources:
       initiatives_type:
         actions:
+          create: Membuat
           title: Tindakan
           vote: Memilih
   layouts:

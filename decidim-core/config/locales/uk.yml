@@ -22,7 +22,6 @@ uk:
     attributes:
       decidim/user:
         current_password: Поточний пароль
-        email: Адреса електронної пошти
         name: Ім'я учасника
         password: Пароль
         password_confirmation: Підтвердження паролю
@@ -191,6 +190,10 @@ uk:
         name: Статистика організації
       sub_hero:
         name: Під-багатирський банер
+    core:
+      application_helper:
+        filter_category_values:
+          all: Усі
     devise:
       omniauth_registrations:
         new:
@@ -417,7 +420,6 @@ uk:
     scopes:
       global: Всеохопний обсяг
       picker:
-        cancel: Скасувати
         choose: Оберіть
         title: Оберіть %{field}
       prompt: Оберіть обсяг

@@ -83,7 +83,7 @@ ja:
             add_question: 質問を追加
             add_separator: 区切り文字を追加
             add_title_and_description: タイトルと説明を追加
-            already_answered_warning: このフォームはすでに一部のユーザーによって回答されているため、質問を修正することはできません。
+            already_answered_warning: このフォームはすでに回答しているユーザーがいるため、質問を修正することはできません。
             collapse: すべての質問を閉じる
             expand: すべての質問を展開
             preview: プレビュー

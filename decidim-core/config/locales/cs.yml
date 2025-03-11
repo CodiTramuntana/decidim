@@ -534,6 +534,8 @@ cs:
             dummy_step_attribute1: Atribut 1 zástupného kroku
             dummy_step_attribute2: Atribut 2 zástupného kroku
             dummy_step_translatable_text: Zástupný krok textu k přeložení
+      pagination:
+        page_title: "%{component_name} - Strana %{current_page} z %{total_pages}"
     contact: Kontakt
     content_blocks:
       announcement:
@@ -1119,6 +1121,8 @@ cs:
           not_found: 'Oblast působnosti nebyla nalezena v databázi (ID: %{id})'
         scope_type_presenter:
           not_found: 'Typ oboru nebyl nalezen v databázi (ID: %{id})'
+    machine_translations:
+      automatic: automatický překlad do %{locale_name}
     managed_users:
       expired_session: Aktuální relace správy účastníka vypršela.
     map:
@@ -1988,6 +1992,8 @@ cs:
         expire_time_html: Platnost vaší relace vyprší za <b><span class="minutes">%{minutes}</span></b>.
       language_chooser:
         choose_language: Vyberte jazyk
+      navigation:
+        aria_label: Navigační menu - %{title}
       notifications_dashboard:
         mark_all_as_read: Označit vše jako přečtené
         mark_as_read: Označit jako přečtené
@@ -2094,6 +2100,7 @@ cs:
       long_with_particles: "%B %d, %Y v %H:%M"
       short: "%d/%m/%Y %H:%M"
       time_of_day: "%H:%M"
+      tooltip: "%d-%m-%Y %H:%M %p %Z (GMT %:z)"
   versions:
     directions:
       left: Smazané

@@ -3,7 +3,6 @@ it:
   activemodel:
     attributes:
       budget:
-        decidim_scope_id: Ambito
         description: Descrizione
         title: Titolo
         total_budget: Budget totale
@@ -11,7 +10,6 @@ it:
       project:
         budget_amount: Importo del budget
         decidim_category_id: Categoria
-        decidim_scope_id: Ambito tematico
         description: Descrizione
         proposal_ids: Proposte correlate
         selected: Selezionato per l'implementazione
@@ -26,7 +24,6 @@ it:
       actions:
         attachment_collections: Cartelle
         attachments: Allegati
-        confirm_destroy: Sei certo di voler cancellare questo progetto?
         destroy: Cancella
         edit: Modifica
         edit_projects: Gestisci progetti
@@ -144,7 +141,6 @@ it:
           title: Non hai ancora votato
         filters:
           category: Categoria
-          scope: Ambito tematico
           search: Cerca
           status: Stato
           status_values:
@@ -184,7 +180,6 @@ it:
             more_information_modal: Finestra modale "Maggiori informazioni"
             projects_per_page: Progetti per pagina
             resources_permissions_enabled: Le autorizzazioni relative alle azioni possono essere impostate per ogni progetto
-            scope_id: Obiettivo
             scopes_enabled: Obiettivi abilitati
             title: Titolo
             total_budget: Budget totale

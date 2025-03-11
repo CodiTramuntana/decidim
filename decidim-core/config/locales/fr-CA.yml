@@ -57,7 +57,7 @@ fr-CA:
         with_participatory_space: Espace participatif
       decidim/user:
         current_password: Mot de passe actuel
-        email: Email
+        email: Courriel
         name: Surnom
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe
@@ -500,6 +500,8 @@ fr-CA:
             dummy_step_attribute1: Attribut d'étape factice 1
             dummy_step_attribute2: Attribut d'étape factice 2
             dummy_step_translatable_text: Texte traduisible de l'étape factice
+      pagination:
+        page_title: "%{component_name} - Page %{current_page} sur %{total_pages}"
     contact: Contact
     content_blocks:
       announcement:
@@ -1080,6 +1082,8 @@ fr-CA:
           not_found: 'Le secteur n''a pas été trouvé dans la base de données (ID: %{id})'
         scope_type_presenter:
           not_found: 'Le type de secteur n''a pas été trouvé dans la base de données (ID: %{id})'
+    machine_translations:
+      automatic: traduction automatique en %{locale_name}
     managed_users:
       expired_session: La session de représentation d'identité a expiré.
     map:
@@ -1505,7 +1509,7 @@ fr-CA:
         filters:
           area: Périmètre d'assemblée
           areas: Zones d'application
-          scope: Secteur
+          scope: Périmètre d'application
           select_an_area: Sélectionnez une zone d'application
       progress: Avancement
       public_participation:
@@ -1942,6 +1946,8 @@ fr-CA:
         expire_time_html: Votre session expirera dans <b><span class="minutes">%{minutes}</span> minutes</b>.
       language_chooser:
         choose_language: Choisir la langue
+      navigation:
+        aria_label: Menu de navigation - %{title}
       notifications_dashboard:
         mark_all_as_read: Marquer tout comme lu
         mark_as_read: Marquer comme lu

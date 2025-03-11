@@ -355,7 +355,7 @@ hu:
         title: Ellenőrzési konfliktusok
         transfer:
           email: Email
-          error: Hiba történt a jelenlegi résztvevő kezelt résztvevővé transzferálása során.
+          error: Hiba történt a jelenlegi résztvevő kezelt résztvevővé átminősítése során.
           name: Név
           reason: Ok
           success: Az átvitel sikeresen befejezve.
@@ -448,7 +448,7 @@ hu:
             'false': Közzétéve
             'true': Visszavont
         scope_id_eq:
-          label: Hatáskör
+          label: Hatókör
         search_label: Keresés
         search_placeholder:
           name_or_nickname_or_email_cont: Keresés %{collection} email, név vagy becenév alapján.

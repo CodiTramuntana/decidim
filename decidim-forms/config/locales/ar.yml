@@ -30,6 +30,9 @@ ar:
             free_text: نص حر
             remove: إزالة
             statement: بيان
+          answers:
+            actions:
+              export: تصدير
           display_condition:
             condition_question: سؤال
             remove: حذف
@@ -37,7 +40,6 @@ ar:
             save: حفظ
           form:
             add_question: أضف سؤال
-            already_answered_warning: تمت الإجابة على النموذج من قبل بعض المستخدمين حتى لا تتمكن من تعديل أسئلته.
           matrix_row:
             remove: إزالة
             statement: بيان
@@ -83,7 +85,6 @@ ar:
           tos_agreement: من خلال المشاركة ، فإنك تقبل شروط الخدمة
       step_navigation:
         show:
-          are_you_sure: لا يمكن التراجع عن هذا الإجراء ولن تتمكن من تعديل إجاباتك. هل أنت واثق؟
           submit: خضع
       user_answers_serializer:
         created_at: أجاب على

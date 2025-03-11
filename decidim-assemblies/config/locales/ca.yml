@@ -154,7 +154,7 @@ ca:
           success: El membre per a aquesta assemblea s'ha eliminat correctament.
         edit:
           title: Actualitzar membre de l'assemblea
-          update: Actualitza
+          update: Actualitzar
         index:
           assembly_members_title: Membres de l'assemblea
         new:
@@ -352,10 +352,10 @@ ca:
       assembly_types:
         commission: Comissió
         consultative_advisory: Consultiva / Assessora
-        executive: Executiva
+        executive: Executiu
         government: Govern
         others: Altres
-        participatory: Participativa
+        participatory: Participatiu
         working_group: Grup de treball
       content_blocks:
         children_assemblies:

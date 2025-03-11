@@ -500,6 +500,8 @@ es-PY:
             dummy_step_attribute1: Atributo de paso ficticio 1
             dummy_step_attribute2: Atributo de paso ficticio 2
             dummy_step_translatable_text: Fase de ejemplo traducible
+      pagination:
+        page_title: "%{component_name} - Página %{current_page} de %{total_pages}"
     contact: Contacto
     content_blocks:
       announcement:
@@ -1079,6 +1081,8 @@ es-PY:
           not_found: 'No se encontró el ámbito en la base de datos (ID: %{id})'
         scope_type_presenter:
           not_found: 'No se encontró el tipo de ámbito en la base de datos (ID: %{id})'
+    machine_translations:
+      automatic: traducción automática a %{locale_name}
     managed_users:
       expired_session: La sesión de suplantación actual ha caducado.
     map:
@@ -1167,7 +1171,7 @@ es-PY:
         active: Activas
         finished: 'Terminado el: %{end_date}'
         not_started: Aún no ha comenzado
-        remaining: "queda %{time_distance}"
+        remaining: "Queda(n) %{time_distance}"
     metrics:
       download:
         csv: Descargar datos (CSV)
@@ -1941,6 +1945,8 @@ es-PY:
         expire_time_html: Su sesión expirará en <b><span class="minutes">%{minutes}</span> minutos</b>.
       language_chooser:
         choose_language: Elegir el idioma
+      navigation:
+        aria_label: 'Menú de navegación: %{title}'
       notifications_dashboard:
         mark_all_as_read: Marcar todo como leído
         mark_as_read: Marcar como leído

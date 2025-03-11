@@ -351,6 +351,9 @@ id:
           fields:
             name: Nama
             plural: Jamak
+        share_token:
+          fields:
+            created_at: Dibuat di
         static_page:
           fields:
             created_at: Dibuat di
@@ -404,6 +407,7 @@ id:
         select_recipients_to_deliver:
           confirm_deliver: Anda yakin ingin menyampaikan buletin ini? Tindakan ini tidak bisa dibatalkan.
           deliver: Kirimkan buletin
+          none: Tidak ada
         show:
           preview: Preview
           subject: Subyek

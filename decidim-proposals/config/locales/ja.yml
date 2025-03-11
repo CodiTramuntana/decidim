@@ -101,7 +101,7 @@ ja:
               'false': 提案
               'true': 修正
           scope_id_eq:
-            label: 対象範囲
+            label: スコープ
           state_eq:
             label: 州(県)
             values:
@@ -316,12 +316,10 @@ ja:
             notification_title: <a href="%{resource_path}">%{resource_title}</a> の提案は拒否されました。
         proposal_update_category:
           email_intro: '管理者があなたの提案 "%{resource_title}" のカテゴリを更新しました。このページでチェックしてください：'
-          email_outro: あなたが提案の著者であるため、この通知を受け取りました。
           email_subject: '%{resource_title} 提案カテゴリが更新されました'
           notification_title: <a href="%{resource_path}">%{resource_title}</a> 提案カテゴリは管理者によって更新されました。
         proposal_update_scope:
           email_intro: '管理者があなたの提案 "%{resource_title}" のスコープを更新しました。このページで確認してください：'
-          email_outro: あなたが提案の著者であるため、この通知を受け取りました。
           email_subject: '%{resource_title} の提案範囲が更新されました'
           notification_title: <a href="%{resource_path}">%{resource_title}</a> の提案スコープが管理者によって更新されました。
         voting_enabled:
@@ -384,7 +382,7 @@ ja:
     participatory_spaces:
       highlighted_proposals:
         last: 最近の提案
-        see_all: すべての提案を見る (%{count})
+        see_all: すべての提案を見る
     proposals:
       actions:
         answer_proposal: 提案に回答
@@ -690,7 +688,7 @@ ja:
           final_proposal_help_text: この草案は終了しました。最終提案を確認してください。
           hidden_authors_count:
             other: '%{count} 人以上'
-          info-message: これは提案のための<strong>共同草案</strong>です。コメントセクションを使用して著者に提案を形成するのを手伝うことができます。また、編集アクセスを要求することで直接改善することもできます。著者がアクセスを許可したら、このドラフトを変更できるようになります。
+          info-message: これは提案のための <strong>共同草案</strong> です。 これは、以下のコメントセクションを使用して提案を作成したり、編集するためのアクセスを要求することで、提案を改善したりすることができることを意味します。 作成者がアクセスを許可すると、この草案を変更できるようになります。
           publish: 公開
           publish_info: このバージョンの草案を公開するか、
           published_proposal: 公開された提案

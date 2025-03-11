@@ -1,14 +1,14 @@
 {
   "name": "@decidim/core",
   "description": "The core dependencies for Decidim",
-  "version": "0.28.4",
+  "version": "0.28.5",
   "repository": {
     "url": "git@github.com:decidim/decidim.git",
     "type": "git",
     "directory": "packages/core"
   },
   "author": "Decidim Contributors",
-  "license": "AGPL-3.0",
+  "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@picmo/popup-picker": "^5.8.4",
     "@rails/activestorage": "^6.0.4",

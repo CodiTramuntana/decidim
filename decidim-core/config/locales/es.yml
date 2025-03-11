@@ -497,6 +497,8 @@ es:
             dummy_step_attribute1: Atributo de fase de prueba 1
             dummy_step_attribute2: Atributo de fase de prueba 2
             dummy_step_translatable_text: Fase de ejemplo traducible
+      pagination:
+        page_title: "%{component_name} - Página %{current_page} de %{total_pages}"
     contact: Contacto
     content_blocks:
       announcement:
@@ -978,7 +980,7 @@ es:
         success: Solicitud de unirse correctamente aceptada.
       actions:
         are_you_sure: '¿Seguro?'
-        promote_to_admin: Hacer administrador
+        promote_to_admin: Hacer administradora
         remove_from_group: Eliminar participante
       index:
         current_members_without_admins: 'Miembros actuales (sin administradores):'
@@ -1076,6 +1078,8 @@ es:
           not_found: 'El ámbito no se encontró en la base de datos (ID: %{id})'
         scope_type_presenter:
           not_found: 'El tipo de ámbito no se encontró en la base de datos (ID: %{id})'
+    machine_translations:
+      automatic: traducción automática a %{locale_name}
     managed_users:
       expired_session: La sesión actual de administración de una participante ha caducado.
     map:
@@ -1095,30 +1099,30 @@ es:
         comanagers_new_conversation:
           admin_in_group: Recibes esta notificación porque eres administradora de %{group}.
           greeting: '¡Hola, %{recipient}!'
-          intro: "%{manager} ha iniciado una nueva conversación en nombre de %{group}. Haz clic aquí para verla:"
+          intro: "%{manager} ha iniciado una nueva conversación en nombre de %{group}. Para verla y responder, inicia tu sesión y haz clic en el enlace que encontrarás más abajo:"
           outro: '¡Disfruta de la plataforma!'
           subject: "%{manager} ha iniciado una nueva conversación como %{group}"
         comanagers_new_message:
           admin_in_group: Recibes esta notificación porque eres administradora de %{group}.
           greeting: Hola, %{recipient}!
-          intro: "%{manager} ha publicado nuevos mensajes en una conversación en nombre de %{group}. Haz clic aquí para verla:"
+          intro: "%{manager} ha publicado nuevos mensajes en una conversación en nombre de %{group}. Para verlos y responder, inicia tu sesión y haz clic en el enlace que encontrarás más abajo:"
           outro: '¡Disfruta de la plataforma!'
           subject: "%{manager} ha enviado nuevos mensajes como %{group}"
         new_conversation:
           greeting: Hola, %{recipient}!
-          intro: "%{sender} ha iniciado una nueva conversación contigo. Haz click aquí para verla:"
+          intro: "%{sender} ha iniciado una nueva conversación contigo. Para responder, inicia tu sesión y haz clic en el enlace que encontrarás más abajo:"
           outro: '¡Disfruta de la plataforma!'
           subject: "%{sender} ha iniciado una conversación contigo"
         new_group_conversation:
           admin_in_group: Recibes esta notificación porque eres administradora de %{group}.
           greeting: '¡Hola, %{recipient}!'
-          intro: "%{sender} ha iniciado una nueva conversación con el grupo %{group}. Haz clic aquí para verla:"
+          intro: "%{sender} ha iniciado una nueva conversación con el grupo %{group}. Para verlo y responder, inicia tu sesión y haz clic en el enlace que encontrarás más abajo:"
           outro: '¡Disfruta de la plataforma!'
           subject: "%{sender} ha iniciado una nueva conversación con %{group}"
         new_group_message:
           admin_in_group: Recibes esta notificación porque eres administradora de %{group}.
           greeting: '¡Hola, %{recipient}!'
-          intro: "%{sender} ha iniciado una nueva conversación con el grupo %{group}. Haz clic aquí para verla:"
+          intro: "%{sender} ha añadido nuevos mensajes en la conversación con el grupo %{group}. Para verlos y responder, inicia tu sesión y haz clic en el enlace que encontrarás más abajo:"
           outro: '¡Disfruta de la plataforma!'
           subject: "%{group} tiene nuevos mensajes de %{sender}"
         new_message:
@@ -1164,7 +1168,7 @@ es:
         active: Activas
         finished: 'Terminado el: %{end_date}'
         not_started: Aún no ha comenzado
-        remaining: "queda %{time_distance}"
+        remaining: "Queda(n) %{time_distance}"
     metrics:
       download:
         csv: Descargar datos (CSV)
@@ -1665,7 +1669,7 @@ es:
       invite_collaborator:
         subject: Te han invitado a colaborar en %{organization}
       invite_private_user:
-        subject: Te han invitado a participar en un proceso participativo privado en %{organization}
+        subject: Te han invitado a participar en un espacio de participación privado en %{organization}
       organization_admin_invitation_instructions:
         subject: Te han invitado a administrar %{organization}
       password_change:
@@ -1938,6 +1942,8 @@ es:
         expire_time_html: Su sesión expirará en <b><span class="minutes">%{minutes}</span> minutos</b>.
       language_chooser:
         choose_language: Elegir el idioma
+      navigation:
+        aria_label: 'Menú de navegación: %{title}'
       notifications_dashboard:
         mark_all_as_read: Marcar todo como leído
         mark_as_read: Marcar como leído

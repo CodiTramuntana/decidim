@@ -296,7 +296,6 @@ nl:
         title: Controle conflicten
         transfer:
           email: E-mail
-          error: Er is een probleem opgetreden bij het overbrengen van de huidige deelnemer naar een beheerde deelnemer.
           name: Naam
           reason: Reden
           success: De overdracht is met succes voltooid.
@@ -364,7 +363,7 @@ nl:
             'false': Ingediend
             'true': Niet-gepubliceerde
         scope_id_eq:
-          label: Bereik
+          label: Scope
         search_label: Zoeken
         search_placeholder:
           name_or_nickname_or_email_cont: Zoek %{collection} op e-mail, naam of bijnaam.

@@ -29,7 +29,6 @@ gl:
     attributes:
       decidim/user:
         current_password: Contrasinal actual
-        email: Correo electrónico
         name: Nome da usuaria
         password: Contrasinal
         password_confirmation: Confirmación por contrasinal
@@ -273,6 +272,10 @@ gl:
         name: Estatísticas da organización
       sub_hero:
         name: Banner sub-heroe
+    core:
+      application_helper:
+        filter_category_values:
+          all: Todo
     devise:
       omniauth_registrations:
         new:

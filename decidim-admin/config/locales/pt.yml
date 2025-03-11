@@ -31,6 +31,7 @@ pt:
         user_group_id: Criar importações como
       newsletter:
         body: Corpo
+        send_to_all_users: Enviar para todas as pessoas utilizadoras
         subject: Assunto
       organization:
         alert_color: Alerta
@@ -161,6 +162,9 @@ pt:
         reject: Rejeitar
         share: Partilhar
         verify: Verificar
+      admin_terms_of_service:
+        accept:
+          error: Ocorreu um erro ao aceitar os termos de utilização de administrador.
       area_types:
         create:
           error: Ocorreu um problema ao criar um novo tipo de área.
@@ -292,7 +296,6 @@ pt:
         title: Conflitos de verificação
         transfer:
           email: e-Mail
-          error: Houve um problema ao transferir o utilizador actual para utilizador gerido.
           name: Nome
           reason: Motivo
           success: A transferência actual foi completada com êxito.

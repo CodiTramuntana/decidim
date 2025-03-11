@@ -23,7 +23,7 @@ ro:
       category:
         description: Descriere
         name: Nume
-        parent_id: Categoria mamă
+        parent_id: Categoria părinte
         weight: Poziție
       component:
         name: Nume
@@ -353,7 +353,6 @@ ro:
         title: Conflicte de verificare
         transfer:
           email: E-mail
-          error: A apărut o problemă la transferul participantului curent drept participant gestionat.
           name: Nume
           reason: Motiv
           success: Transferul curent a fost finalizat cu succes.
@@ -429,7 +428,7 @@ ro:
             'false': Publicat
             'true': Nepublicat
         scope_id_eq:
-          label: Domeniu
+          label: Domeniu de interes
         search_label: Caută
         search_placeholder:
           name_or_nickname_or_email_cont: Caută %{collection} după e-mail, nume sau pseudonim.
@@ -492,7 +491,7 @@ ro:
         and: și
         data_errors:
           duplicate_headers:
-            detail: Te rugăm verifică dacă fişierul conţine coloanele sau antetele obligatorii o singură dată.
+            detail: Vă rugăm verificați că fișierul conține coloanele sau antetele o singură dată.
             message:
               one: Duplică coloana %{columns}.
               few: Duplică coloanele %{columns}.
@@ -876,7 +875,7 @@ ro:
       resources:
         index:
           headers:
-            scope: Domeniu
+            scope: Domeniu de interes
       scope_types:
         create:
           error: A apărut o problemă la crearea unui nou tip de domeniu.

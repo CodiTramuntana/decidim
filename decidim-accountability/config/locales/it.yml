@@ -56,6 +56,9 @@ it:
             name: Risultato
           status:
             name: Stato
+        projects_import:
+          new:
+            create: Importa
         results:
           edit:
             title: Modifica il risultato
@@ -113,7 +116,7 @@ it:
             end_date: Data di fine
             id: ID
             progress: Avanzamento
-            scope: Ambito
+            scope: Obiettivi
             start_date: Data di inizio
             status: Stato
             title: Titolo
@@ -135,7 +138,6 @@ it:
         filters:
           all: Tutti
         home:
-          categories_label: Categorie
           subcategories_label: Sottocategorie
         home_header:
           global_status: Stato di esecuzione globale
@@ -162,7 +164,7 @@ it:
           category_id_eq:
             label: Categoria
           scope_id_eq:
-            label: Ambito
+            label: Obiettivi
           status_id_eq:
             label: Stato
     components:
@@ -179,7 +181,7 @@ it:
             heading_leaf_level_results: Nome per "Progetti"
             heading_parent_level_results: Nome per "Risultati"
             intro: Introduzione
-            scope_id: Ambito
+            scope_id: Obiettivi
             scopes_enabled: Ambiti abilitati
             subcategories_label: Nome per "Sottocategorie"
           step:

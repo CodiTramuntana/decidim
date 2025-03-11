@@ -92,6 +92,10 @@ nl:
     admin:
       filters:
         proposals:
+          category_id_eq:
+            label: Categorie
+          scope_id_eq:
+            label: Scope
           valuator_role_ids_has:
             label: Toegewezen aan beoordelaar
         search_placeholder:
@@ -101,7 +105,7 @@ nl:
         actions:
           amend: Pas aan
           comment: Reactie
-          create: creëren
+          create: Creëren
           endorse: Aanbevelen
           vote: Stem
           vote_comment: Stem op de reactie
@@ -259,12 +263,10 @@ nl:
             notification_title: Het voorstel <a href="%{resource_path}">%{resource_title}</a> is afgewezen.
         proposal_update_category:
           email_intro: 'Een beheerder heeft de categorie van uw voorstel "%{resource_title} bijgewerkt, bekijk het op deze pagina:'
-          email_outro: Je hebt deze melding ontvangen omdat je de auteur bent van het voorstel.
           email_subject: De categorie van het %{resource_title} voorstel is bijgewerkt
           notification_title: De categorie van het <a href="%{resource_path}">%{resource_title}</a> voorstel is bijgewerkt door een beheerder.
         proposal_update_scope:
           email_intro: 'Een admin heeft de reikwijdte van je voorstel "%{resource_title}" geüpdatet, bekijk het op deze pagina:'
-          email_outro: Je hebt deze melding ontvangen omdat je de auteur bent van het voorstel.
           email_subject: Het toepassingsgebied van het %{resource_title} voorstel is bijgewerkt
           notification_title: Het bereik van <a href="%{resource_path}">%{resource_title}</a> voorstel is bijgewerkt door een admin.
         voting_enabled:
@@ -324,7 +326,7 @@ nl:
         title: stemmen
     participatory_spaces:
       highlighted_proposals:
-        see_all: Alles zien (%{count})
+        see_all: Alles zien
     proposals:
       actions:
         answer_proposal: Antwoord voorstel
@@ -402,7 +404,7 @@ nl:
             title: Voorstel bijwerken
             update: Bijwerken
           form:
-            attachment_legend: "(Optioneel) Een bijlage toevoegen"
+            attachment_legend: "(Optioneel) Voeg een bijlage toe"
             created_in_meeting: Dit voorstel komt uit een vergadering
             delete_attachment: Bijlage verwijderen
             select_a_category: Kies een categorie

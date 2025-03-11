@@ -219,7 +219,7 @@ lt:
             ceased_date: Nutraukimo data
             designation_date: Paskyrimo data
             full_name: Vardas
-            position: Pareigos
+            position: Pozicija
           name: Narys
           positions:
             other: Kita
@@ -332,7 +332,7 @@ lt:
         commission: Komisija
         consultative_advisory: Konsultacinė / Patariamoji
         executive: Vykdomoji
-        government: Vyriausybe
+        government: Vyriausybė
         others: Kita
         participatory: Dalyvaujamoji
         working_group: Darbo grupė
