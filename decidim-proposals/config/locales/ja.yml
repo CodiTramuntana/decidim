@@ -316,10 +316,12 @@ ja:
             notification_title: <a href="%{resource_path}">%{resource_title}</a> の提案は拒否されました。
         proposal_update_category:
           email_intro: '管理者があなたの提案 "%{resource_title}" のカテゴリを更新しました。このページでチェックしてください：'
+          email_outro: あなたが提案の作成者であるため、この通知を受け取りました。
           email_subject: '%{resource_title} 提案カテゴリが更新されました'
           notification_title: <a href="%{resource_path}">%{resource_title}</a> 提案カテゴリは管理者によって更新されました。
         proposal_update_scope:
           email_intro: '管理者があなたの提案 "%{resource_title}" のスコープを更新しました。このページで確認してください：'
+          email_outro: あなたが提案の作成者であるため、この通知を受け取りました。
           email_subject: '%{resource_title} の提案範囲が更新されました'
           notification_title: <a href="%{resource_path}">%{resource_title}</a> の提案スコープが管理者によって更新されました。
         voting_enabled:
@@ -498,7 +500,6 @@ ja:
           index:
             actions: アクション
             assign_to_valuator: 評価者に割り当てる
-            assign_to_valuator_button: 割り当て
             cancel: キャンセル
             change_category: カテゴリの変更
             change_scope: スコープの変更
@@ -512,7 +513,6 @@ ja:
             split_button: 分割
             title: 提案
             unassign_from_valuator: 評価者からの割り当てを解除
-            unassign_from_valuator_button: 割り当ての解除
             update: 更新
             update_scope_button: スコープの更新
           new:
