@@ -323,7 +323,7 @@ hu:
       proposals:
         description: A létrehozott javaslatok száma
         object: javaslatok
-        title: javaslatok
+        title: Javaslatok
       votes:
         description: A felhasználók által benyújtott szavazatok száma
         object: szavazatok
@@ -688,7 +688,6 @@ hu:
           see_all_withdrawn: Összes visszavont javaslat
         new:
           send: Tovább
-          title: Javaslat létrehozása
         orders:
           label: 'Javaslatok rendezése:'
           most_commented: Legtöbb hozzászólással

@@ -33,6 +33,12 @@ es:
         personal_url: URL personal
         remove_avatar: Eliminar imagen de perfil
         tos_agreement: Términos y condiciones uso
+    errors:
+      models:
+        user:
+          attributes:
+            nickname:
+              format: El alias o apodo debe estar en minúsculas y no contener espacios
     models:
       decidim/attachment_created_event: Archivo adjunto
       decidim/component_published_event: Componente activo
@@ -145,6 +151,7 @@ es:
       front_page_link: Ir a la página principal
       logo: "Logo oficial de %{organization}"
       opens_in_new_tab: Abrir en una pestaña nueva
+      secondary_menu: Menú secundario
       skip_button: Saltar al contenido principal
     account:
       blocked: Esta cuenta ha sido bloqueada por una violación de los términos y condiciones de uso
@@ -1601,7 +1608,7 @@ es:
       show:
         version_index: Versión %{index} de %{total}
     welcome_notification:
-      default_body: <p>¡Hola {{name}}, gracias por unirte a {{organization}} te damos la bienvenida!</p><ul><li>Si quieres hacerte una idea rápida de que puedes hacer, echa un vistazo a la <a href="{{help_url}}">Sección de ayuda</a>.</li><li>Una vez la hayas leído recibirás tu primera insignia. Aquí encontrarás un <a href="{{badges_url}}">listado de todas las insignias</a>que puedes conseguir participando en {{organization}}</li><li>. Para terminar, pero no por ello menos importante, únete a otras personas, comparte con ellas de estar comprometida y de participar en {{organization}}. Haz propuestas, comentarios, debate, piensa en cómo contribuir a un bien común, aporta argumentos para tratar de convencer, escucha y lee para convencerte, expresa tus ideas de manera concreta y directa, responde con paciencia y decisión, defiende tus ideas y permanece abierta de mente para colaborar y unirte a las ideas de otra gente.</li></ul>
+      default_body: <p>¡Hola {{name}}, gracias por unirte a {{organization}} te damos la bienvenida!</p><ul><li>Si quieres hacerte una idea rápida de qué puedes hacer, echa un vistazo a la <a href="{{help_url}}">Sección de ayuda</a>.</li><li>Una vez la hayas leído recibirás tu primera insignia. Aquí encontrarás un <a href="{{badges_url}}">listado de todas las insignias</a>que puedes conseguir participando en {{organization}}</li><li>. Para terminar, pero no por ello menos importante, únete a otras personas, comparte con ellas de estar comprometida y de participar en {{organization}}. Haz propuestas, comentarios, debate, piensa en cómo contribuir a un bien común, aporta argumentos para tratar de convencer, escucha y lee para convencerte, expresa tus ideas de manera concreta y directa, responde con paciencia y decisión, defiende tus ideas y permanece abierta de mente para colaborar y unirte a las ideas de otra gente.</li></ul>
       default_subject: Gracias por unirte a {{organization}}!
     wizard_step_form:
       wizard_aside:
