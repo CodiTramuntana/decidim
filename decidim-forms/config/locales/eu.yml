@@ -55,7 +55,7 @@ eu:
             export_response:
               title: survey_user_answers_%{token}
             index:
-              title: "Guztira, %{guztira} erantzun"
+              title: "Guztira, %{total} erantzun"
             show:
               title: '#%{number} erantzun'
           display_condition:
@@ -129,7 +129,7 @@ eu:
           update: "%{user_name} parte-hartzaileak %{resource_name} galdetegia eguneratu du"
       errors:
         answer:
-          body: Gorputza ezin da hutsik egon
+          body: Testua ezin da hutsik egon
       images:
         dimensions: "%{width} x %{height} px"
         processors:

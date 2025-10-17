@@ -679,7 +679,6 @@ lt:
       drag_and_drop_help: Pridėkite paveikslėlius juos užvesdami ant lango arba juos įklijuodami.
     endorsement_buttons_cell:
       already_endorsed: Nepatinka
-      endorse: Patinka
     endorsements:
       identities:
         done: Atlikta
@@ -1403,9 +1402,6 @@ lt:
     reported_mailer:
       hide:
         hello: Sveiki %{name},
-        manage_moderations: Tvarkyti vedamas diskusijas
-        report_html: <p>Toliau pateikiamas <a href="%{url}">turinys</a> paslėptas automatiškai.</p>
-        subject: Išteklius paslėptas automatiškai
       report:
         authors: Autoriai
         content: Turinys, apie kurį pranešta

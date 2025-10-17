@@ -695,7 +695,6 @@ fr-CA:
       drag_and_drop_help: Ajoutez des images en les glissant - déposant ou en les collant depuis votre presse-papier.
     endorsement_buttons_cell:
       already_endorsed: Je n'aime pas
-      endorse: J’aime
     endorsements:
       identities:
         done: Terminé
@@ -1442,8 +1441,8 @@ fr-CA:
       hide:
         hello: Bonjour %{name},
         manage_moderations: Gérer les modérations
-        report_html: <p>Le <a href="%{url}">contenu suivant</a> a été masqué automatiquement.</p>
-        subject: Une ressource a été cachée automatiquement
+        report_html: <p>Le <a href="%{url}">contenu</a> suivant a été masqué automatiquement.</p>
+        subject: Une ressource a été masquée automatiquement
       report:
         authors: Auteurs
         content: Contenu signalé

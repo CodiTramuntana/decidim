@@ -534,7 +534,6 @@ el:
       drag_and_drop_help: Προσθήκη εικόνων σύροντας τις & ρίχνοντας ή επικολλώντας αυτές.
     endorsement_buttons_cell:
       already_endorsed: Δεν μου αρέσει
-      endorse: Μου αρέσει
     endorsements:
       identities:
         done: Τέλος
@@ -1119,9 +1118,6 @@ el:
     reported_mailer:
       hide:
         hello: Γεια σας %{name},
-        manage_moderations: Διαχείριση εποπτεύσεων
-        report_html: <p>Το παρακάτω <a href="%{url}">περιεχόμενο</a> αποκρύφτηκε αυτόματα.</p>
-        subject: Ένας πόρος αποκρύφτηκε αυτόματα
       report:
         authors: Συγγραφείς
         content: Αναφερόμενο περιεχόμενο

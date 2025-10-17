@@ -63,7 +63,7 @@ eu:
               cant_be_equal_to_template: ezin da plantilla bezalakoa izan
               identical: ETA izenburua ezin da berdina izan
             title:
-              identical: ETA gorputza ezin da berdina izan
+              identical: ETA testua ezin da berdina izan
         proposals_merge:
           attributes:
             base:
@@ -272,7 +272,7 @@ eu:
           notification_title: 'Orain honi <a href="%{resource_path}"> proposamen berriak aurkeztu ahal dizkiozu hemen: <a href="%{participatory_space_url}">%{participatory_space_title}</a>.'
         endorsing_enabled:
           email_intro: 'Proposamenak egin ditzakezu %{participatory_space_title} parte hartze espazioan! Hasi orri honetan parte hartzen:'
-          email_outro: Jakinarazpen hau jaso duzu %{participatory_space_title} jarraitzen duzulako. Jakinarazpenak jasotzeari utz diezaiokezu aurreko estekan.
+          email_outro: Jakinarazpen hau jaso duzu %{participatory_space_title} jarraitzen ari zarelako. Jakinarazpenak jasotzeari utzi ahal diozu aurreko estekan.
           email_subject: Onarpen proposamenak %{participatory_space_title} espazioan hasi dira
           notification_title: 'Orain has zaitezke <a href="%{resource_path}"></a> proposamenak onartzen hemen: <a href="%{participatory_space_url}">%{participatory_space_title}</a>.'
         proposal_accepted:
@@ -538,7 +538,7 @@ eu:
           show:
             amendments_count: Zuzenketa kopurua
             assigned_valuators: Ebaluatzaileak esleituta
-            body: Gorputza
+            body: Testua
             comments_count: Iruzkin kopurua
             documents: Dokumentuak
             endorsements_count: Atxikimendu kopurua
@@ -878,7 +878,7 @@ eu:
             given_enough_votes: Nahiko babes eman dituzu.
             supports_remaining: '%{remaining_votes} proposamen gehiago babestu behar dituzu zure aldeko babesak kontuan hartzeko.'
           proposal_limit:
-            description: '%{limit} proposamen sortu ditzakezu.'
+            description: Proposamen(ak) sortu ditzakezu.
           threshold_per_proposal:
             description: Proposamenak baliozkotu ahal izateko, %{limit} babesetara iritsi behar dira.
           title: 'Babesek arau hauek bete behar dituzte:'

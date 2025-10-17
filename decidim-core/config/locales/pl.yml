@@ -663,7 +663,6 @@ pl:
       drag_and_drop_help: Dodaj obrazy, przeciągając i upuszczając lub wklejając je.
     endorsement_buttons_cell:
       already_endorsed: Nie lubię tego
-      endorse: Lubię to
     endorsements:
       identities:
         done: Gotowe
@@ -1392,9 +1391,6 @@ pl:
     reported_mailer:
       hide:
         hello: Witaj %{name},
-        manage_moderations: Zarządzaj moderacjami
-        report_html: <p>Poniższa<a href="%{url}">zawartość</a> została ukryta automatycznie.</p>
-        subject: Zasób został ukryty automatycznie
       report:
         authors: Autorzy
         content: Zgłoszona zawartość

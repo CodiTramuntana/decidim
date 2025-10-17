@@ -676,7 +676,6 @@ bg:
       drag_and_drop_help: Добавете изображения чрез плъзгане и пускане или поставяне (paste).
     endorsement_buttons_cell:
       already_endorsed: Не харесвам
-      endorse: Харесвам
     endorsements:
       identities:
         done: Готово
@@ -1405,9 +1404,6 @@ bg:
     reported_mailer:
       hide:
         hello: Здравейте %{name},
-        manage_moderations: Управлявай модераторите
-        report_html: <p>Следното <a href="%{url}">съдържание</a> е скрито автоматично.</p>
-        subject: Ресурсът е скрит автоматично
       report:
         authors: Автори
         content: Докладвано съдържание
