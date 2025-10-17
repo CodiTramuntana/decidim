@@ -51,7 +51,7 @@ eu:
         close: Itxi
         confirm_destroy: Ziur zaude?
         destroy: Ezabatu
-        edit: Editatu
+        edit: Aldatu
         new: Beste eztabaida bat
         title: Ekintzak
       admin:
@@ -96,7 +96,7 @@ eu:
         close_debate_modal:
           cancel: Ezeztatu
           description: Zein da eztabaida honen laburpena edo ondorioa?
-          send: Itxi eztabaida
+          send: Eztabaida itxi
         count:
           debates_count:
             one: "%{count} eztabaida"
@@ -113,13 +113,13 @@ eu:
           title: Editatu eztabaida
         filters:
           activity: Nire jarduera
-          all: guztiak
+          all: Guztiak
           category: Kategoria
           category_prompt: Aukeratu kategoria bat
           commented: Iruzkina eginda
           my_debates: Nire eztabaidak
           official: Ofiziala
-          origin: Origin
+          origin: Jatorria
           participants: Parte-hartzaileak
           search: Bilatu
           state: Egoera
@@ -134,12 +134,12 @@ eu:
         new:
           back: Atzera
           create: Sortu
-          title: Beste eztabaida bat
+          title: Sortu eztabaida berri bat
         orders:
           commented: Iruzkin gehien dituztenak
           label: Ordenatu eztabaidak honen arabera
           random: Ausazko ordena
-          recent: Azkenak
+          recent: Berrienetatik zaharrenetara
           updated: Orain dela gutxi eguneratuak
         show:
           close_debate: Itxi eztabaida

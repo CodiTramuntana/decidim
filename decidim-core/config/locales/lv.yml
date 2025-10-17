@@ -23,6 +23,8 @@ lv:
         password_confirmation: Apstiprināt jūsu paroli
         personal_url: Personīgais URL
         remove_avatar: Noņemt avatāru
+      user_group:
+        avatar: Avatārs
     models:
       decidim/attachment_created_event: Pielikums
       decidim/component_published_event: Aktīvs komponents
@@ -63,6 +65,8 @@ lv:
     'false': 'Nē'
     'true': 'Jā'
   date:
+    buttons:
+      select: Izvēlēties
     formats:
       decidim_short: "%d/%m/%G"
       decidim_short_with_month_name_short: "%d %b %G"
@@ -323,6 +327,8 @@ lv:
         view_all: Skatīt visu
       metrics:
         name: Organizācijas rādītāji
+      participatory_space_metrics:
+        name: Rādītāji
       stats:
         name: Organizācijas statistika
       sub_hero:
@@ -706,11 +712,9 @@ lv:
       participants:
         description: Aktīvo dalībnieku skaits organizācijā
         object: dalībnieki
-        title: Dalībnieki
       users:
         description: Dalībnieku skaits organizācijā
         object: dalībnieki
-        title: Dalībnieki
     newsletter_mailer:
       newsletter:
         unsubscribe: Lai atteiktos no šāda veida e-pasta saņemšanas, <a href="%{link}" target="_blank" class="unsubscribe"> Anulēt abonementu</a>.
@@ -836,9 +840,6 @@ lv:
     reported_mailer:
       hide:
         hello: Sveiki, %{name}!
-        manage_moderations: Pārvaldiet moderāciju
-        report_html: <p> Šis <a href="%{url}"> saturs </a> ir paslēpts automātiski.</p>
-        subject: Vienums ir automātiski paslēpts
       report:
         hello: Sveiki, %{name}!
         report_html: <p> Par šo <a href="%{url}"> saturu </a> ir ziņots.</p>

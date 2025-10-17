@@ -44,6 +44,8 @@ id:
     'false': 'Tidak'
     'true': 'iya nih'
   date:
+    buttons:
+      select: Memilih
     formats:
       decidim_short: "%d/%m/%Y"
       decidim_short_with_month_name_short: "%d %b %Y"
@@ -251,6 +253,8 @@ id:
         view_all: Lihat semua
       metrics:
         name: Metrik organisasi
+      participatory_space_metrics:
+        name: Partisipasi dalam angka
       stats:
         name: Statistik organisasi
       sub_hero:
@@ -588,11 +592,9 @@ id:
       participants:
         description: Jumlah pengguna aktif dalam organisasi
         object: peserta
-        title: Peserta
       users:
         description: Jumlah pengguna dalam organisasi
         object: pengguna
-        title: Pengguna
     newsletter_mailer:
       newsletter:
         unsubscribe: Untuk memilih tidak menerima jenis email ini, <a href="%{link}" target="_blank" class="unsubscribe">Berhenti Berlangganan</a>.
@@ -699,9 +701,6 @@ id:
     reported_mailer:
       hide:
         hello: Halo %{name},
-        manage_moderations: Kelola moderasi
-        report_html: <p>berikut <a href="%{url}">konten</a> telah disembunyikan secara otomatis.</p>
-        subject: Sumber daya telah disembunyikan secara otomatis
       report:
         hello: Halo %{name},
         report_html: <p> <a href="%{url}">konten</a> berikut telah dilaporkan.</p>

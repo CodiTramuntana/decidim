@@ -2,6 +2,8 @@
 fi-pl:
   activemodel:
     attributes:
+      answer:
+        add_documents: Lisää asiakirjoja
       close_meeting:
         attendees_count: Osallistujien määrä
         attending_organizations: Osallistuvien organisaatioiden lista
@@ -355,8 +357,6 @@ fi-pl:
         registrations:
           edit:
             save: Tallenna
-            validate: Vahvista
-            validate_registration_code: Vahvista ilmoittautumiskoodi
           form:
             available_slots_help: Jätä arvoksi 0, mikäli tapahtumaan on rajoittamaton määrä paikkoja.
             invites: Kutsut
@@ -372,9 +372,6 @@ fi-pl:
           update:
             invalid: Ilmoittautumisasetusten tallentamisessa esiintyi ongelma.
             success: Tapahtumailmoittautumisasetukset tallennettiin onnistuneesti.
-          validate_registration_code:
-            invalid: Tämä ilmoittautumiskoodi on virheellinen.
-            success: Ilmoittautumiskoodi on vahvistettu onnistuneesti.
       admin_log:
         invite:
           create: "%{user_name} kutsui %{attendee_name} osallistumaan tapahtumaan %{resource_name} tilassa %{space_name}"
@@ -526,7 +523,7 @@ fi-pl:
         new:
           back: Takaisin
           create: Luo
-          title: Luo tapahtuma
+          title: Luo uusi tapaaminen
         registration_confirm:
           cancel: Peruuta
           confirm: Vahvista

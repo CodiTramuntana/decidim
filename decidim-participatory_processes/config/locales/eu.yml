@@ -315,6 +315,7 @@ eu:
         update: "%{user_name} parte-hartzaileak %{resource_name} partaidetza-prozesua eguneratu du"
       participatory_process_group:
         create: "%{user_name} parte-hartzaileak sortu du %{resource_name} partaidetza-prozesuen multzoa"
+        unpublish: "%{user_name} parte-hartzaileak despublikatu du %{resource_name} partaidetza-prozesuen multzoa"
         update: "%{user_name} parte-hartzaileak eguneratu du %{resource_name} partaidetza-prozesuen multzoa"
       participatory_process_step:
         activate: "%{user_name} parte-hartzaileak %{resource_name} urratsa aktibatu du %{space_name} partaidetza-prozesuan"
@@ -362,7 +363,7 @@ eu:
       participatory_processes:
         description: Erakundeko partaidetza-prozesu kopurua
         object: partaidetza-prozesuak
-        title: Partaidetza-prozesuak
+        title: Prozesu pare-hartzaileak
     participatory_process_groups:
       content_blocks:
         extra_data:
@@ -494,7 +495,7 @@ eu:
           filter_by: Erakutsi
           names:
             active: Aktiboa
-            all: guztiak
+            all: Guztiak
             past: Aurrekoak
             upcoming: Hurrengoak
           see: Ikusi
@@ -512,7 +513,7 @@ eu:
       participatory_process_groups:
         participatory_process_group:
           browse: Arakatu
-          browse_resource: Aztertu %{resource_name} prozesuen multzoa
+          browse_resource: '%{resource_name} prozesuen multzoa arakatu'
           processes_count: 'Prozesuak:'
       participatory_processes:
         index:

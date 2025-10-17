@@ -12,6 +12,8 @@ es-MX:
         state: Estado
         title: Título
         user_group_id: Crear borrador colaborativo como
+      import_participatory_text:
+        document: Documento
       proposal:
         address: Dirección
         answer: Respuesta
@@ -21,6 +23,8 @@ es-MX:
         category_id: Categoría
         decidim_scope_id: Ámbito
         has_address: Tiene dirección
+        latitude: Latitud
+        longitude: Longitud
         scope_id: Ámbito
         state: Estado
         suggested_hashtags: Hashtags sugeridos
@@ -34,6 +38,8 @@ es-MX:
       proposals_copy:
         copy_proposals: Entiendo que esto importará todas las propuestas del componente seleccionado al actual y que esta acción no se puede deshacer.
         origin_component_id: Componente desde dónde copiar las propuestas
+      proposals_file_import:
+        file: Archivo
       proposals_import:
         import_proposals: Propuestas de importación
         keep_answers: Mantener estado y respuestas
@@ -387,7 +393,6 @@ es-MX:
         title: Votos
     participatory_spaces:
       highlighted_proposals:
-        last: Propuestas más recientes
         see_all: Ver todo
     proposals:
       actions:
@@ -506,6 +511,7 @@ es-MX:
           index:
             actions: Acciones
             assign_to_valuator: Asignar a evaluadora
+            assign_to_valuator_button: Asignar
             cancel: Cancelar
             change_category: Cambiar categoría
             change_scope: Cambiar ámbito
@@ -519,6 +525,7 @@ es-MX:
             split_button: Dividir
             title: Propuestas
             unassign_from_valuator: Desasignar de evaluadora
+            unassign_from_valuator_button: Deshacer la asignación
             update: Actualizar
             update_scope_button: Actualizar ámbito
           new:
@@ -536,9 +543,6 @@ es-MX:
             endorsements_count: Número de adhesiones
             endorsers: Se han adherido
             link: Ver la propuesta
-            n_more_endorsers:
-              one: y 1 más
-              other: y %{count} más
             photos: Fotos
             ranking: "%{ranking} de %{total}"
             related_meetings: Encuentros relacionados
@@ -565,7 +569,7 @@ es-MX:
             no_components: No hay otros componentes propuesta en este espacio participativo desde el que importar.
             select_component: Por favor selecciona un componente
             select_states: Verifica los estados de las propuestas para importar
-            title: Importar proyectos desde otro componente
+            title: Importar propuestas desde otro componente
         proposals_merges:
           create:
             invalid: 'Ha habido un problema al fusionar las propuestas seleccionadas porque algunas de ellas:'
@@ -643,7 +647,7 @@ es-MX:
           send: Enviar
           title: Editar borrador colaborativo
         empty: Todavía no hay borradores colaborativos
-        empty_filters: No hay un borrador de colaboración con este criterio
+        empty_filters: No hay ningún borrador colaborativo con este criterio
         filters:
           all: Todas
           amendment: Enmiendas
@@ -802,7 +806,7 @@ es-MX:
           text_banner: Estás viendo la lista de propuestas retiradas por sus autoras. %{go_back_link}.
         new:
           send: Continuar
-          title: Crea tu propuesta
+          title: Crear una nueva propuesta
         orders:
           label: 'Ordenar propuestas por:'
           most_commented: Más comentadas

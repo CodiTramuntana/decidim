@@ -31,6 +31,8 @@ zh-TW:
         personal_url: 個人 URL
         remove_avatar: 刪除頭像
         tos_agreement: 同意服務條款
+      user_group:
+        avatar: 頭像
     models:
       decidim/attachment_created_event: 附件
       decidim/component_published_event: 啟用組件
@@ -76,6 +78,8 @@ zh-TW:
     errors:
       file_size_too_large: 檔案太大。
   date:
+    buttons:
+      select: 選擇
     formats:
       decidim_short: "%d/%m/%Y"
       decidim_short_with_month_name_short: "%d %b %Y"
@@ -481,6 +485,8 @@ zh-TW:
         view_all: 檢視全部
       metrics:
         name: 組織指標
+      participatory_space_metrics:
+        name: 指標
       static_page:
         section:
           name: 節
@@ -574,7 +580,6 @@ zh-TW:
       drag_and_drop_help: 通過拖放或粘貼方式添加圖片。
     endorsement_buttons_cell:
       already_endorsed: 不喜歡
-      endorse: 喜歡！
     endorsements:
       identities:
         done: 已完成
@@ -1275,9 +1280,6 @@ zh-TW:
     reported_mailer:
       hide:
         hello: 哈囉，%{name},
-        manage_moderations: 管理版主
-        report_html: <p>以下<a href="%{url}">內容</a>已自動隱藏。</p>
-        subject: 一個資源已被自動隱藏。
       report:
         authors: 作者
         content: 已檢舉內容

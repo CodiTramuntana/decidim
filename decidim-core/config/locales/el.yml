@@ -31,6 +31,8 @@ el:
         personal_url: Προσωπική ιστοσελίδα
         remove_avatar: Αφαίρεση avatar
         tos_agreement: Όροι Παροχής Υπηρεσιών
+      user_group:
+        avatar: Άβαταρ
     models:
       decidim/attachment_created_event: Συνημμένο
       decidim/component_published_event: Ενεργό στοιχείο
@@ -80,6 +82,8 @@ el:
     errors:
       file_size_too_large: Το μέγεθος του αρχείου είναι πολύ μεγάλο
   date:
+    buttons:
+      select: Επιλέξτε
     formats:
       decidim_short: "%d/%m/%Y"
       decidim_short_with_month_name_short: "%d %b %Y"
@@ -443,6 +447,8 @@ el:
         view_all: Προβολή όλων
       metrics:
         name: Μετρικά οργανισμού
+      participatory_space_metrics:
+        name: Μετρικά
       static_page:
         section:
           name: Ενότητα
@@ -528,7 +534,6 @@ el:
       drag_and_drop_help: Προσθήκη εικόνων σύροντας τις & ρίχνοντας ή επικολλώντας αυτές.
     endorsement_buttons_cell:
       already_endorsed: Δεν μου αρέσει
-      endorse: Μου αρέσει
     endorsements:
       identities:
         done: Τέλος
@@ -943,11 +948,9 @@ el:
       participants:
         description: Αριθμός ενεργών συμμετεχόντων στον οργανισμό
         object: συμμετέχοντες
-        title: Συμμετέχοντες
       users:
         description: Αριθμός συμμετεχόντων στον οργανισμό
         object: συμμετέχοντες
-        title: Συμμετέχοντες
     newsletter_mailer:
       newsletter:
         unsubscribe: Για να εξαιρεθείτε από τη λήψη αυτού του τύπου email, πατήστε <a href="%{link}" target="_blank" class="unsubscribe">Κατάργηση εγγραφής</a>.
@@ -1115,9 +1118,6 @@ el:
     reported_mailer:
       hide:
         hello: Γεια σας %{name},
-        manage_moderations: Διαχείριση εποπτεύσεων
-        report_html: <p>Το παρακάτω <a href="%{url}">περιεχόμενο</a> αποκρύφτηκε αυτόματα.</p>
-        subject: Ένας πόρος αποκρύφτηκε αυτόματα
       report:
         authors: Συγγραφείς
         content: Αναφερόμενο περιεχόμενο

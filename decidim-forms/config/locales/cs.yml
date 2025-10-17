@@ -17,11 +17,11 @@ cs:
         answer:
           attributes:
             add_documents:
-              needs_to_be_reattached: Potřebuje být znovu připojen
+              needs_to_be_reattached: Vyžaduje být znovu připojen
             body:
               too_long: je příliš dlouhý
             choices:
-              missing: nejsou úplné
+              missing: nejsou kompletní
               too_many: jsou příliš mnoho
         questionnaire:
           request_invalid: Při zpracování požadavku došlo k chybě. Zkuste to prosím znovu.
@@ -187,7 +187,7 @@ cs:
           submit: Odeslat
       user_answers_serializer:
         body: Odpověď
-        completion: Ukončení
+        completion: Dokončení
         created_at: Zodpovězeno
         id: ID odpovědi
         ip_hash: IP Hash

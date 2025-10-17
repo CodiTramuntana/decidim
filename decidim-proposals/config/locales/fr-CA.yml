@@ -12,6 +12,8 @@ fr-CA:
         state: État
         title: Titre
         user_group_id: Créez un brouillon collaboratif comme
+      import_participatory_text:
+        document: Document
       proposal:
         address: Adresse
         answer: Répondre
@@ -21,6 +23,8 @@ fr-CA:
         category_id: Catégorie
         decidim_scope_id: Portée
         has_address: Renseigner une adresse
+        latitude: Latitude
+        longitude: Longitude
         scope_id: Périmètre d'application
         state: État
         suggested_hashtags: Hashtags suggérés
@@ -34,6 +38,8 @@ fr-CA:
       proposals_copy:
         copy_proposals: Je comprends que cela importera toutes les propositions de la fonctionnalité sélectionnée dans la fonctionnalité actuelle et que cette action ne peut être annulée.
         origin_component_id: Fonctionnalité dont on veut copier les propositions
+      proposals_file_import:
+        file: Fichier
       proposals_import:
         import_proposals: Importer des propositions
         keep_answers: Garder l'état et les réponses
@@ -266,7 +272,7 @@ fr-CA:
           notification_title: Vous pouvez maintenant créer de <a href="%{resource_path}">nouvelles propositions</a> dans <a href="%{participatory_space_url}">%{participatory_space_title}</a>.
         endorsing_enabled:
           email_intro: 'Vous pouvez soutenir les différentes propositions dans %{participatory_space_title} ! Commencez à participer en vous rendant sur cette page :'
-          email_outro: Vous avez reçu cette notification car vous suivez %{participatory_space_title}. Vous pouvez arrêter de recevoir des notifications en cliquant sur ce dernier lien.
+          email_outro: Vous avez reçu cette notification car vous suivez %{participatory_space_title}. Vous pouvez arrêter de recevoir des notifications en cliquant sur le lien précédent.
           email_subject: Vous pouvez désormais soutenir des propositions dans %{participatory_space_title}
           notification_title: Vous pouvez maintenant commencer à <a href="%{resource_path}">soutenir les propositions</a> dans <a href="%{participatory_space_url}">%{participatory_space_title}</a>.
         proposal_accepted:
@@ -370,7 +376,7 @@ fr-CA:
       accepted_proposals:
         description: Nombre de propositions acceptées par les utilisateurs
         object: propositions
-        title: Propositions Acceptées
+        title: Propositions acceptées
       endorsements:
         description: Nombre d'avenants générés dans les propositions
         object: soutiens
@@ -385,7 +391,6 @@ fr-CA:
         title: Votes
     participatory_spaces:
       highlighted_proposals:
-        last: Dernières propositions
         see_all: Voir toutes les propositions
     proposals:
       actions:
@@ -536,9 +541,6 @@ fr-CA:
             endorsements_count: Nombre de soutiens
             endorsers: Soutiens
             link: Voir la proposition
-            n_more_endorsers:
-              one: et 1 de plus
-              other: et %{count} autres
             photos: Photos
             ranking: "%{ranking} sur %{total}"
             related_meetings: Réunions associées
@@ -802,7 +804,7 @@ fr-CA:
           text_banner: Vous voyez actuellemnent la liste des propositions retirées par leurs auteurs. %{go_back_link}.
         new:
           send: Continuer
-          title: Créer une proposition
+          title: Créer une nouvelle proposition
         orders:
           label: 'Classement des propositions par :'
           most_commented: Les plus commentées

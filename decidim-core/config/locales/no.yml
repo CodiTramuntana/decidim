@@ -29,6 +29,8 @@
         password_confirmation: Bekreft ditt passord
         personal_url: Din profilside
         remove_avatar: Fjern profilbilde
+      user_group:
+        avatar: Profilbilde
     models:
       decidim/attachment_created_event: Vedlegg
       decidim/component_published_event: Aktive komponent
@@ -66,6 +68,8 @@
     'false': 'Nei'
     'true': 'Ja'
   date:
+    buttons:
+      select: Velg
     formats:
       decidim_short: "%d.%m-%Y"
       decidim_short_with_month_name_short: "%d %b %Y"
@@ -380,6 +384,8 @@
         view_all: Vis alle
       metrics:
         name: Organisasjonens målinger
+      participatory_space_metrics:
+        name: Deltakelse i tall
       stats:
         name: Organisasjonsstatistikk
       sub_hero:
@@ -964,9 +970,6 @@
     reported_mailer:
       hide:
         hello: Hei %{name},
-        manage_moderations: Administrer moderasjoner
-        report_html: <p>Det følgene <a href="%{url}">innholdet</a> har blitt automatisk skjult.</p>
-        subject: En ressurs var automatisk skjult
       report:
         authors: Forfattere
         content: Rapportert innhold

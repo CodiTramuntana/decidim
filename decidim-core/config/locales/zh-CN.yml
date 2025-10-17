@@ -25,6 +25,8 @@ zh-CN:
         password_confirmation: 确认您的密码
         personal_url: 个人网址
         remove_avatar: 删除头像
+      user_group:
+        avatar: 头像
     models:
       decidim/attachment_created_event: 附文
       decidim/component_published_event: 活动组件
@@ -57,6 +59,8 @@ zh-CN:
     'false': '否'
     'true': '否'
   date:
+    buttons:
+      select: 选择
     formats:
       decidim_short: "%d/%m/%Y"
       decidim_with_day_and_month_name: "%A %d %b %Y"
@@ -320,6 +324,8 @@ zh-CN:
         view_all: 查看全部
       metrics:
         name: 组织指标
+      participatory_space_metrics:
+        name: 指标
       stats:
         name: 组织统计
       sub_hero:
@@ -728,11 +734,9 @@ zh-CN:
       participants:
         description: 组织中的活跃参与者人数
         object: 参与者
-        title: 参加者
       users:
         description: 参加组织的人数
         object: 参与者
-        title: 参加者
     newsletter_mailer:
       newsletter:
         unsubscribe: 选择不接收这种类型的电子邮件， <a href="%{link}" target="_blank" class="unsubscribe">取消订阅</a>。
@@ -861,9 +865,6 @@ zh-CN:
     reported_mailer:
       hide:
         hello: 您好 %{name}，
-        manage_moderations: 管理版面
-        report_html: <p>以下 <a href="%{url}">内容</a> 已被自动隐藏。</p>
-        subject: 资源已自动隐藏
       report:
         authors: 作者
         content: 报告的内容

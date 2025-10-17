@@ -47,6 +47,8 @@ gl:
     'false': 'Non'
     'true': 'Si'
   date:
+    buttons:
+      select: Seleccionar
     formats:
       decidim_short: "%d/%m/%Y"
       decidim_short_with_month_name_short: "%d %b %Y"
@@ -268,6 +270,8 @@ gl:
         view_all: Ver todo
       metrics:
         name: Métricas da organización
+      participatory_space_metrics:
+        name: Participación en números
       stats:
         name: Estatísticas da organización
       sub_hero:
@@ -646,7 +650,7 @@ gl:
       users:
         description: Número de usuarios da organización
         object: usuarios
-        title: Usuarios
+        title: Participantes
     newsletter_mailer:
       newsletter:
         unsubscribe: Para desactivar a recepción deste tipo de correo electrónico, <a href="%{link}" target="_blank" class="unsubscribe">Subscribe</a>.
@@ -763,9 +767,6 @@ gl:
     reported_mailer:
       hide:
         hello: Ola %{name},
-        manage_moderations: Xestionar moderacións
-        report_html: <p> O seguinte <a href="%{url}">content</a> ocultouse automaticamente.</p>
-        subject: Ocultouse un recurso automaticamente
       report:
         hello: Ola %{name},
         report_html: <p> Informáronse os seguintes <a href="%{url}">content</a>.</p>

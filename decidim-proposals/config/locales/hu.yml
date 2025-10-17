@@ -323,14 +323,13 @@ hu:
       proposals:
         description: A létrehozott javaslatok száma
         object: javaslatok
-        title: javaslatok
+        title: Javaslatok
       votes:
         description: A felhasználók által benyújtott szavazatok száma
         object: szavazatok
         title: Szavazatok
     participatory_spaces:
       highlighted_proposals:
-        last: Legutóbbi javaslatok
         see_all: Összes
     proposals:
       actions:
@@ -460,9 +459,6 @@ hu:
             documents: Dokumentumok
             endorsements_count: Támogatások száma
             endorsers: Támogatók
-            n_more_endorsers:
-              one: és még egy
-              other: és még %{count}
             photos: Fotók
             ranking: "%{total} -ból %{ranking}"
             related_meetings: Kapcsolódó találkozók
@@ -688,7 +684,6 @@ hu:
           see_all_withdrawn: Összes visszavont javaslat
         new:
           send: Tovább
-          title: Javaslat létrehozása
         orders:
           label: 'Javaslatok rendezése:'
           most_commented: Legtöbb hozzászólással
@@ -712,7 +707,7 @@ hu:
           estimated_cost: Becsült költség
           hidden_endorsers_count:
             one: és még %{count} személy
-            other: és még %{count} ember
+            other: és még %{count} személy
           link_to_collaborative_draft_help_text: Ez a javaslat egy közös vázlat eredménye. Nézd át az előzményeket
           link_to_collaborative_draft_text: Közös vázlat megtekintése
           link_to_promoted_emendation_help_text: Ez a javaslat egy támogatott helyreigazítás

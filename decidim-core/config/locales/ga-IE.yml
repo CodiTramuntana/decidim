@@ -17,6 +17,8 @@ ga:
         about: Faoi
         nickname: Leasainm
         password: Pasfhocal
+      user_group:
+        avatar: Abhatár
     models:
       decidim/attachment_created_event: Ceangaltán
   activerecord:
@@ -29,6 +31,8 @@ ga:
     'false': 'Níl'
     'true': 'Is ea'
   date:
+    buttons:
+      select: Roghnaigh
     formats:
       decidim_short: "%d/%m/%Y"
       decidim_short_with_month_name_short: "%d %b %Y"
@@ -100,6 +104,8 @@ ga:
           random: Randamach
       last_activity:
         view_all: Amharc ar uile
+      participatory_space_metrics:
+        name: Méadrachtaí
     core:
       application_helper:
         filter_category_values:

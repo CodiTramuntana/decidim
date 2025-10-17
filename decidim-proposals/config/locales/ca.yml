@@ -12,6 +12,8 @@ ca:
         state: Estat
         title: Títol
         user_group_id: Crea un esborrany col·laboratiu com a
+      import_participatory_text:
+        document: Document
       proposal:
         address: Adreça
         answer: Respondre
@@ -21,6 +23,8 @@ ca:
         category_id: Categoria
         decidim_scope_id: Àmbit
         has_address: Té adreça
+        latitude: Latitud
+        longitude: Longitud
         scope_id: Àmbit
         state: Estat
         suggested_hashtags: Hashtags suggerits
@@ -34,6 +38,8 @@ ca:
       proposals_copy:
         copy_proposals: Entenc que això importarà totes les propostes del component seleccionat a l'actual i que aquesta acció no es pot desfer.
         origin_component_id: Component des d'on importar les propostes
+      proposals_file_import:
+        file: Arxiu
       proposals_import:
         import_proposals: Importar propostes
         keep_answers: Manté l'estat i les respostes
@@ -387,7 +393,6 @@ ca:
         title: Suports
     participatory_spaces:
       highlighted_proposals:
-        last: Propostes més recents
         see_all: Veure totes les propostes
     proposals:
       actions:
@@ -506,6 +511,7 @@ ca:
           index:
             actions: Accions
             assign_to_valuator: Assignar a avaluadora
+            assign_to_valuator_button: Assignar
             cancel: Cancel·lar
             change_category: Canvia la categoria
             change_scope: Canviar àmbit
@@ -519,6 +525,7 @@ ca:
             split_button: Dividir
             title: Propostes
             unassign_from_valuator: Desfer assignació a avaluadora
+            unassign_from_valuator_button: Desfer l'assignació
             update: Actualitza
             update_scope_button: Actualitzar àmbit
           new:
@@ -536,9 +543,6 @@ ca:
             endorsements_count: Número d'esmenes
             endorsers: Adherides
             link: Veure la proposta
-            n_more_endorsers:
-              one: i 1 més
-              other: i %{count} més
             photos: Fotos
             ranking: "%{ranking} de %{total}"
             related_meetings: Trobades relacionades
@@ -802,7 +806,7 @@ ca:
           text_banner: Estàs veient un llistat de propostes retirades per les seves autores. %{go_back_link}.
         new:
           send: Continua
-          title: Crea la teva proposta
+          title: Crea una nova proposta
         orders:
           label: 'Ordenar propostes:'
           most_commented: Més comentades

@@ -119,6 +119,7 @@ it:
           state_values:
             closed: Chiuso
             open: Apri
+          user_group: Gruppi
         form:
           select_a_category: Si prega di selezionare una categoria
         index:
@@ -126,7 +127,6 @@ it:
         new:
           back: Indietro
           create: Crea
-          title: Nuovo dibattito
         orders:
           commented: I più commentati
           label: Ordina i dibattiti per
@@ -197,6 +197,6 @@ it:
       debates:
         description: Numero di dibattiti creati
         object: dibattiti
-        title: dibattiti
+        title: Dibattiti
     statistics:
       debates_count: Dibattiti

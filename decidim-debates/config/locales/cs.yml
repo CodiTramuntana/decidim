@@ -138,7 +138,7 @@ cs:
         new:
           back: Zpět
           create: Vytvořit
-          title: Nová debata
+          title: Vytvořit novou debatu
         orders:
           commented: Nejvíce komentované
           label: Řazení debat podle

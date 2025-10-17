@@ -4,10 +4,19 @@ ja:
     attributes:
       account:
         delete_reason: アカウントを削除する理由
+      attachment:
+        documents: ドキュメント
+        image: 画像
+        photos: 写真
       common:
         created_at: 作成日時
+      content_block_attachment:
+        background_image: 背景画像
+        main_image: メイン画像
       conversation:
         body: 本文
+      editor_image:
+        file: ファイル
       group:
         about: グループについて
         avatar: アバター
@@ -16,12 +25,15 @@ ja:
         name: 名前
         nickname: アカウントID
         phone: 電話番号
+      import:
+        file: ファイル
       message:
         body: 本文
       report:
         details: 追加コメント
       user:
         about: 私について
+        avatar: アバター
         email: あなたのメールアドレス
         encrypted_password: パスワード
         locale: 地域
@@ -33,6 +45,14 @@ ja:
         personal_url: 個人用URL
         remove_avatar: アバターを削除
         tos_agreement: 利用規約
+      user_group:
+        avatar: アバター
+    errors:
+      models:
+        user:
+          attributes:
+            nickname:
+              format: ニックネームは小文字でスペースを含まない必要があります
     models:
       decidim/attachment_created_event: 添付ファイル
       decidim/component_published_event: アクティブなコンポーネント
@@ -81,6 +101,9 @@ ja:
       file_size_too_large: ファイルサイズが大きすぎます
       not_inside_organization: ファイルがどの組織にも属していません
   date:
+    buttons:
+      close: 閉じる
+      select: 選択
     formats:
       decidim_short: "%Y/%m/%d"
       decidim_short_dashed: "%Y-%m-%d"
@@ -88,6 +111,10 @@ ja:
       decidim_with_day_and_month_name: "%Y %b %d %A"
       decidim_with_month_name: "%Y %B %d"
       decidim_with_month_name_short: "%b %d"
+      help:
+        date_format: 'フォーマット: dd/mm/yyyy'
+      order: d-m-y
+      separator: "/"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -132,6 +159,7 @@ ja:
       front_page_link: フロントページに移動
       logo: "%{organization}の公式ロゴ"
       opens_in_new_tab: 新しいタブで開く
+      secondary_menu: セカンダリメニュー
       skip_button: メインコンテンツにスキップ
     account:
       blocked: このアカウントは利用規約に違反しているためブロックされています
@@ -533,7 +561,7 @@ ja:
       metrics:
         name: 組織の指標
       participatory_space_metrics:
-        name: メトリクス
+        name: 指標
       participatory_space_stats:
         name: 統計情報
       social_networks_metadata:
@@ -569,7 +597,7 @@ ja:
         create:
           email_already_exists: 別のアカウントで同じメールアドレスを使用しています。
         new:
-          complete_profile: プロファイルを完了
+          complete_profile: プロフィールを完了
           nickname_help: '%{organization} でのニックネームです。文字、数字、''-'' および ''_'' のみを使用できます。'
           sign_up: プロフィールを完成してください
           subtitle: ユーザ登録を完了するには、次のフォームに記入してください
@@ -647,7 +675,6 @@ ja:
       drag_and_drop_help: ドラッグ&ドロップまたは貼り付けることで画像を追加できます。
     endorsement_buttons_cell:
       already_endorsed: 取り消し
-      endorse: オススメ
     endorsements:
       identities:
         done: 完了
@@ -717,6 +744,11 @@ ja:
             email_outro: '%{amendable_title}をフォローしているため、この通知を受け取りました。前のリンクに続く通知の受信を停止することができます。'
             email_subject: '%{amendable_title} から %{emendation_author_nickname} の修正が却下されました'
             notification_title: <a href="%{emendation_path}">修正</a> <a href="%{emendation_author_path}">%{emendation_author_nickname}</a> によって作成された <a href="%{amendable_path}">%{amendable_title}</a> は拒否されました。
+        emendation_promoted:
+          follower:
+            email_intro: '%{amendable_title}に対する修正案が公開されました。このページから確認できます：'
+            email_outro: あなたは %{amendable_title}の作者であるため、この通知を受け取りました。
+            email_subject: '%{emendation_author_nickname}による修正案が新しい%{amendable_type}として公開されました'
       attachments:
         attachment_created:
           email_intro: '%{resource_title}に新しいドキュメントが追加されました。このページから見ることができます：'
@@ -789,8 +821,8 @@ ja:
         user_group_updated:
           email_intro: ユーザーグループ「 %{user_group_name} 」がプロフィールページをアップデートし、未承認のままになっています。 <a href="%{groups_admin_url}">管理画面</a>から承認してください。
           email_outro: あなたはプラットフォームの管理者であるため、この通知を受け取りました。
-          email_subject: ユーザーグループがプロファイルを更新しました
-          notification_title: '%{user_group_name} ユーザーグループがプロファイルを更新し、未検証のままにしました。 <a href="%{groups_admin_path}">管理画面</a> で確認できるようになりました。'
+          email_subject: ユーザーグループがプロフィールを更新しました
+          notification_title: '%{user_group_name} ユーザーグループがプロフィールを更新し、未検証のままにしました。 <a href="%{groups_admin_path}">管理画面</a> で確認できるようになりました。'
       nickname_event:
         notification_body: ニックネームの使用方法を修正し、重複をなくすために大文字小文字を区別しないようにしました。<br/> あなたのニックネームは他の人と同じだったため、自動的にリネームされました。<a href="%{link_to_account_settings}">アカウント設定</a>から変更することができます。
       notification_event:
@@ -1152,6 +1184,8 @@ ja:
         not_started: まだ開始していません
         remaining: "残り %{time_distance}"
     metrics:
+      blocked_users:
+        description: ブロックされた参加者数
       download:
         csv: ダウンロードデータ(CSV)
       followers:
@@ -1162,6 +1196,10 @@ ja:
         description: 組織内のアクティブな参加者数
         object: 参加者
         title: 参加者
+      reported_users:
+        description: 報告された参加者数
+      user_reports:
+        description: 参加者によって行われた報告数
       users:
         description: 組織の参加者数
         object: 参加者
@@ -1226,11 +1264,13 @@ ja:
     notifications_digest_mailer:
       header:
         daily: 日次の通知のダイジェスト
+        real_time: リアルタイム
         weekly: 週次の通知のダイジェスト
       hello: こんにちは %{name} さん、
       intro:
         daily: 'あなたがフォローしているアクティビティに基づいた最終日以降の通知です:'
-        weekly: 'これらは、あなたがフォローしているアクティビティに基づいた先週以降の通知です:'
+        real_time: 'あなたがフォローしているアクティビティに基づいた通知です:'
+        weekly: 'あなたがフォローしているアクティビティに基づいた先週以降の通知です:'
       outro: このコンテンツまたは著者をフォローしているため、これらの通知を受け取りました。それぞれのページからフォローを解除できます。
       see_more: 他の通知を見る
       subject: あなたのメールダイジェストです
@@ -1330,7 +1370,7 @@ ja:
         success: パスワードを更新しました。
     profile:
       deleted: 削除された参加者
-      inaccessible_message: このプロファイルは利用規約違反のためアクセスできません！
+      inaccessible_message: このプロフィールは利用規約違反のためアクセスできません！
     profiles:
       default_officialization_text_for_user_groups: このグループは公的に検証されており、その名前が実際の名前に対応していることが検証されています。
       default_officialization_text_for_users: この参加者は公的に検証されます。彼/彼女の名前または役割が実名・実際の役割に対応していることが確認されています。
@@ -1355,7 +1395,7 @@ ja:
           create_user_group: グループを作成
           disabled_message: メッセージ
           edit_profile: プロフィールを編集
-          edit_user_group: グループプロファイルを編集
+          edit_user_group: グループプロフィールを編集
           invite_user: 参加者の招待
           join_user_group: グループに参加するリクエスト
           leave_user_group: グループから退出する
@@ -1367,7 +1407,7 @@ ja:
         confirmation_instructions_sent: メール確認の手順を送信しました。
         create_user_group: グループを作成
         edit_profile: プロフィールを編集
-        edit_user_group: グループプロファイルを編集
+        edit_user_group: グループプロフィールを編集
         fill_in_email_to_confirm_it: グループのメールアドレスを入力して確認してください。
         invite_user: 参加者の招待
         join_user_group: グループに参加するリクエスト
@@ -1379,7 +1419,7 @@ ja:
       hide:
         hello: こんにちは、 %{name} さん。
         manage_moderations: モデレーションの管理
-        report_html: <p>次の <a href="%{url}">コンテンツ</a> が自動的に非表示になりました。</p>
+        report_html: <p>以下の<a href="%{url}">コンテンツ</a>は自動的に非表示にされました。</p>
         subject: リソースは自動的に非表示になりました
       report:
         authors: 著者

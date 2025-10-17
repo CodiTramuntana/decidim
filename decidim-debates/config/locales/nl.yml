@@ -112,7 +112,6 @@ nl:
         new:
           back: Terug
           create: Aanmaken
-          title: Nieuw debat
         orders:
           commented: Meeste reacties
           label: Sorteer debatten op
@@ -177,6 +176,6 @@ nl:
       debates:
         description: Aantal debatten gemaakt
         object: debatten
-        title: debatten
+        title: Debatten
     statistics:
       debates_count: Debatten

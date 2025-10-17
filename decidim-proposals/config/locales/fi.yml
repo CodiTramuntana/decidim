@@ -12,6 +12,8 @@ fi:
         state: Tila
         title: Ehdotuksen nimi
         user_group_id: Luo yhteistyöluonnos nimellä
+      import_participatory_text:
+        document: Asiakirja
       proposal:
         address: Osoite
         answer: Vastaus
@@ -21,6 +23,8 @@ fi:
         category_id: Aihepiiri
         decidim_scope_id: Teema
         has_address: Ehdotuksella on sijainti
+        latitude: Leveysaste
+        longitude: Pituusaste
         scope_id: Teema
         state: Tila
         suggested_hashtags: Ehdotetut aihetunnisteet (hashtag)
@@ -34,6 +38,8 @@ fi:
       proposals_copy:
         copy_proposals: Ymmärrän, että tämä tuo kaikki ideat valitusta komponentista tähän komponenttiin ja tätä toimintoa ei voi perua.
         origin_component_id: Osio josta ehdotukset kopioidaan
+      proposals_file_import:
+        file: Tiedosto
       proposals_import:
         import_proposals: Tuo ehdotuksia
         keep_answers: Säilytä tilat ja vastaukset
@@ -266,7 +272,7 @@ fi:
           notification_title: Voit nyt esittää <a href="%{resource_path}">uusia ehdotuksia</a> osallistumistilassa <a href="%{participatory_space_url}">%{participatory_space_title}</a>.
         endorsing_enabled:
           email_intro: 'Voit suositella ehdotuksia osallistumistilassa %{participatory_space_title}! Aloita osallistuminen sivulta:'
-          email_outro: Tämä ilmoitus on lähetetty sinulle, koska seuraat kohdetta %{participatory_space_title}. Voit lopettaa ilmoitusten vastaanottamisen edellä esiteyn linkin kautta.
+          email_outro: Tämä ilmoitus on lähetetty sinulle, koska seuraat kohdetta %{participatory_space_title}. Voit lopettaa ilmoitusten vastaanottamisen edellä esitetyn linkin kautta.
           email_subject: Ehdotusten suosittelu on alkanut kohteelle %{participatory_space_title}
           notification_title: Voit nyt aloittaa <a href="%{resource_path}">ehdotusten suosittelun</a> osallistumistilassa <a href="%{participatory_space_url}">%{participatory_space_title}</a>.
         proposal_accepted:
@@ -387,7 +393,6 @@ fi:
         title: Kannatukset
     participatory_spaces:
       highlighted_proposals:
-        last: Viimeisimmät ehdotukset
         see_all: Näytä kaikki ehdotukset
     proposals:
       actions:
@@ -505,6 +510,7 @@ fi:
           index:
             actions: Toiminnot
             assign_to_valuator: Anna tehtäväksi arvioijalle
+            assign_to_valuator_button: Anna tehtäväksi
             cancel: Peruuta
             change_category: Vaihda aihepiiri
             change_scope: Vaihda teema
@@ -518,6 +524,7 @@ fi:
             split_button: Jaa
             title: Ehdotukset
             unassign_from_valuator: Poista tehtävä arvioijalta
+            unassign_from_valuator_button: Poista tehtävä
             update: Päivitä
             update_scope_button: Päivitä teema
           new:
@@ -535,9 +542,6 @@ fi:
             endorsements_count: Suositusten lukumäärä
             endorsers: Suosittelijat
             link: Näytä ehdotus
-            n_more_endorsers:
-              one: ja 1 muu
-              other: ja %{count} muuta
             photos: Kuvat
             ranking: "%{ranking} / %{total}"
             related_meetings: Liittyvät tapaamiset
@@ -801,7 +805,7 @@ fi:
           text_banner: Katselet ehdotuksia, jotka on peruttu niiden laatijoiden toimesta. %{go_back_link}.
         new:
           send: Jatka
-          title: Luo ehdotuksesi
+          title: Luo uusi ehdotus
         orders:
           label: 'Järjestä ehdotukset:'
           most_commented: Eniten kommentoidut

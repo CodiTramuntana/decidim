@@ -4,10 +4,19 @@ eu:
     attributes:
       account:
         delete_reason: Zure kontua ezabatzeko arrazoia
+      attachment:
+        documents: Dokumentuak
+        image: Irudia
+        photos: Argazkiak
       common:
         created_at: Sortze-data
+      content_block_attachment:
+        background_image: Atzeko planoko irudia
+        main_image: Irudi nagusia
       conversation:
         body: Testua
+      editor_image:
+        file: Fitxategia
       group:
         about: Honi buruz
         avatar: Abatarra
@@ -16,12 +25,15 @@ eu:
         name: Izena
         nickname: Goitizena
         phone: Telefonoa
+      import:
+        file: Fitxategia
       message:
         body: Testua
       report:
         details: Iruzkin gehigarriak
       user:
         about: Honi buruz
+        avatar: Abatarra
         email: Zure helbide elektronikoa
         encrypted_password: Pasahitza
         locale: Tokikoa
@@ -33,8 +45,16 @@ eu:
         personal_url: URL pertsonala
         remove_avatar: Kendu abatarra
         tos_agreement: Erabilera-terminoak eta -baldintzak
+      user_group:
+        avatar: Abatarra
+    errors:
+      models:
+        user:
+          attributes:
+            nickname:
+              format: Goitizenak minuskulaz egon behar du, eta ez du tarterik izan behar
     models:
-      decidim/attachment_created_event: eranskina
+      decidim/attachment_created_event: Eranskina
       decidim/component_published_event: Osagai erabilgarria
       decidim/demoted_membership: Ez da talde administratzaile gehiagorik
       decidim/gamification/badge_earned_event: Irabazitako dominak
@@ -61,7 +81,7 @@ eu:
         name: Ezizena
         password: Pasahitza
         password_confirmation: Baieztatu pasahitza
-        remember_me: Gogoratu
+        remember_me: Gogoratu ni
     models:
       decidim/amendment:
         one: Zuzenketa
@@ -83,8 +103,11 @@ eu:
       file_cannot_be_processed: Fitxategia ezin izan da prozesatu
       file_resolution_too_large: Fitxategiaren erresoluzioa handiegia da
       file_size_too_large: Fitxategiaren taimaina handiegia da
-      not_inside_organization: Artxiboa ez dago erakunde batekin erlazionatuta
+      not_inside_organization: Fitxategia ez dago erakunde batekin erlazionatuta
   date:
+    buttons:
+      close: Itxi
+      select: Hautatu
     formats:
       decidim_short: "%d/%m/%Y"
       decidim_short_dashed: "%e-%h-%U"
@@ -92,6 +115,10 @@ eu:
       decidim_with_day_and_month_name: "%A %d %b %Y"
       decidim_with_month_name: "%d %B %Y"
       decidim_with_month_name_short: "%d %b"
+      help:
+        date_format: 'Formatua: dd/mm/yyyy'
+      order: d-m-y
+      separator: "/"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -145,6 +172,7 @@ eu:
       front_page_link: Zoaz orri nagusira
       logo: "%{organization} aren logo ofiziala"
       opens_in_new_tab: Ireki beste fitxa batean
+      secondary_menu: Bigarren mailako menua
       skip_button: Joan eduki nagusira
     account:
       blocked: Kontu hau blokeatu egin da erabilera-terminoak eta -baldintzak urratu direlako
@@ -277,7 +305,7 @@ eu:
         verify: "%{user_name} parte-hartzaileak egiaztatu du %{resource_name} taldea"
         verify_via_csv: "%{user_name} parte-hartzaileak egiaztatu du %{resource_name} erabiltzaile-taldea CSV fitxategi baten bidez"
       user_moderation:
-        unreport: "%{user_name} parte-hartzaileak desegin du %{resource_type} - %{unreported_user_name} erreportea"
+        unreport: "%{user_name} parte-hartzaileak desegin du %{resource_type} - %{unreported_user_name} txostena"
     admin_terms_of_service:
       default_body: "<h2>ZERBITZUAREN ADMINISTRAZIO BALDINTZAK</h2><p>Sistemaren tokiko administratzailearen ohiko azalpena jaso duzulakoan gaude. Oro har, hiru gauza hauetara mugatzen da:</p><ol><li>Errespetatu besteen pribatutasuna.</li><li>Klikatu aurretik pentsatu.</li><li>Botere handiak erantzukizun handia dakar.</li></ol>"
     alert:
@@ -530,7 +558,7 @@ eu:
         orders:
           label: 'Ordenatu elementuak honen arabera:'
           random: Ausazkoa
-          recent: Azkenak
+          recent: Berrienetatik zaharrenetara
       how_to_participate:
         name: Nola hartu parte
       html:
@@ -654,13 +682,13 @@ eu:
       show:
         download_data: Deskargatu datuak
         download_data_description_html: |-
-          Artxibo bat bidaliko da zure kontura lotutako informazio guztiarekin hona: <strong>%{user_email}</strong>.
+          Fitxategi bat bidaliko da zure kontura lotutako informazio guztiarekin hona: <strong>%{user_email}</strong>.
           Korreo honek .zip artxibo bat izango du eta pasahitz bat zabaldu ahal izateko.<br/><br/>Artxiboa deskonprimitzeko, beharko duzu: <a href="https://www.7-zip.org/">7-Zip</a> (Windows) edo <a href="https://www.keka.io/">Keka</a> (MacOS). Linux erabiltzen baduzu, gehienetan instalatuta izango duzu defektuz. 
           Bestela, erabil dezakezu: <a href="https://gitlab.gnome.org/GNOME/file-roller">File Roller</a> o <a href="https://peazip.github.io">PeaZip</a>).
         request_data: Eskaera datuak
     editor_images:
       create:
-        error: Errore bat egon da irudia eguneratzean.
+        error: Akats bat izan da irudia eguneratzean.
         success: Irudia zuzen igota.
       drag_and_drop_help: Gehitu irudiak arrastatuz edo itsatsiz.
     endorsement_buttons_cell:
@@ -735,6 +763,11 @@ eu:
             email_outro: Jakinarazpen hau jaso duzu %{amendable_title} jarraitzen duzulako. Aurreko estekan jakinarazpenak jasotzeari utzi ahal diozu.
             email_subject: '%{emendation_author_nickname} k baztertu du %{amendable_title} aldaketa'
             notification_title: <a href="%{emendation_author_path}">%{emendation_author_nickname}</a> k sortutako <a href="%{emendation_path}">zuzenketa </a> <a href="%{amendable_path}">%{amendable_title}</a> k ukatu du.
+        emendation_promoted:
+          follower:
+            email_intro: 'Zuzenketa bat argitaratu da honetarako: %{amendable_title}. Orrialde honetatik ikus dezakezu:'
+            email_outro: 'Jakinarazpen hau jaso duzu honen egilea zarelako: %{amendable_title}.'
+            email_subject: 'Hemendik: %{emendation_author_nickname} zuzenketa bat argitaratu da %{amendable_type} berri gisa'
       attachments:
         attachment_created:
           email_intro: 'Dokumentu berri bat gehitu zaio %{resource_title}-ri. Orrialde honetan ikusi dezakezu:'
@@ -839,7 +872,7 @@ eu:
     export_mailer:
       download_your_data_export:
         click_button: 'Egin klik hurrengo estekan zure datuak deskargatzeko. <br/>Artxiboa eskuragai egongo da data honetara arte %{date}.<br/>Irekitzeko beharko duzu <a href="https://www.7-zip.org/">7-Zip</a> (Windowserako), <a href="https://www.keka.io/en/">Keka</a> (para MacOS) o <a href="https://peazip.github.io">PeaZip</a> (Linuxerako). Pasahitza: %{password}'
-        download: Deskarga
+        download: Deskargatu
       export:
         ready: Mesedez, atxikita aurkituko duzu zure esportazioaren bertsio trinkotua.
       subject: Prest duzu "%{name}" izeneko esportazioa
@@ -888,7 +921,7 @@ eu:
         error: Errore bat dago datu-eremu honetan.
       file_help:
         file:
-          explanation: 'Jarraibideak artxiborako:'
+          explanation: 'Fitxategirako jarraibideak:'
           message_1: Irudi bat edo dokumentu bat izan behar da.
           message_2: Irudietarako, ahal dela, erabili irudi etzanak, zerbitzuak irudia mozten baitu.
         icon:
@@ -901,8 +934,8 @@ eu:
           message_2: Zerbitzuak irudia moztu egiten du.
       file_validation:
         allowed_file_extensions: 'Onartutako artxiboen formatua: %{extensions}'
-        max_file_dimension: 'Artxiboaren gehieneko neurriak: %{resolution} pixel'
-        max_file_size: 'Artxiboaren gehieneko tamaina: %{megabytes}MB'
+        max_file_dimension: 'Fitxategiaren gehieneko neurriak: %{resolution} pixel'
+        max_file_size: 'Fitxategiaren gehieneko tamaina: %{megabytes}MB'
       files:
         extension_allowlist: 'Onartutako formatuak: %{extensions}'
       upload:
@@ -921,10 +954,10 @@ eu:
           title_required: Izenburua behar da!
           uploaded: Igota
           validating: Balidatzen...
-          validation_error: Balioztatze-akatsa! Egiaztatu artxiboak luzapen edo tamaina baimendua duela.
+          validation_error: Balioztatze-akatsa! Egiaztatu fitxategiak luzapen edo tamaina baimendua duela.
         select_file: Hautatu fitxategia
       upload_help:
-        dropzone: Bota artxiboak hona edo egin klik igotzeko
+        dropzone: Bota fitxategiak hona edo egin klik igotzeko
         explanation: Gida honetarako %{attribute}
     gamification:
       all_badges_link: Ikusi eskuragarri dauden txapak.
@@ -1171,6 +1204,8 @@ eu:
         not_started: Oraindik ez da hasi
         remaining: "%{time_distance} falta da"
     metrics:
+      blocked_users:
+        description: Blokeatutako parte-hartzaile kopurua
       download:
         csv: Deskargatu datuak (CSV)
       followers:
@@ -1181,10 +1216,14 @@ eu:
         description: Erakundekoparte-hartzaile aktiboen kopurua
         object: parte-hartzaileak
         title: Parte-hartzaileak
+      reported_users:
+        description: Erreportatuko parte-hartzaile kopurua
+      user_reports:
+        description: Parte-hartzaileek egindako txosten kopurua
       users:
         description: Parte-hartzaile kopurua erakundean
         object: parte-hartzaileak
-        title: erabiltzaileak
+        title: Parte-hartzaileak
     newsletter_mailer:
       newsletter:
         no_reply_notice: Posta elektroniko hori jakinarazpen-helbide batetik bidali da, eta ezin du posta elektronikorik sartu. Mesedez, ez erantzun mezu honi.
@@ -1207,7 +1246,7 @@ eu:
         body: Testua
         cta_text: Ekintza-botoiaren testua
         cta_url: Ekintza-botoiaren URLa
-        interpolations_hint: 'Iradokizuna: "%{name}" erabil dezakezu sarreraren, gorputzaren, ekintza-botoiaren testuaren edo gaiaren edozein lekutan, eta horren ordez parte-hartzailearen izena agertuko da.'
+        interpolations_hint: 'Iradokizuna: "%{name}" erabil dezakezu sarreraren, tetsuaren, ekintza-botoiaren testuaren edo gaiaren edozein lekutan, eta horren ordez parte-hartzailearen izena agertuko da.'
         introduction: Sarrera
         main_image: Irudi nagusia
     newsletters:
@@ -1245,10 +1284,12 @@ eu:
     notifications_digest_mailer:
       header:
         daily: Jakinarazpenen eguneroko laburpena
+        real_time: Denbora erreala
         weekly: Jakinarazpenen asteko laburpena
       hello: Kaixo %{name},
       intro:
         daily: 'Hauek dira azken eguneko jakinarazpenak, jarraitzen ari zaren jardueran oinarrituta:'
+        real_time: 'Jarraitzen ari zaren jarduerari buruzko jakinarazpena dago:'
         weekly: 'Hauek dira azken asteko jakinarazpenak, jarraitzen ari zaren jardueran oinarrituta:'
       outro: Jakinarazpen hau jaso duzu eduki hau edo bere egileak jarraitzen dituzulako. Jarraitzeari utzi ahal diozu euren orrialdeetan.
       see_more: Ikusi jakinarazpen gehiago
@@ -1411,7 +1452,7 @@ eu:
         participatory_space: Partaidetza-espazioa
         reason: Arrazoia
         report_html: <p>Hurrengo <a href="%{url}"> edukia </a> salatua izan da.</p>
-        see_report: Ikusi erreportea
+        see_report: Txostena ikusi
         subject: Eduki bat salatua izan da
     reports:
       create:
@@ -1813,7 +1854,7 @@ eu:
       flags: Banderak
       food-drink: Janaria & Edaria
       objects: Objektuak
-      people-body: Jendea eta gorputza
+      people-body: Jendea eta tesua
       recents: Oraintsu erabilia
       smileys-emotion: Irribarreak eta emozioa
       symbols: Ikurrak
@@ -1844,7 +1885,7 @@ eu:
       file_size_is_less_than_or_equal_to: fitxategiaren pisuak %{count} izan behar du, edo gutxiago
       invalid_time_zone: ordu-zona ez da baliozkoa
       long_words: luzeegiak diren hitzak ditu (35 karaktere baino gehiago)
-      must_start_with_caps: letra maiuskulaz hasi behar da
+      must_start_with_caps: letra larriz hasi behartu
       nesting_too_deep: ezin da egon azpikategoria batean
       not_found: ezin izan da aurkitu. Aldez aurretik erregistratu zara?
       not_locked: ez zen blokeatuta
@@ -2014,7 +2055,7 @@ eu:
     facebook: Facebook
     google_bookmark: Google Bookmark
     google_plus: Google+
-    hacker_news: hacker News
+    hacker_news: Hacker berriak
     linkedin: Linkedin
     pinterest: Pinterest
     qq: Qzone

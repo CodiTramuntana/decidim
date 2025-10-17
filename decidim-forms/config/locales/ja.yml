@@ -4,7 +4,7 @@ ja:
     attributes:
       answer:
         body: 回答
-        choices: 選択項目
+        choices: 項目
         selected_choices: 選択した項目
       question:
         max_choices: 選択肢の最大数
@@ -19,7 +19,7 @@ ja:
             add_documents:
               needs_to_be_reattached: 再添付が必要
             body:
-              too_long: 長すぎます
+              too_long: は長すぎます
             choices:
               missing: は完全ではありません
               too_many: 多すぎます
@@ -38,12 +38,12 @@ ja:
             show: 回答を表示
           answer_option:
             answer_option: 回答オプション
-            free_text: フリーテキスト
+            free_text: 自由形式テキスト
             remove: 削除
             statement: ステートメント
           answers:
             actions:
-              back: 返信に戻る
+              back: 応答に戻る
               export: エクスポート
               next: 次 &rsaquo;
               previous: "&lsaquo; 前"
@@ -55,7 +55,7 @@ ja:
             export_response:
               title: survey_user_answers_%{token}
             index:
-              title: "合計%{total} 件の回答"
+              title: "総回答数 %{total} 件"
             show:
               title: '回答 #%{number}'
           display_condition:

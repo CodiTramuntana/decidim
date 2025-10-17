@@ -12,6 +12,8 @@ sv:
         state: Status
         title: Titel
         user_group_id: Skapa gemensamt utkast som
+      import_participatory_text:
+        document: Dokument
       proposal:
         address: Adress
         answer: Svar
@@ -21,6 +23,8 @@ sv:
         category_id: Kategori
         decidim_scope_id: Indelning
         has_address: Har adress
+        latitude: Latitud
+        longitude: Longitud
         scope_id: Indelning
         state: Status
         suggested_hashtags: Föreslagna hashtags
@@ -34,6 +38,8 @@ sv:
       proposals_copy:
         copy_proposals: Jag förstår att det här importerar alla förslag från den valda komponenten till den aktuella komponenten och att det inte går att ångra.
         origin_component_id: Komponent att kopiera förslagen från
+      proposals_file_import:
+        file: Fil
       proposals_import:
         import_proposals: Importera förslag
         keep_answers: Behåll status och svar
@@ -386,7 +392,6 @@ sv:
         title: Stöd
     participatory_spaces:
       highlighted_proposals:
-        last: Senaste förslagen
         see_all: Visa alla förslag
     proposals:
       actions:
@@ -519,6 +524,7 @@ sv:
             split_button: Dela upp
             title: Förslag
             unassign_from_valuator: Ta bort tilldelning till handläggare
+            unassign_from_valuator_button: Ta bort
             update: Uppdatera
             update_scope_button: Uppdatera indelning
           new:
@@ -802,7 +808,7 @@ sv:
           text_banner: Du visar förslag som dragits tillbaka av sin författare. %{go_back_link}.
         new:
           send: Fortsätt
-          title: Skapa ditt förslag
+          title: Skapa ett nytt förslag
         orders:
           label: 'Ordna förslag efter:'
           most_commented: Mest kommenterade
@@ -835,8 +841,8 @@ sv:
           edit_proposal: Redigera förslag
           estimated_cost: Beräknad kostnad
           hidden_endorsers_count:
-            one: och %{count} till person
-            other: och %{count} till personer
+            one: och %{count} mer person
+            other: och %{count} fler personer
           link_to_collaborative_draft_help_text: Detta förslag är resultatet av ett gemensamt utkast. Läs historiken
           link_to_collaborative_draft_text: Visa det gemensamma utkastet
           link_to_promoted_emendation_help_text: Detta förslag är ett annonserat ändringsförslag
@@ -864,19 +870,19 @@ sv:
             other: STÖDER
         voting_rules:
           can_accumulate_supports_beyond_threshold:
-            description: Varje förslag kan samla mer än %{limit} stöd
+            description: Förslag kan få fler stöd än gränsen på %{limit}
           minimum_votes_per_user:
-            description: Du måste fördela minst %{votes} stöd mellan olika förslag.
-            given_enough_votes: Du har gett så mycket stöd du kan.
-            supports_remaining: Du måste stödja ytterligare %{remaining_votes} förslag för att dina stöd ska beaktas.
+            description: Du kan stödja minst %{votes} förslag.
+            given_enough_votes: Du har gett minsta antalet stöd.
+            supports_remaining: Du behöver stödja %{remaining_votes} till förslag för att din röst ska räknas.
           proposal_limit:
             description: Du kan skapa upp till %{limit} förslag.
           threshold_per_proposal:
-            description: Förslag behöver få stöd från minst %{limit} deltagare för accepteras.
-          title: 'Stöd är föremål för följande regler:'
+            description: Förslag behöver få minst %{limit} stöd för att gå vidare.
+          title: 'Röstning på förslag fungerar så här:'
           vote_limit:
             description: Du kan stödja upp till %{limit} förslag.
-            votes: Saknar %{number} stöd
+            votes: '%{number} stöd kvar'
         wizard_aside:
           back: Tillbaka
           back_from_step_1: Tillbaka till förslag

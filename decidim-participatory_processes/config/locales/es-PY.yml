@@ -224,7 +224,7 @@ es-PY:
             body_html: |-
               La configuración del CTA a través de la Fase del proceso participativo está obsoleta con el nuevo diseño.
               Ahora esto se hace en la <b>Página de Inicio</b>, usando el bloque de contenido <b>Imagen principal y botón de acción</b> .
-              Lo hemos dejado aquí para que migres las CTAs que necesites. Los campos <i>Ruta del acción</i> y
+              Lo hemos dejado aquí para que migres las CTAs que necesites. Los campos <i>Ruta del botón de acción</i> y
               <i>Texto del botón de acción</i> se eliminaran en la próxima versión.
             title: CTA obsoleto
           title: Editar fase de proceso participativo
@@ -315,6 +315,7 @@ es-PY:
         update: "%{user_name} actualizó el proceso participativo %{resource_name}"
       participatory_process_group:
         create: "%{user_name} creó el grupo de procesos participativos de %{resource_name}"
+        unpublish: "%{user_name} ha despublicado el grupo de procesos participativos: %{resource_name}"
         update: "%{user_name} actualizó el grupo de procesos participativos de %{resource_name}"
       participatory_process_step:
         activate: "%{user_name} activó la fase %{resource_name} en el proceso participativo %{space_name}"
@@ -380,7 +381,7 @@ es-PY:
         html_3:
           name: Tercer bloque HTML
         main_data:
-          name: Titulo y descripción
+          name: Título y descripción
         participatory_processes:
           active: Procesos participativos activos
           name: Procesos participativos

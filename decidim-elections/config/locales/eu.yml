@@ -133,7 +133,7 @@ eu:
           label: Baliozkotuta
           values:
             'false': Baliozkotu gabe
-            'true': Baliozkotua
+            'true': Baliozkotuta
       voting_publications:
         create:
           error: Arazo bat sortu da bozketa hau argitaratzean.
@@ -145,7 +145,7 @@ eu:
       elections:
         actions:
           vote: Eman babesa
-        name: Bozketak
+        name: Hauteskundeak
         settings:
           global:
             announcement: Iragarpena
@@ -162,7 +162,7 @@ eu:
         manage_questions: Kudeatu galderak
         manage_steps: Kudeatu urratsak
         new_answer: Beste erantzun bat
-        new_election: Beste aukera bat
+        new_election: Beste hauteskunde bat
         new_question: Beste galdera bat
         new_trustee: Beste bermatzaile bat
         preview: Aurrebistaratu
@@ -207,16 +207,16 @@ eu:
             invalid: Arazo bat egon da aukera hau ezabatzean.
             success: Aukera ondo ezabatua.
           edit:
-            title: Editatu aukera
-            update: Eguneratu aukera
+            title: Editatu hauteskundea
+            update: Eguneratu hauteskundea
           form:
             organization_time_zone: Egiaztatu ordutegi-eremua egokia dela antolamenduaren konfigurazioan. Egungo konfigurazioa da %{time_zone} (%{time}).
           index:
             no_bulletin_board: Ez dago <a href = "https://github.com/decidim/decidim-bulletin-board" >Iragarki Taula </a> zerbitzari konfiguraturik, modulu hau erabiltzeko beharrezkoa dena. Ataza hori sistemaren administratzaileak egin behar du.
-            title: Aukerak
+            title: Hauteskundeak
           new:
-            create: Sortu aukera
-            title: Beste aukera bat
+            create: Sortu hauteskundea
+            title: Beste hauteskunde bat
           publish:
             success: Aukera zuzen argitaratu da.
           unpublish:
@@ -225,7 +225,7 @@ eu:
             invalid: Arazo bat egon da aukera hau eguneratzean.
             success: Aukera ondo eguneratua.
         exports:
-          elections: Bozketak
+          elections: Hauteskundeak
           feedback_form_answers: Erantzunen feedbacka
         mailers:
           trustee_mailer:
@@ -463,13 +463,13 @@ eu:
           title: Aukeraketaren erregistroa
           unpublished: Argitaratu gabea
           verifiable_results:
-            checksum: 'Artxiboaren SHA256 egiaztapenaren batuketa:'
+            checksum: 'Fitxategiaren SHA256 egiaztapenaren batuketa:'
             description:
-              not_ready: Hautapenaren artxibo egiaztagarria eta SHA256 egiaztatze-batura oraindik ez daude eskuragarri. Emaitzak argitaratu bezain laster, aukera hori egiaztatu ahal izango duzu.
+              not_ready: Hautapenaren fitxategi egiaztagarria eta SHA256 egiaztatze-batura oraindik ez daude eskuragarri. Emaitzak argitaratu bezain laster, aukera hori egiaztatu ahal izango duzu.
               ready: 'Hemen duzu aukera egiaztatzeko aukera. Lehenik eta behin, fitxategia deskargatu behar duzu eta ziurtatu ez dela hondatu. Horretarako, exekutatu ondorengo komandoa eta egiaztatu irteera egiaztatze-baturarekin bat datorrela:'
             how_to_verify: 'Fitxategia deskargatu eta ondo dagoela ziurtatu ondoren, egiaztatzaile unibertsala exekuta dezakezu. Klona ezazu biltegi hau <a href=''https://github.com/decidim/decidim-bulletin-board''>este repositorio</a> eta, erro-karpetatik, exekuta ezazu ondoko komandoa:'
             title: Egiaztatu aukeraketaren emaitzak
-            verifiable_file: 'Aukeraketaren artxibo egiaztagarria:'
+            verifiable_file: 'Aukeraketaren fitxategi egiaztagarria:'
           verify: Egiaztatu aukeraketa
           vote_description:
             finished: Bozkatzeko prozesua amaitu da.
@@ -531,8 +531,8 @@ eu:
             end_time: Bukaera-data
             start_time: Hasiera-data
             title: Izenburua
-            verifiable_results_file_hash: Artxiboaren SHA256 egiaztapenaren batuketa
-            verifiable_results_file_url: Aukeraketa egiaztatzeko artxiboa
+            verifiable_results_file_hash: Fitxategiaren SHA256 egiaztapenaren batuketa
+            verifiable_results_file_url: Aukeraketa egiaztatzeko fitxategia
         question:
           fields:
             answers: Erantzunak
@@ -550,7 +550,7 @@ eu:
       orders:
         label: Ordenatu bozketak honen arabera
         older: Zaharrena
-        recent: Berriena
+        recent: Berrienetatik zaharrenetara
       trustee_zone:
         elections:
           backup_modal:
@@ -617,14 +617,14 @@ eu:
                 election: Aukera
                 voting_period: Bozketa-aldia
               no_elections: Ez dago aukerarik zuk bermatzaile gisa aritzeko.
-              title: Bozketak
+              title: Hauteskundeak
             identification_keys:
               cancel: Utzi
               generate: Sortu identifikatzeko gakoak
               generate_error: Errore bat egon da identifikatzeko gakoak sortzean.
               generate_legend: Bozketan bermatzaile gisa parte hartzeko, identifikatzeko gako pare bat sortu behar duzu.
-              generate_legend_1: Botoia sakatu ondoren sortutako identifikatzeko gakoak dituen artxiboa deskargatu behar duzu.
-              generate_legend_2: Kopiatu deskargatutako artxiboa USB gailu garbi batean
+              generate_legend_1: Botoia sakatu ondoren sortutako identifikatzeko gakoak dituen fitxategia deskargatu behar duzu.
+              generate_legend_2: Kopiatu deskargatutako fitxategia USB gailu garbi batean
               generate_legend_3: Ziurtatu zure ekipoak ez duela fitxategiaren kopiarik (adibidez, egiaztatu Deskargak eta Mahaigaina karpetak).
               generate_legend_4: Egin beste kopia bat kanpoko beste gailu batean, eta gorde oso leku seguruan.
               submit: Bidali
@@ -680,8 +680,8 @@ eu:
           try_again: Saiatu berriro
         header:
           ballot_decision: Eman edo ikuskatu zure babesa
-          confirm: Berretsi
-          election: Hautaketa
+          confirm: Baieztatu
+          election: Aukera
           register: Erregistroa
           vote_for: '%{title} (r) en alde bozkatu'
         messages:
@@ -773,7 +773,7 @@ eu:
       related_elections:
         see_all: Ikusi aukera guztiak
     statistics:
-      elections_count: Bozketak
+      elections_count: Hauteskundeak
       votings_count: Bozketak
     votings:
       admin:
@@ -954,7 +954,7 @@ eu:
             how_to_run_verifier: 'Fitxategia deskargatu eta ondo dagoela ziurtatu ondoren, egiaztatzaile unibertsala exekuta dezakezu. Klona ezazu biltegi hau <a href=''https://github.com/decidim/decidim-bulletin-board''>este repositorio</a> eta, erro-karpetatik, exekuta ezazu ondoko komandoa:'
             how_to_title: Nola egiaztatu aukera baten balioa
             not_available: Oraindik ez dago erabilgarri
-            title: Bozketak
+            title: Hauteskundeak
         polling_officers:
           create:
             invalid: Arazo bat egon da mahaiko kudeatzailea sortzean.
@@ -1103,7 +1103,7 @@ eu:
               info_message: "<strong>Mesedez, itxaron</strong>, bozketan sartzeko kodeak sortzen ari dira (honek minutu batzuk beharko ditu)..."
             new:
               file_help:
-                explanation: 'Jarraibideak artxiborako:'
+                explanation: 'Fitxategiako jarraibieak:'
                 message_1: Soilik CSV (.csv) artxiboak onartzen dira.
                 message_2: Zutabeen arteko banatzailea puntu eta koma (";") izan behar da.
               has_ballot_styles_message: Boto-paper motak konfiguratu dituzu. Mesedez, ziurtatu CSVren "%{ballot_style_code_header}" eremua eta nahi duzun boto-paper motaren kodea bat datozela.
@@ -1114,10 +1114,10 @@ eu:
             show:
               heading: Bozketa-gunearen errolda
             upload_info:
-              csv_example_with_ballot_style: '<strong>con</strong> artxiboaren adibide bat boto-paper mota:'
-              csv_example_without_ballot_style: '<strong>con</strong> artxiboaren adibide bat boto-paper mota:'
+              csv_example_with_ballot_style: '<strong>con</strong> fitxategiaren adibide bat boto-paper mota:'
+              csv_example_without_ballot_style: '<strong>con</strong> fitxategiaren adibide bat boto-paper mota:'
               csv_header_after: Ez sartu ("%{ballot_style_code_header}") azken eremua, baldintza-galderarik/boto-paper motarik behar ez baduzu
-              csv_header_before: 'Errolda CSV artxiboa izan behar da honako goiburu hau duena:'
+              csv_header_before: 'Errolda CSV fitxategia izan behar da honako goiburu hau duena:'
         document_types:
           identification_number: Identifikazio-zenbakia 
           passport: Pasaportea
@@ -1329,8 +1329,8 @@ eu:
           year_placeholder: UUUU
         count:
           title:
-            one: "Boto %{count}"
-            other: "%{count} boto"
+            one: "%{count} bozketa"
+            other: "%{count} bozketa"
         elections_log:
           description: Aukeraren erregistroak bozketa bakoitzari buruzko informazio garrantzitsu guztia erakutsiko dizu. Adibidez, gako-zeremoniaren edo zenbaketaren egoera edo emaitzak argitaratuta dauden. Egin klik erregistroari buruzko informazioa nahi duzun aukeran.
           title: Aukeraketaren erregistroa
