@@ -22,6 +22,7 @@ jobs:
       DATABASE_PASSWORD: postgres
       DATABASE_HOST: localhost
       RUBYOPT: '-W:no-deprecated'
+      NODE_OPTIONS: '--experimental-global-webcrypto'
     services:
       postgres:
         image: postgres:14
