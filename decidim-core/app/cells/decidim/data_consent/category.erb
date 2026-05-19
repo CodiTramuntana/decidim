@@ -14,9 +14,9 @@
     </label>
 
     <div id="accordion-trigger-<%= category[:slug] %>" data-controls="accordion-panel-<%= category[:slug] %>" aria-labelledby="accordion-title-<%= category[:slug] %>">
-      <h3 id="accordion-title-<%= category[:slug] %>" class="cookies__category-trigger-title">
+      <span id="accordion-title-<%= category[:slug] %>" class="cookies__category-trigger-title">
         <%= category[:title] %>
-      </h3>
+      </span>
 
       <span>
         <%= icon "arrow-down-s-line", class: "cookies__category-trigger-arrow" %>
