@@ -26,11 +26,11 @@ module Decidim
     delegate :content_tag, :safe_join, :link_to, :active_link_to_class, :is_active_link?, :icon, to: :@view
 
     def render
-      content_tag :li, role: :menuitem, class: link_wrapper_classes do
+      content_tag :li, role: :none, class: link_wrapper_classes do
         output = if url == "#"
-                   [content_tag(:span, composed_label, class: "sidebar-menu__item-disabled")]
+                   [content_tag(:span, composed_label, class: "sidebar-menu__item-disabled", role: "menuitem")]
                  else
-                   [link_to(composed_label, url, link_options)]
+                   [link_to(composed_label, url, link_options.merge(role: "menuitem"))]
                  end
         output.push(@view.send(:simple_menu, **@menu_item.submenu).render) if @menu_item.submenu
 

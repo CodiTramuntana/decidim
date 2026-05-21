@@ -19,9 +19,10 @@ module Decidim
 
     def find_or_initialize_user_by(email:)
       user = Decidim::User.find_or_initialize_by(email:)
+      name = ::Faker::Name.name
       user.update!(
-        name: ::Faker::Name.name,
-        nickname: ::Faker::X.unique.screen_name,
+        name:,
+        nickname: Decidim::User.nicknamize(name, organization.id),
         password: "decidim123456789",
         organization:,
         confirmed_at: Time.current,

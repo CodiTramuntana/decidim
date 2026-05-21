@@ -200,9 +200,10 @@ module Decidim
       end
 
       def create_user_group!(user:, verified_at:)
+        group_name = ::Faker::Company.unique.name
         user_group = Decidim::UserGroup.create!(
-          name: ::Faker::Company.unique.name,
-          nickname: ::Faker::Internet.unique.username,
+          name: group_name,
+          nickname: Decidim::UserGroup.nicknamize(group_name, user.organization.id),
           email: ::Faker::Internet.email,
           confirmed_at: Time.current,
           extended_data: {

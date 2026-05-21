@@ -152,8 +152,8 @@ module Decidim
         end
       end
 
-      def random_nickname
-        "#{::Faker::X.unique.screen_name}-#{SecureRandom.hex(4)}"[0, 20]
+      def random_nickname(name = nil)
+        Decidim::UserGroup.nicknamize(name || ::Faker::Name.name, organization.id)
       end
 
       def random_email(suffix:)
@@ -165,9 +165,10 @@ module Decidim
       def create_emendation!(proposal:)
         author = find_or_initialize_user_by(email: random_email(suffix: "amendment"))
 
+        group_name = ::Faker::Name.name
         group = Decidim::UserGroup.create!(
-          name: ::Faker::Name.name,
-          nickname: random_nickname,
+          name: group_name,
+          nickname: random_nickname(group_name),
           email: ::Faker::Internet.email,
           extended_data: {
             document_number: ::Faker::Code.isbn,
