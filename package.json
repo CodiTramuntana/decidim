@@ -71,5 +71,8 @@
     "jest-localstorage-mock": "^2.4.26",
     "react-test-renderer": "^18.2.0",
     "yaml-jest": "^1.2.0"
+  },
+  "overrides": {
+    "serialize-javascript": "^6.0.2"
   }
 }

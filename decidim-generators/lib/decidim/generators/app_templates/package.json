@@ -15,5 +15,8 @@
   },
   "browserslist": [
     "extends @decidim/browserslist-config"
-  ]
+  ],
+  "overrides": {
+    "serialize-javascript": "^6.0.2"
+  }
 }
