@@ -54,6 +54,8 @@ module Decidim
       end
 
       before do
+        Decidim::Map.reset_utility_configuration!
+        GeocoderHelpers.configure_maps
         allow(template).to receive(:current_organization).and_return(organization)
       end
 

@@ -55,7 +55,8 @@
   "dependencies": {
     "@decidim/browserslist-config": "file:packages/browserslist-config",
     "@decidim/core": "file:packages/core",
-    "@decidim/webpacker": "file:packages/webpacker"
+    "@decidim/webpacker": "file:packages/webpacker",
+    "workbox-webpack-plugin": "7.0.0"
   },
   "devDependencies": {
     "@decidim/dev": "file:packages/dev",
@@ -70,5 +71,8 @@
     "jest-localstorage-mock": "^2.4.26",
     "react-test-renderer": "^18.2.0",
     "yaml-jest": "^1.2.0"
+  },
+  "overrides": {
+    "serialize-javascript": "^6.0.2"
   }
 }
