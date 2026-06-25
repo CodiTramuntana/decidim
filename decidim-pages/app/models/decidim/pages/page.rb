@@ -11,6 +11,7 @@ module Decidim
       include Decidim::Loggable
       include Decidim::TranslatableResource
       include Decidim::HasReference
+      include Decidim::HasAttachments
 
       translatable_fields :body
 
