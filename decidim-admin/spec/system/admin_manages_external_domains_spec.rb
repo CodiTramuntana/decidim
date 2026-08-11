@@ -33,6 +33,7 @@ describe "Admin manages external domain list" do
       )
 
       click_on "Update"
+      sleep 1
 
       organization.reload
       expect(organization.external_domain_allowlist).not_to include("example.org")
@@ -65,6 +66,8 @@ describe "Admin manages external domain list" do
       )
 
       click_on "Update"
+      sleep 1
+
       organization.reload
       expect(organization.external_domain_allowlist).to eq(["twitter.com", "example.org", "youtube.com", "facebook.com", "mytesturl.me", "github.com"])
     end
@@ -81,6 +84,7 @@ describe "Admin manages external domain list" do
       end
 
       click_on "Update"
+      sleep 1
 
       organization.reload
       expect(organization.external_domain_allowlist).to include("example.org")
@@ -98,6 +102,7 @@ describe "Admin manages external domain list" do
       end
 
       click_on "Update"
+      sleep 1
 
       organization.reload
       expect(organization.external_domain_allowlist).to include("example.org", "decidim.org")
@@ -133,6 +138,7 @@ describe "Admin manages external domain list" do
       )
 
       click_on "Update"
+      sleep 1
 
       organization.reload
       expect(organization.external_domain_allowlist).to eq(["decidim.org", "example.org"])
