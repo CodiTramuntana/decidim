@@ -106,6 +106,7 @@ ca:
         settings:
           global:
             announcement: Avís
+            attachments_allowed: Permetre fitxers adjunts
             comments_enabled: Comentaris habilitats
             comments_max_length: Longitud màxima dels comentaris (deixa 0 si vols mantenir la configuració per defecte)
             creation_enabled_for_participants: Les participants poden crear noves entrades en el blog

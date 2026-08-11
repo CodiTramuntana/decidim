@@ -31,7 +31,7 @@ module Decidim
 
           with_events(with_transaction: true) do
             update_page
-            attachment_cleanup!(include_all_attachments: true)
+            document_cleanup!(include_all_attachments: true)
             create_attachments(first_weight: first_attachment_weight) if process_attachments?
           end
 

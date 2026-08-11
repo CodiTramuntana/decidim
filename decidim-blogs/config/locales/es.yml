@@ -106,6 +106,7 @@ es:
         settings:
           global:
             announcement: Aviso
+            attachments_allowed: Permitir archivos adjuntos
             comments_enabled: Comentarios habilitados
             comments_max_length: Longitud máxima de los comentarios (deja 0 si quieres mantener la configuración por defecto)
             creation_enabled_for_participants: Las participantes pueden crear nuevas entradas en el blog

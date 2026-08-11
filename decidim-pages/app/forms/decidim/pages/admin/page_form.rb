@@ -13,6 +13,12 @@ module Decidim
         attribute :attachment, AttachmentForm
         attachments_attribute :attachments
 
+        # MultipleAttachmentsMethods expects documents-style accessors.
+        alias documents attachments
+        alias documents= attachments=
+        alias add_documents add_attachments
+        alias add_documents= add_attachments=
+
         validate :notify_missing_attachment_if_errored
 
         def map_model(model)
