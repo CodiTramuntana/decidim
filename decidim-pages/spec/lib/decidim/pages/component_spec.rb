@@ -21,6 +21,18 @@ describe "Pages component" do # rubocop:disable RSpec/DescribeClass
     end
 
     context "when the page has attachments" do
+      before do
+        # We do not optimize the eager loading here, as these associations are loaded by
+        # .with_attached_file and .includes(:attachment_collection) and used internally
+        # by ActiveStorage callbacks or the machine_translation callback, which Bullet does not track.
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "Decidim::Attachment", association: :file_attachment
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "ActiveStorage::Attachment", association: :blob
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "ActiveStorage::Blob", association: :variant_records
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "ActiveStorage::Blob", association: :preview_image_attachment
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "ActiveStorage::Attachment", association: :record
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "Decidim::Attachment", association: :attachment_collection
+      end
+
       let!(:document) { create(:attachment, :with_pdf, attached_to: original_page) }
 
       it "copies the page with attachments" do
