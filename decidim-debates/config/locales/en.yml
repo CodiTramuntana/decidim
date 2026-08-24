@@ -74,7 +74,6 @@ en:
             update: Update debate
           form:
             add_attachments: Add attachments
-            attachment_legend: Add a document or an image
             comments_visualization: Comments visualization
             comments_warning: Once the first comment is posted, the selected display option cannot be changed.
             debate_type: Debate type

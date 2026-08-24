@@ -1093,6 +1093,8 @@ en:
           next_title: Next item
           previous: Previous
           previous_title: Previous item
+        attachments:
+          attachment_legend: Add a document or an image
         gallery:
           add_images: Add images
           edit_images: Edit images
