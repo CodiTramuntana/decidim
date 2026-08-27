@@ -39,7 +39,7 @@ module Decidim::Meetings
         address:,
         latitude:,
         longitude:,
-        taxonomies: meeting.taxonomies,
+        taxonomizations: meeting.taxonomizations,
         services_to_persist:,
         current_user:,
         questionnaire: Decidim::Forms::Questionnaire.new,
