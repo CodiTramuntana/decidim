@@ -87,5 +87,26 @@ describe "Show a page" do
         end
       end
     end
+
+    context "when the page has attachments" do
+      let!(:document) { create(:attachment, :with_pdf, attached_to: page_component) }
+      let!(:photo) { create(:attachment, :with_image, attached_to: page_component) }
+
+      before do
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "Decidim::Attachment", association: :file_attachment
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "ActiveStorage::Attachment", association: :blob
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "ActiveStorage::Attachment", association: :record
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "ActiveStorage::Blob", association: :variant_records
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "ActiveStorage::Blob", association: :preview_image_attachment
+        Bullet.add_safelist type: :unused_eager_loading, class_name: "Decidim::Attachment", association: :attachment_collection
+
+        visit_component
+      end
+
+      it "displays the attachments" do
+        expect(page).to have_css("[data-controls='panel-images']")
+        expect(page).to have_css("[data-controls='panel-documents']")
+      end
+    end
   end
 end
